@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { profile, siteConfig } from "@/lib/profile";
 
 function IconEmail() {

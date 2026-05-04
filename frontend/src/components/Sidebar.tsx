@@ -207,6 +207,7 @@ export default function Sidebar() {
             height={64}
             className="w-full h-full object-cover"
           />
+
         </div>
       </div>
 
@@ -263,15 +264,15 @@ export default function Sidebar() {
                     style={
                       msg.role === "user"
                         ? {
-                            background: "var(--send)",
-                            color: "#fff",
-                            borderRadius: "18px 18px 4px 18px",
-                          }
+                          background: "var(--send)",
+                          color: "#fff",
+                          borderRadius: "18px 18px 4px 18px",
+                        }
                         : {
-                            background: "#f0f0ee",
-                            color: "var(--dark)",
-                            borderRadius: "18px 18px 18px 4px",
-                          }
+                          background: "#f0f0ee",
+                          color: "var(--dark)",
+                          borderRadius: "18px 18px 18px 4px",
+                        }
                     }
                   >
                     {msg.content}
