@@ -3,7 +3,7 @@ import os
 import httpx
 
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
-PRIMARY_MODEL = "openai/gpt-oss-20b:free"
+PRIMARY_MODEL = "liquid/lfm-2.5-1.2b-instruct:free"
 FALLBACK_MODEL = "google/gemma-4-26b-a4b-it:free"
 
 
