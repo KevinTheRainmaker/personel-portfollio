@@ -49,6 +49,36 @@
   ],
   "publications": [
     {
+      "title": "Who Holds the Pen? Preserving Clinicians' Role in Human-AI Interpretation for Child Language Therap",
+      "authors": "Ko, K., Lim, C., Oh, M., Park, J., Oh, J., Kang, S., Gim, B., Kim, W., Kim, S.",
+      "journal": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "time": "",
+      "link": "",
+      "thumbnail": "/images/publications/whoHoldsThePen.png",
+      "highlight": true,
+      "abstract": "Child language therapy for developmental language disorder relies on clinicians' interpretive judgments, which directly shape children's developmental trajectories. As artificial intelligence (AI) and large language models (LLMs) are integrated into therapeutic workflows, questions arise regarding how to support interpretation without undermining professional agency and accountability. We examine this through a within-subjects study with eight Speech-Language Pathologists, comparing four human-AI collaboration modes that vary in AI autonomy and interaction structure. By situating these configurations within the domain of clinical interpretation, the study provides an empirical account of how different forms of AI assistance are experienced in practice. While greater autonomy reduced effort and increased perceived usefulness, it diminished clinicians' sense of control and professional identity. Despite comparable efficiency, participants consistently preferred a collaborative dialogue mode. These findings show that differences in adoption intention between AI-assisted configurations cannot be fully explained by perceived usefulness or effort reduction alone, but are associated with how interaction structures position clinicians within the interpretive process. They further suggest that, in contrast to more general-purpose domains, the use of AI in clinical interpretive work is shaped by the need to preserve authorship and professional agency. This study highlights the role of interaction structure in shaping professional experience and informs design principles for AI systems supporting clinical interpretation."
+    },
+    {
+      "title": "PardonMix: Unpacking Ambiguity in Semantic Audio Mixing for Adaptive Interface Design",
+      "authors": "Kim, D., Ko, K., Oh, J., Kim, S.",
+      "journal": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "time": "May 2026",
+      "link": "https://dl.acm.org/doi/10.1145/3772363.3798647",
+      "thumbnail": "/images/publications/PardonMix.png",
+      "highlight": true,
+      "abstract": "Audio mixing requires sophisticated parameter control and accumulated listening experience. In collaborative workflows, novice musicians often struggle to convey their auditory intent to professional engineers, creating a semantic gap between abstract descriptors and technical execution. While prior studies have mapped descriptive terms to parameters by focusing on minimizing ambiguity, we propose that identifying types of ambiguity can serve as a key to bridging this communication gap. We conducted a formative study analyzing mixing parameter vectors from 10 professional engineers for 18 abstract descriptors, identifying distinct types of ambiguity: High Consensus, Intensity Variance, and Directional Divergence. We propose PardonMix, an adaptive interface strategy that dynamically allocates disambiguation widgets; direct automation for high consensus terms, degree control for intensity varying terms, and exploratory gallery for divergent terms. PardonMix seeks to bridge the semantic gap by embracing ambiguity, facilitating smoother collaboration that ensures the novice’s artistic vision is precisely translated into technical execution."
+    },
+    {
+      "title": "Demonstrating InteractiSense: An Interactive Tool for Supporting Social Engagement for Children with ASD",
+      "authors": "Kim, W.*, Lim, C.*, Seong, M., Ko, K., Kim, S.",
+      "journal": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
+      "time": "May 2026",
+      "link": "https://dl.acm.org/doi/10.1145/3772363.3799141",
+      "thumbnail": "/images/publications/InteractiSense.png",
+      "highlight": true,
+      "abstract": "Children with autism spectrum disorder (ASD) are prone to disengagement during social activities, which limits opportunities for communication and peer interaction. We present InteractiSense, a spherical, sensing-integrated tangible prototype and cooperative serious game (SG) that targets social and collaborative scenarios for children with ASD. The prototype embeds seven sensors in a soft graspable body and streams multimodal data during play, while SG modules translate imitation, joint attention, and turn-taking objectives into shared gameplay. Prior to this demo, a preliminary study with 15 children with ASD has examined data stability and in-game experience. In this Interactive Demo, attendees experience InteractiSense through paired gameplay and a real-time visualization interface that exposes engagement-related signals. The demo aims to prompt discussion within the CHI community on inclusive SG content, tangible input mechanisms, and opportunities for physical AI systems in developmental contexts."
+    },
+    {
       "title": "LEGOLAS: Learning & Enhancing Golf Skills through LLM-Augmented System",
       "authors": "Ko, K., Oh, M., Seong, M., & Kim, S. J.",
       "journal": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
