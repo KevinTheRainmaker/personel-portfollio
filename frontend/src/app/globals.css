@@ -3,16 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --bg: #faf8f3;
-  --surface: #f3f0e8;
-  --dark: #1a1714;
-  --mid: #6b6560;
-  --muted: #a09b95;
-  --accent: #1a4d3a;
-  --accent-hover: #235e48;
-  --accent-light: #e8f2ee;
-  --warm: #c07830;
-  --border: #e4ddd4;
+  --bg: #f8f7f5;
+  --surface: #ffffff;
+  --dark: #111111;
+  --mid: #5a5a5a;
+  --muted: #999999;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --accent-light: #eef2ff;
+  --warm: #888888;
+  --border: #e5e3df;
+  --name: #e879b3;
+  --send: #4f46e5;
 }
 
 .dark {
@@ -21,11 +23,13 @@
   --dark: #f0ece4;
   --mid: #a09b95;
   --muted: #6b6560;
-  --accent: #3d7a61;
-  --accent-hover: #4e9478;
-  --accent-light: #1a2e25;
-  --warm: #d4924a;
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
+  --accent-light: #1e1b3a;
+  --warm: #6b6560;
   --border: #2a2520;
+  --name: #f9a8d4;
+  --send: #818cf8;
 }
 
 * {
@@ -131,4 +135,36 @@ h4 {
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+/* Fade-up animation */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease forwards;
+}
+
+/* Slide-in animation */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease forwards;
 }

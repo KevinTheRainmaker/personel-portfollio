@@ -60,4 +60,3 @@ Built a deep learning model for cerebral aneurysm localization using cerebral an
 **Date**: 2024
 
 Developed a multimodal LLM-based online shopping assistant for visually impaired users, capable of extracting on-screen information and providing voice-based responses to user queries.
-

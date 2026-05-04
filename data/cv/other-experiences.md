@@ -5,11 +5,11 @@ description: "Additional professional activities and experiences"
 
 ## Startup Program Finalist & Participant
 
-**Organization**: Innopolis Foundation, KAIST E*5, X-IST, Ministry of Education
+**Organization**: Innopolis Foundation, KAIST E\*5, X-IST, Ministry of Education
 
 **Period**: 2021
 
-Selected for various early-stage startup competitions and accelerators, including the Pre-Startup Package (AI Track, Best Company Award), Youth Startup 300 (Finalist), Innopolis Campus (Final Selection), X-IST, and KAIST E*5 (Round 2).
+Selected for various early-stage startup competitions and accelerators, including the Pre-Startup Package (AI Track, Best Company Award), Youth Startup 300 (Finalist), Innopolis Campus (Final Selection), X-IST, and KAIST E\*5 (Round 2).
 
 ---
 
@@ -60,4 +60,3 @@ Successfully passed the document screening stage of the SGM AI 2nd cohort, a sel
 **Period**: 2019 – 2023
 
 Selected four times for the GIST Infinite Challenge program. Served as team member (5th cohort) and team leader (4th, 6th, and 8th cohorts), leading student innovation projects over multiple years.
-

@@ -4,7 +4,7 @@
 
 ## 구조
 
-```
+````
 core/
 ├── data/
 │   ├── profile-data.json       # 전체 프로필 데이터 (학력/경력/논문/프로젝트/수상/스킬)
@@ -53,7 +53,7 @@ core/
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key_here
-```
+````
 
 ## 챗봇 아키텍처
 

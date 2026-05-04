@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Remove-Item \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\\\\python\\\\llm_chat\\\\config.py\", \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\\\\python\\\\llm_chat\\\\chat_handler.py\", \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\\\\python\\\\llm_chat\\\\langchain_memory.py\", \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\\\\python\\\\llm_chat\\\\relevance_filter.py\", \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\\\\python\\\\llm_chat\\\\response_generator.py\", \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\\\\python\\\\llm_chat\\\\short_term_memory.py\", \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\\\\python\\\\llm_chat\\\\long_term_memory.py\" -Force)",
+      "Bash(python3 -c ' *)",
+      "Bash(dir \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\\\\frontend\" /b)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(git checkout *)",
+      "Bash(dir /s)"
+    ]
+  }
+}

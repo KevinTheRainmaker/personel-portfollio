@@ -117,7 +117,12 @@
       "thumbnail": "/images/projects/be_with_you.png",
       "link": "https://youtu.be/BK_KMwFTS7g",
       "time": "2024",
-      "tags": ["Emotional Reflection", "Affective Design", "Self-healing", "LLM"]
+      "tags": [
+        "Emotional Reflection",
+        "Affective Design",
+        "Self-healing",
+        "LLM"
+      ]
     },
     {
       "title": "Peach Seoga: Text Simplification Platform for Slow Learners",

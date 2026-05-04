@@ -4,7 +4,7 @@
  */
 
 export interface Message {
-  role: 'user' | 'model';
+  role: "user" | "model";
   parts: { text: string }[];
   timestamp: string;
   metadata?: Record<string, any>;
@@ -28,7 +28,11 @@ export class ShortTermMemory {
   /**
    * Add a message to the conversation history
    */
-  addMessage(role: 'user' | 'model', content: string, metadata?: Record<string, any>) {
+  addMessage(
+    role: "user" | "model",
+    content: string,
+    metadata?: Record<string, any>,
+  ) {
     const message: Message = {
       role,
       parts: [{ text: content }],
@@ -60,16 +64,16 @@ export class ShortTermMemory {
     const recentHistory = this.getHistory(limit);
 
     if (recentHistory.length === 0) {
-      return 'No previous conversation.';
+      return "No previous conversation.";
     }
 
     const formatted = recentHistory.map((msg) => {
-      const role = msg.role === 'user' ? 'User' : 'Assistant';
-      const text = msg.parts[0]?.text || '';
+      const role = msg.role === "user" ? "User" : "Assistant";
+      const text = msg.parts[0]?.text || "";
       return `${role}: ${text}`;
     });
 
-    return formatted.join('\n');
+    return formatted.join("\n");
   }
 
   /**
@@ -85,11 +89,11 @@ export class ShortTermMemory {
    */
   getLastUserMessage(): string {
     for (let i = this.history.length - 1; i >= 0; i--) {
-      if (this.history[i].role === 'user') {
-        return this.history[i].parts[0]?.text || '';
+      if (this.history[i].role === "user") {
+        return this.history[i].parts[0]?.text || "";
       }
     }
-    return '';
+    return "";
   }
 
   /**
@@ -97,11 +101,11 @@ export class ShortTermMemory {
    */
   getLastAssistantMessage(): string {
     for (let i = this.history.length - 1; i >= 0; i--) {
-      if (this.history[i].role === 'model') {
-        return this.history[i].parts[0]?.text || '';
+      if (this.history[i].role === "model") {
+        return this.history[i].parts[0]?.text || "";
       }
     }
-    return '';
+    return "";
   }
 
   /**
@@ -115,7 +119,7 @@ export class ShortTermMemory {
    * Set the preferred language for this session
    */
   setPreferredLanguage(language: string) {
-    if (language === 'en' || language === 'ko') {
+    if (language === "en" || language === "ko") {
       this.preferredLanguage = language;
       this.lastUpdated = new Date();
     }
@@ -125,7 +129,7 @@ export class ShortTermMemory {
    * Get the preferred language for this session
    */
   getPreferredLanguage(): string {
-    return this.preferredLanguage || 'en';
+    return this.preferredLanguage || "en";
   }
 }
 
@@ -165,7 +169,9 @@ export class SessionManager {
     const sessionsToDelete: string[] = [];
 
     this.sessions.forEach((session, sessionId) => {
-      const age = (currentTime.getTime() - session.lastUpdated.getTime()) / (1000 * 60 * 60);
+      const age =
+        (currentTime.getTime() - session.lastUpdated.getTime()) /
+        (1000 * 60 * 60);
       if (age > maxAgeHours) {
         sessionsToDelete.push(sessionId);
       }

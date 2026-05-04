@@ -3,10 +3,10 @@
  * Filters out questions that are not related to Kangbeen Ko's profile
  */
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI(import.meta.env.GEMINI_API_KEY || '');
-const filterModel = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+const genAI = new GoogleGenerativeAI(import.meta.env.GEMINI_API_KEY || "");
+const filterModel = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
 export interface RelevanceResult {
   relevant: boolean;
@@ -79,7 +79,7 @@ export async function checkRelevance(query: string): Promise<RelevanceResult> {
   if (quickResult === false) {
     return {
       relevant: false,
-      reason: 'Question is clearly unrelated to the profile.',
+      reason: "Question is clearly unrelated to the profile.",
     };
   }
   if (quickResult === true) {
@@ -111,27 +111,35 @@ Question: "${query}"
 
     const result = await filterModel.generateContent(prompt);
     let raw = result.response.text().trim();
-    
+
     // Clean up JSON response
-    raw = raw.replace(/^```json\s*/i, '').replace(/```$/, '').trim();
-    
+    raw = raw
+      .replace(/^```json\s*/i, "")
+      .replace(/```$/, "")
+      .trim();
+
     try {
       const parsed = JSON.parse(raw);
       const relevant = Boolean(parsed.relevant);
-      
+
       return {
         relevant,
-        reason: relevant ? undefined : parsed.reason || 'This question is not related to Kangbeen Ko\'s profile.',
+        reason: relevant
+          ? undefined
+          : parsed.reason ||
+            "This question is not related to Kangbeen Ko's profile.",
       };
     } catch (err) {
       // Fallback: if JSON parsing fails, assume relevant (safer default)
-      console.warn('Failed to parse relevance check response. Assuming relevant.');
+      console.warn(
+        "Failed to parse relevance check response. Assuming relevant.",
+      );
       return {
         relevant: true,
       };
     }
   } catch (error) {
-    console.error('Error checking relevance:', error);
+    console.error("Error checking relevance:", error);
     // On error, assume relevant (safer default)
     return {
       relevant: true,
@@ -142,17 +150,20 @@ Question: "${query}"
 /**
  * Generate a rejection message for irrelevant questions using Gemini
  */
-export async function generateRejectionMessage(query: string, language: string = 'en'): Promise<string> {
+export async function generateRejectionMessage(
+  query: string,
+  language: string = "en",
+): Promise<string> {
   try {
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
-    
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+
     const prompt = `
 You are Kangbeen Ko's digital twin assistant. A user asked a question that is not related to Kangbeen Ko's profile.
 
 Generate a brief, polite rejection message that:
 1. Politely declines to answer the unrelated question
 2. Keeps it concise (1-2 sentences)
-3. Responds in ${language === 'ko' ? 'Korean' : 'English'}
+3. Responds in ${language === "ko" ? "Korean" : "English"}
 4. **IMPORTANT**: Do NOT use titles like "박사님", "Dr.", "Professor" or any honorifics. Simply refer to "Kangbeen Ko" or "고강빈" without titles.
 5. Write as if you are the assistant speaking directly to the user, not referring to Kangbeen Ko in third person with titles.
 
@@ -163,13 +174,13 @@ Rejection message:
 
     const result = await model.generateContent(prompt);
     let rejectionMessage = result.response.text().trim();
-    
+
     // Clean up any markdown or extra formatting
-    rejectionMessage = rejectionMessage.replace(/^["']|["']$/g, '').trim();
-    
+    rejectionMessage = rejectionMessage.replace(/^["']|["']$/g, "").trim();
+
     return rejectionMessage;
   } catch (error) {
-    console.error('Error generating rejection message:', error);
+    console.error("Error generating rejection message:", error);
     // Fallback to default message
     const messages: Record<string, string> = {
       en: "Sorry, your question is not related to Kangbeen Ko's profile. Please ask about his background, education, research, publications, projects, or career.",
@@ -178,4 +189,3 @@ Rejection message:
     return messages[language] || messages.en;
   }
 }
-

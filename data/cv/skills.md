@@ -24,4 +24,3 @@ description: "Technical and professional skills"
 ## Languages
 
 **Description**: English (Fluent), Korean (Native)
-

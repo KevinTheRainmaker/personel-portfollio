@@ -42,4 +42,3 @@ description: "Academic background and education details"
 **Period**: Sep. 2020 – Aug. 2021
 
 **Location**: GIST, Gwangju, Korea
-

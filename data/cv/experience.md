@@ -13,21 +13,20 @@ description: "Work experience and professional career details"
 
 **Google Developer Group on Campus**
 
-					  **Led AI/ML track as Core R&D member (2021–2022)**
+    				  **Led AI/ML track as Core R&D member (2021–2022)**
 
-					  - Organized and taught sessions on **Git, ML, and Kaggle studies**
+    				  - Organized and taught sessions on **Git, ML, and Kaggle studies**
 
-					  - Planned and hosted seminars, **GDSC x GDG 'AI in Wonderland'**
+    				  - Planned and hosted seminars, **GDSC x GDG 'AI in Wonderland'**
 
 
-					  **Mentored student AI projects (2022–Present)**
+    				  **Mentored student AI projects (2022–Present)**
 
-					  - Delivered sessions on **AI config management with Hydra/Gin**
+    				  - Delivered sessions on **AI config management with Hydra/Gin**
 
-					  - Currently running **'Decoding The Deep'** AI seminar (GenAI, RecSys, XAI, LLM fine-tuning)
+    				  - Currently running **'Decoding The Deep'** AI seminar (GenAI, RecSys, XAI, LLM fine-tuning)
 
-					  - Provide ongoing student projects mentorship
-					  
+    				  - Provide ongoing student projects mentorship
 
 ---
 
@@ -41,18 +40,17 @@ description: "Work experience and professional career details"
 
 **Initial MVP development team for SickGPT, a chatbot for medical record understanding**
 
-						- Designed a role-playing pipeline where agents interact to generate dialogue data, which was then used to fine-tune LLaMA2-7B.
+    					- Designed a role-playing pipeline where agents interact to generate dialogue data, which was then used to fine-tune LLaMA2-7B.
 
-						- Developed an evaluation module measuring question relevance, BLEU score, and answer grounding
+    					- Developed an evaluation module measuring question relevance, BLEU score, and answer grounding
 
-					  **Authored a research paper on ML-based severity prediction for Chronic Kidney Disease**
+    				  **Authored a research paper on ML-based severity prediction for Chronic Kidney Disease**
 
-						- Built a voice-based CKD severity prediction model
+    					- Built a voice-based CKD severity prediction model
 
-						- Proposed clinically grounded features and validated statistical significance
+    					- Proposed clinically grounded features and validated statistical significance
 
-						- Published a research paper in eTELEMED 2024 (Advisor: Prof. Sejoong Kim)
-						
+    					- Published a research paper in eTELEMED 2024 (Advisor: Prof. Sejoong Kim)
 
 ---
 
@@ -66,12 +64,10 @@ description: "Work experience and professional career details"
 
 **Data-driven Hiring platform for Early-stage Startups**
 
-					- **Co-founded** startup from 2021
+    				- **Co-founded** startup from 2021
 
-					- Raised **Seed-round funding** from two Venture Capitalists
-		
-					- Built **Personalized and Real-time Position Recommendation Algorithms** using GNNs
+    				- Raised **Seed-round funding** from two Venture Capitalists
 
-					- Led **2022 Tech Incubator Program for Startup (TIPS)**
-					
+    				- Built **Personalized and Real-time Position Recommendation Algorithms** using GNNs
 
+    				- Led **2022 Tech Incubator Program for Startup (TIPS)**

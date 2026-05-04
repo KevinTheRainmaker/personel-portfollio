@@ -5,9 +5,7 @@ import {
   Fira_Code,
 } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import ChatWidget from "@/components/ChatWidget";
+import Sidebar from "@/components/Sidebar";
 import { siteConfig } from "@/lib/profile";
 
 const serif = DM_Serif_Display({
@@ -61,11 +59,17 @@ export default function RootLayout({
       lang="en"
       className={`${serif.variable} ${sans.variable} ${mono.variable}`}
     >
-      <body className="min-h-screen flex flex-col">
-        <Navigation />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <ChatWidget />
+      <body
+        className="flex overflow-hidden"
+        style={{ background: "var(--bg)", height: "100dvh" }}
+      >
+        <Sidebar />
+        <main
+          className="flex-1 overflow-y-auto"
+          style={{ background: "var(--bg)" }}
+        >
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -3,7 +3,7 @@
  * Manages static profile information loaded from JSON
  */
 
-import profileData from '@/data/profile-data.json';
+import profileData from "@/data/profile-data.json";
 
 export interface SiteLink {
   label: string;
@@ -81,9 +81,11 @@ export class LongTermMemory {
 
     // Education
     if (this.data.education) {
-      sections.push('## Education');
+      sections.push("## Education");
       this.data.education.forEach((edu) => {
-        sections.push(`- ${edu.degree || ''} at ${edu.school || ''} (${edu.time || ''})`);
+        sections.push(
+          `- ${edu.degree || ""} at ${edu.school || ""} (${edu.time || ""})`,
+        );
         if (edu.description) {
           sections.push(`  ${edu.description}`);
         }
@@ -92,19 +94,19 @@ export class LongTermMemory {
 
     // Skills
     if (this.data.skills) {
-      sections.push('\n## Skills');
+      sections.push("\n## Skills");
       this.data.skills.forEach((skill) => {
-        sections.push(`- ${skill.title || ''}: ${skill.description || ''}`);
+        sections.push(`- ${skill.title || ""}: ${skill.description || ""}`);
       });
     }
 
     // Publications
     if (this.data.publications) {
-      sections.push('\n## Publications');
+      sections.push("\n## Publications");
       this.data.publications.forEach((pub) => {
-        sections.push(`- ${pub.title || ''} (${pub.time || ''})`);
-        sections.push(`  Authors: ${pub.authors || ''}`);
-        sections.push(`  Journal: ${pub.journal || ''}`);
+        sections.push(`- ${pub.title || ""} (${pub.time || ""})`);
+        sections.push(`  Authors: ${pub.authors || ""}`);
+        sections.push(`  Journal: ${pub.journal || ""}`);
         if (pub.abstract) {
           sections.push(`  Abstract: ${pub.abstract.substring(0, 200)}...`);
         }
@@ -113,9 +115,11 @@ export class LongTermMemory {
 
     // Experiences
     if (this.data.experiences) {
-      sections.push('\n## Work Experiences');
+      sections.push("\n## Work Experiences");
       this.data.experiences.forEach((exp) => {
-        sections.push(`- ${exp.title || ''} at ${exp.company || ''} (${exp.time || ''})`);
+        sections.push(
+          `- ${exp.title || ""} at ${exp.company || ""} (${exp.time || ""})`,
+        );
         if (exp.description) {
           sections.push(`  ${exp.description.substring(0, 200)}...`);
         }
@@ -124,9 +128,9 @@ export class LongTermMemory {
 
     // Projects
     if (this.data.projects) {
-      sections.push('\n## Projects');
+      sections.push("\n## Projects");
       this.data.projects.forEach((proj) => {
-        sections.push(`- ${proj.title || ''} (${proj.time || ''})`);
+        sections.push(`- ${proj.title || ""} (${proj.time || ""})`);
         if (proj.description) {
           sections.push(`  ${proj.description.substring(0, 200)}...`);
         }
@@ -135,13 +139,13 @@ export class LongTermMemory {
 
     // Awards
     if (this.data.awards) {
-      sections.push('\n## Awards & Honors');
+      sections.push("\n## Awards & Honors");
       this.data.awards.forEach((award) => {
-        sections.push(`- ${award.title || ''} (${award.time || ''})`);
+        sections.push(`- ${award.title || ""} (${award.time || ""})`);
       });
     }
 
-    return sections.join('\n');
+    return sections.join("\n");
   }
 
   /**
@@ -152,19 +156,19 @@ export class LongTermMemory {
 
     // Add main pages
     links.push(
-      { label: 'Home', href: '/' },
-      { label: 'Papers', href: '/papers' },
-      { label: 'Research', href: '/research' },
-      { label: 'CV', href: '/cv' }
+      { label: "Home", href: "/" },
+      { label: "Papers", href: "/papers" },
+      { label: "Research", href: "/research" },
+      { label: "CV", href: "/cv" },
     );
 
     // Add CV sections
     links.push(
-      { label: 'Education', href: '/cv#education' },
-      { label: 'Experiences', href: '/cv#experiences' },
-      { label: 'Projects', href: '/cv#projects' },
-      { label: 'Awards', href: '/cv#awards' },
-      { label: 'Skills', href: '/cv#skills' }
+      { label: "Education", href: "/cv#education" },
+      { label: "Experiences", href: "/cv#experiences" },
+      { label: "Projects", href: "/cv#projects" },
+      { label: "Awards", href: "/cv#awards" },
+      { label: "Skills", href: "/cv#skills" },
     );
 
     // Add publication links
