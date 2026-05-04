@@ -1,103 +1,83 @@
-"""
-FastAPI Server for LLM Chat
-Provides REST API endpoints for chat functionality
-"""
+import os
+from contextlib import asynccontextmanager
 
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import List, Dict, Any, Optional
-import uvicorn
 
-from llm_chat import handle_chat_request
+from llm_chat.context_builder import build_system_prompt
+from llm_chat.openrouter_client import chat_with_fallback
 
-# Create FastAPI app
+load_dotenv()
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    if not os.environ.get("OPENROUTER_API_KEY"):
+        raise RuntimeError("OPENROUTER_API_KEY environment variable is not set")
+    yield
+
+
 app = FastAPI(
-    title="LLM Chat API",
-    description="Python-based LLM chat API for portfolio website",
-    version="1.0.0"
+    title="Kangbeen Ko Portfolio Chat API",
+    version="2.0.0",
+    lifespan=lifespan,
 )
 
-# Add CORS middleware
+_allowed_origins = os.environ.get(
+    "ALLOWED_ORIGINS",
+    "http://localhost:3000,https://portfolio.kangbeen.my",
+).split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify exact origins
+    allow_origins=_allowed_origins,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
 
+_system_prompt = build_system_prompt()
 
-# Request/Response models
-class ChatMessage(BaseModel):
-    """Chat message structure"""
-    role: str
-    parts: List[Dict[str, str]]
+
+class Message(BaseModel):
+    role: str  # "user" | "assistant"
+    content: str
 
 
 class ChatRequest(BaseModel):
-    """Chat request body"""
     message: str
-    history: Optional[List[ChatMessage]] = []
-    sessionId: Optional[str] = None
+    history: list[Message] = []
 
 
 class ChatResponse(BaseModel):
-    """Chat response body"""
-    response: Optional[str] = None
-    error: Optional[str] = None
+    response: str
+    model_used: str
 
 
 @app.get("/")
 async def root():
-    """Root endpoint"""
-    return {
-        "message": "LLM Chat API",
-        "version": "1.0.0",
-        "status": "running"
-    }
+    return {"service": "Kangbeen Ko Portfolio Chat API", "version": "2.0.0"}
 
 
 @app.get("/health")
-async def health_check():
-    """Health check endpoint"""
-    return {"status": "healthy"}
+async def health():
+    return {"status": "ok"}
 
 
 @app.post("/api/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
-    """
-    Chat endpoint
+    messages = [{"role": "system", "content": _system_prompt}]
 
-    Args:
-        request: ChatRequest with message, history, and optional sessionId
+    for msg in request.history:
+        messages.append({"role": msg.role, "content": msg.content})
 
-    Returns:
-        ChatResponse with generated response or error
-    """
+    messages.append({"role": "user", "content": request.message})
+
     try:
-        # Convert Pydantic models to dicts
-        history = [msg.dict() for msg in request.history] if request.history else []
-
-        # Handle chat request
-        result = await handle_chat_request(
-            message=request.message,
-            history=history,
-            session_id=request.sessionId
-        )
-
-        return ChatResponse(**result)
-
+        response_text, model_used = await chat_with_fallback(messages)
     except Exception as e:
-        print(f"Error in chat endpoint: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=503, detail=f"Chat service unavailable: {e}")
 
-
-if __name__ == "__main__":
-    # Run server
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=8000,
-        reload=True
-    )
+    return ChatResponse(response=response_text, model_used=model_used)
