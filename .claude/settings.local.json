@@ -11,7 +11,10 @@
       "mcp__plugin_playwright_playwright__browser_navigate",
       "mcp__plugin_playwright_playwright__browser_take_screenshot",
       "mcp__plugin_playwright_playwright__browser_resize",
-      "Bash(dir /c/Users/HCIS/Desktop/git/personel-portfollio/frontend)"
+      "Bash(dir /c/Users/HCIS/Desktop/git/personel-portfollio/frontend)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\" -Recurse -Exclude \"frontend\", \"node_modules\" -Force)",
+      "Bash(Select-Object FullName)",
+      "Bash(dir \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\")"
     ]
   }
 }

@@ -7,7 +7,7 @@ import { useState, useRef, useEffect } from "react";
 import type { ChatMessage } from "@/lib/types";
 import { siteConfig } from "@/lib/profile";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+const CHAT_ENDPOINT = "/api/chat";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -156,7 +156,7 @@ export default function Sidebar() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API_URL}/api/chat`, {
+      const res = await fetch(CHAT_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -207,7 +207,6 @@ export default function Sidebar() {
             height={64}
             className="w-full h-full object-cover"
           />
-
         </div>
       </div>
 
@@ -264,15 +263,15 @@ export default function Sidebar() {
                     style={
                       msg.role === "user"
                         ? {
-                          background: "var(--send)",
-                          color: "#fff",
-                          borderRadius: "18px 18px 4px 18px",
-                        }
+                            background: "var(--send)",
+                            color: "#fff",
+                            borderRadius: "18px 18px 4px 18px",
+                          }
                         : {
-                          background: "#f0f0ee",
-                          color: "var(--dark)",
-                          borderRadius: "18px 18px 18px 4px",
-                        }
+                            background: "#f0f0ee",
+                            color: "var(--dark)",
+                            borderRadius: "18px 18px 18px 4px",
+                          }
                     }
                   >
                     {msg.content}
