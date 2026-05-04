@@ -66,8 +66,8 @@ export default function HomePage() {
       <section className="flex items-start justify-between gap-10 mb-12">
         <div className="flex-1 min-w-0">
           <h1
-            className="font-sans font-bold text-4xl leading-tight mb-3"
-            style={{ color: "var(--dark)" }}
+            className="font-sans font-bold leading-tight mb-3"
+            style={{ color: "var(--dark)", fontSize: "50px" }}
           >
             Welcome! I&apos;m{" "}
             <span style={{ color: "var(--name)" }}>Kangbeen Ko</span>
@@ -188,13 +188,13 @@ export default function HomePage() {
               }}
             >
               <h3
-                className="font-sans font-semibold text-sm mb-2"
+                className="font-sans font-semibold text-base mb-2"
                 style={{ color: "var(--dark)" }}
               >
                 {area.title}
               </h3>
               <p
-                className="text-sm leading-relaxed"
+                className="text-base leading-relaxed"
                 style={{ color: "var(--mid)" }}
               >
                 {area.description}
@@ -240,7 +240,7 @@ export default function HomePage() {
                   {pub.title}
                 </h3>
               )}
-              <p className="text-sm" style={{ color: "var(--mid)" }}>
+              <p className="text-base" style={{ color: "var(--mid)" }}>
                 {pub.journal} &bull; {pub.time}
               </p>
             </div>
