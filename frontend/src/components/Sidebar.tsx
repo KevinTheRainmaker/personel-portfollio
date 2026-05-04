@@ -3,11 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { ChatMessage } from "@/lib/types";
 import { siteConfig } from "@/lib/profile";
+import { useChatContext } from "@/lib/chat-context";
 
 const CHAT_ENDPOINT = "/api/chat";
 
@@ -17,11 +18,6 @@ const navLinks = [
   { href: "/papers", label: "Papers" },
   { href: "/cv", label: "CV" },
 ];
-
-const INITIAL_MESSAGE: ChatMessage = {
-  role: "assistant",
-  content: "Hello! My name is Kangbeen Ko. Ask anything about me!",
-};
 
 function LoadingDots() {
   return (
@@ -131,21 +127,23 @@ function IconReset() {
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const [chatOpen, setChatOpen] = useState(true);
-  const [messages, setMessages] = useState<ChatMessage[]>([INITIAL_MESSAGE]);
-  const [input, setInput] = useState("");
-  const [loading, setLoading] = useState(false);
+  const {
+    messages,
+    setMessages,
+    input,
+    setInput,
+    loading,
+    setLoading,
+    chatOpen,
+    setChatOpen,
+    resetChat,
+  } = useChatContext();
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
-
-  function resetChat() {
-    setMessages([INITIAL_MESSAGE]);
-    setInput("");
-  }
 
   async function send(text: string) {
     const trimmed = text.trim();

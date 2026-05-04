@@ -5,7 +5,7 @@ import {
   Fira_Code,
 } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+import LayoutShell from "@/components/LayoutShell";
 import { siteConfig } from "@/lib/profile";
 
 const serif = DM_Serif_Display({
@@ -63,13 +63,7 @@ export default function RootLayout({
         className="flex overflow-hidden"
         style={{ background: "var(--bg)", height: "100dvh" }}
       >
-        <Sidebar />
-        <main
-          className="flex-1 overflow-y-auto"
-          style={{ background: "var(--bg)" }}
-        >
-          {children}
-        </main>
+        <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
   );
