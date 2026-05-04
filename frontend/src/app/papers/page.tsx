@@ -6,6 +6,23 @@ export const metadata: Metadata = {
   description: "Academic publications and research papers by Kangbeen Ko.",
 };
 
+function AuthorList({ authors }: { authors: string }) {
+  const SELF = "Ko, K.";
+  const parts = authors.split(SELF);
+  return (
+    <>
+      {parts.map((part, i) => (
+        <span key={i}>
+          {part}
+          {i < parts.length - 1 && (
+            <strong style={{ color: "var(--dark)" }}>{SELF}</strong>
+          )}
+        </span>
+      ))}
+    </>
+  );
+}
+
 export default function PapersPage() {
   const total = profile.publications.length;
 
@@ -74,7 +91,7 @@ export default function PapersPage() {
 
               {/* Authors */}
               <p className="text-base mb-1" style={{ color: "var(--mid)" }}>
-                {pub.authors}
+                <AuthorList authors={pub.authors} />
               </p>
 
               {/* Journal */}
