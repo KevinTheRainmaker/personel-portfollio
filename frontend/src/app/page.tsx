@@ -1,4 +1,5 @@
 import { profile, siteConfig } from "@/lib/profile";
+import Image from "next/image";
 
 function IconEmail() {
   return (
@@ -150,17 +151,8 @@ export default function HomePage() {
         </div>
 
         {/* Profile photo */}
-        <div
-          className="shrink-0 rounded-full overflow-hidden"
-          style={{ width: "220px", height: "220px" }}
-        >
-          <Image
-            src="/images/profile/profile.jpg"
-            alt="Kangbeen Ko"
-            width={220}
-            height={220}
-            className="w-full h-full object-cover"
-          />
+        <div className="shrink-0 rounded-full overflow-hidden" style={{ width: "220px", height: "220px" }}>
+          <Image src="/images/profile/avatar.png" alt="Kangbeen Ko" width={220} height={220} className="object-cover" />
         </div>
       </section>
 

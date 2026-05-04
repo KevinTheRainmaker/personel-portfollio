@@ -201,7 +201,7 @@ export default function Sidebar() {
       <div className="px-5 pt-5 pb-3 shrink-0">
         <div className="w-16 h-16 rounded-full overflow-hidden">
           <Image
-            src="/images/profile/avatar.png"
+            src="/images/profile/profile.jpg"
             alt="Kangbeen Ko"
             width={64}
             height={64}
