@@ -26,13 +26,13 @@ export const siteConfig = {
         "Integrating large language models into everyday applications for enhanced human capabilities",
     },
   ],
-  email: "sweetrainforyou@gmail.com",
+  email: "kangbeen.ko@gm.gist.ac.kr",
   links: {
     github: "https://github.com/KevinTheRainmaker",
-    linkedin: "https://www.linkedin.com/in/kangbeen-ko/",
-    scholar: "https://scholar.google.com/citations?user=PLACEHOLDER",
-    lab: "https://sites.google.com/view/gist-hcis-lab",
-    instagram: "",
+    linkedin: "www.linkedin.com/in/kevin-the-rainmaker",
+    scholar: "https://scholar.google.com/citations?user=0wA0FGgAAAAJ",
+    lab: "https://sites.google.com/view/gist-hcis-lab/home",
+    instagram: "https://www.instagram.com/lucete_lactea/",
   },
   baseUrl: "https://portfolio.kangbeen.my",
 };
