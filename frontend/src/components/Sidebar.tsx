@@ -303,7 +303,7 @@ export default function Sidebar() {
                           ),
                           a: ({ href, children }) => {
                             const isInternal = href?.startsWith("/");
-                            if (isInternal) {
+                            if (isInternal && href) {
                               return (
                                 <Link
                                   href={href}
