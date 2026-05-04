@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { profile, siteConfig } from "@/lib/profile";
 
 function IconEmail() {
@@ -149,17 +150,18 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Profile photo placeholder */}
+        {/* Profile photo */}
         <div
-          className="shrink-0 rounded-full flex items-center justify-center text-3xl font-semibold select-none"
-          style={{
-            width: "220px",
-            height: "220px",
-            background: "var(--border)",
-            color: "var(--mid)",
-          }}
+          className="shrink-0 rounded-full overflow-hidden"
+          style={{ width: "220px", height: "220px" }}
         >
-          KB
+          <Image
+            src="/images/profile/profile.jpg"
+            alt="Kangbeen Ko"
+            width={220}
+            height={220}
+            className="w-full h-full object-cover"
+          />
         </div>
       </section>
 

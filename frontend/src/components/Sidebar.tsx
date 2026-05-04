@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import type { ChatMessage } from "@/lib/types";
@@ -198,11 +199,14 @@ export default function Sidebar() {
     >
       {/* Profile avatar */}
       <div className="px-5 pt-5 pb-3 shrink-0">
-        <div
-          className="w-16 h-16 rounded-full flex items-center justify-center text-base font-semibold select-none"
-          style={{ background: "var(--border)", color: "var(--mid)" }}
-        >
-          KB
+        <div className="w-16 h-16 rounded-full overflow-hidden">
+          <Image
+            src="/images/profile/avatar.png"
+            alt="Kangbeen Ko"
+            width={64}
+            height={64}
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
 

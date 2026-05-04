@@ -10,7 +10,8 @@
       "Bash(dir /s)",
       "mcp__plugin_playwright_playwright__browser_navigate",
       "mcp__plugin_playwright_playwright__browser_take_screenshot",
-      "mcp__plugin_playwright_playwright__browser_resize"
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "Bash(dir /c/Users/HCIS/Desktop/git/personel-portfollio/frontend)"
     ]
   }
 }
