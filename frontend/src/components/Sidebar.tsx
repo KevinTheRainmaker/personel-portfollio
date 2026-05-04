@@ -303,16 +303,22 @@ export default function Sidebar() {
                           ),
                           a: ({ href, children }) => {
                             const isInternal = href?.startsWith("/");
+                            if (isInternal) {
+                              return (
+                                <Link
+                                  href={href}
+                                  className="underline opacity-80 hover:opacity-100"
+                                >
+                                  {children}
+                                </Link>
+                              );
+                            }
                             return (
                               <a
                                 href={href}
                                 className="underline opacity-80 hover:opacity-100"
-                                {...(isInternal
-                                  ? {}
-                                  : {
-                                      target: "_blank",
-                                      rel: "noopener noreferrer",
-                                    })}
+                                target="_blank"
+                                rel="noopener noreferrer"
                               >
                                 {children}
                               </a>
