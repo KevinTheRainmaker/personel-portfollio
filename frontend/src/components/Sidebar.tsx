@@ -303,16 +303,23 @@ export default function Sidebar() {
                           li: ({ children }) => (
                             <li className="leading-snug">{children}</li>
                           ),
-                          a: ({ href, children }) => (
-                            <a
-                              href={href}
-                              className="underline opacity-80 hover:opacity-100"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              {children}
-                            </a>
-                          ),
+                          a: ({ href, children }) => {
+                            const isInternal = href?.startsWith("/");
+                            return (
+                              <a
+                                href={href}
+                                className="underline opacity-80 hover:opacity-100"
+                                {...(isInternal
+                                  ? {}
+                                  : {
+                                      target: "_blank",
+                                      rel: "noopener noreferrer",
+                                    })}
+                              >
+                                {children}
+                              </a>
+                            );
+                          },
                         }}
                       >
                         {msg.content}
