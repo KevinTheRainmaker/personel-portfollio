@@ -3,7 +3,7 @@ import { Langfuse } from "langfuse";
 import profileData from "@/data/profile-data.json";
 
 const OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1";
-const PRIMARY_MODEL = "openai/gpt-oss-20b:free";
+const PRIMARY_MODEL = "google/gemini-3-flash-preview";
 const FALLBACK_MODEL = "google/gemma-4-26b-a4b-it:free";
 
 function buildSystemPrompt(): string {
@@ -36,14 +36,20 @@ RULES:
 - When relevant, mention specific portfolio pages for more details.
 - Use the current date above to reason about past vs. future events accurately.
 
-=== KANGBEEN KO — FULL PROFILE ===
-${JSON.stringify(profileData, null, 2)}
+STYLE:
+- Natural and conversational
+- Minimal, not promotional
+- No long bullet lists unless explicitly requested
 
-=== PORTFOLIO PAGES ===
-- / (Home): Overview and introduction
-- /cv: Full CV — education, experience, projects, skills, awards
-- /papers: Publications and research papers
-- /research: Research interests and focus areas
+NAVIGATION:
+- Suggest pages only when relevant:
+  /cv, /papers, /research
+
+INTERACTION:
+- If the user is vague, ask ONE short follow-up.
+
+PROFILE:
+${JSON.stringify(profileData, null, 2)}
 `;
 }
 
