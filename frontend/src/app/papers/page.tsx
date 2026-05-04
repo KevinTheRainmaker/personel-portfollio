@@ -98,7 +98,7 @@ export default function PapersPage() {
                 </span>
                 <div className="flex items-center gap-2">
                   {isHighlight && <span className="tag-accent">Featured</span>}
-                  {authorPos !== null && (
+                  {authorPos !== null && authorPos <= 2 && (
                     <span className="tag">{ordinal(authorPos)} Author</span>
                   )}
                 </div>
