@@ -307,7 +307,7 @@ export default function Sidebar() {
                               return (
                                 <Link
                                   href={href}
-                                  className="underline opacity-80 hover:opacity-100"
+                                  className="underline text-blue-500 hover:text-blue-700"
                                 >
                                   {children}
                                 </Link>
@@ -316,7 +316,7 @@ export default function Sidebar() {
                             return (
                               <a
                                 href={href}
-                                className="underline opacity-80 hover:opacity-100"
+                                className="underline text-blue-500 hover:text-blue-700"
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
@@ -356,7 +356,11 @@ export default function Sidebar() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
+                  if (
+                    e.key === "Enter" &&
+                    !e.shiftKey &&
+                    !e.nativeEvent.isComposing
+                  ) {
                     e.preventDefault();
                     send(input);
                   }
