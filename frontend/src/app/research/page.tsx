@@ -54,14 +54,14 @@ export default function ResearchPage() {
       {/* Header */}
       <div className="mb-14">
         <p
-          className="text-sm font-mono tracking-widest uppercase mb-4"
+          className="text-base font-mono tracking-widest uppercase mb-4"
           style={{ color: "var(--warm)" }}
         >
           Research
         </p>
         <h1
-          className="font-serif text-5xl mb-5"
-          style={{ color: "var(--dark)" }}
+          className="font-sans font-bold mb-5"
+          style={{ color: "var(--dark)", fontSize: "50px" }}
         >
           Research Interests
         </h1>
@@ -76,7 +76,7 @@ export default function ResearchPage() {
       {/* Research Areas */}
       <section className="mb-14">
         <h2
-          className="font-serif text-2xl mb-8"
+          className="font-sans font-bold text-2xl mb-8"
           style={{ color: "var(--dark)" }}
         >
           Focus Areas
@@ -102,14 +102,14 @@ export default function ResearchPage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3
-                  className="font-serif text-xl leading-snug"
+                  className="font-sans font-semibold text-xl leading-snug"
                   style={{ color: "var(--dark)" }}
                 >
                   {area.title}
                 </h3>
               </div>
               <p
-                className="text-sm leading-relaxed mb-4 ml-10"
+                className="text-base leading-relaxed mb-4 ml-10"
                 style={{ color: "var(--mid)" }}
               >
                 {area.description}
@@ -131,7 +131,7 @@ export default function ResearchPage() {
       {/* Current Position */}
       <section className="mb-14">
         <h2
-          className="font-serif text-2xl mb-6"
+          className="font-sans font-bold text-2xl mb-6"
           style={{ color: "var(--dark)" }}
         >
           Current Position
@@ -141,7 +141,7 @@ export default function ResearchPage() {
           style={{ background: "var(--surface)", borderColor: "var(--border)" }}
         >
           <div
-            className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 font-serif text-xl"
+            className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 font-sans font-bold text-xl"
             style={{
               background: "var(--accent-light)",
               color: "var(--accent)",
@@ -150,14 +150,17 @@ export default function ResearchPage() {
             M
           </div>
           <div>
-            <p className="font-medium text-sm" style={{ color: "var(--dark)" }}>
+            <p
+              className="font-medium text-base"
+              style={{ color: "var(--dark)" }}
+            >
               M.S. Candidate — Human-Centered Intelligent System Lab
             </p>
-            <p className="text-sm" style={{ color: "var(--mid)" }}>
+            <p className="text-base" style={{ color: "var(--mid)" }}>
               GIST (Gwangju Institute of Science and Technology) · Mar. 2025 –
               Present
             </p>
-            <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>
+            <p className="text-base mt-1" style={{ color: "var(--muted)" }}>
               Advisor: Prof. SeungJun Kim
             </p>
           </div>
@@ -175,13 +178,13 @@ export default function ResearchPage() {
       {/* Broader Context */}
       <section>
         <h2
-          className="font-serif text-2xl mb-6"
+          className="font-sans font-bold text-2xl mb-6"
           style={{ color: "var(--dark)" }}
         >
           Background &amp; Motivation
         </h2>
         <div
-          className="space-y-4 text-sm leading-relaxed"
+          className="space-y-4 text-base leading-relaxed"
           style={{ color: "var(--mid)" }}
         >
           <p>

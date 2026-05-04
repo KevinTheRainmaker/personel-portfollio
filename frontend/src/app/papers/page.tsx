@@ -14,13 +14,16 @@ export default function PapersPage() {
       {/* Page Header */}
       <header className="mb-12">
         <p
-          className="text-sm font-mono tracking-widest uppercase mb-3"
+          className="text-base font-mono tracking-widest uppercase mb-3"
           style={{ color: "var(--warm)" }}
         >
           Research
         </p>
         <div className="flex items-baseline gap-3 mb-3">
-          <h1 className="font-serif text-4xl" style={{ color: "var(--dark)" }}>
+          <h1
+            className="font-sans font-bold"
+            style={{ color: "var(--dark)", fontSize: "50px" }}
+          >
             Publications
           </h1>
           <span className="tag-accent text-xs font-mono">{total}</span>
@@ -63,20 +66,20 @@ export default function PapersPage() {
 
               {/* Title */}
               <h2
-                className="font-serif text-xl leading-snug mb-2"
+                className="font-sans font-semibold text-base leading-snug mb-2"
                 style={{ color: "var(--dark)" }}
               >
                 {pub.title}
               </h2>
 
               {/* Authors */}
-              <p className="text-sm mb-1" style={{ color: "var(--mid)" }}>
+              <p className="text-base mb-1" style={{ color: "var(--mid)" }}>
                 {pub.authors}
               </p>
 
               {/* Journal */}
               <p
-                className="text-sm italic mb-4"
+                className="text-base italic mb-4"
                 style={{ color: "var(--mid)" }}
               >
                 {pub.journal}
@@ -86,7 +89,7 @@ export default function PapersPage() {
               {pub.abstract && (
                 <details className="mb-4 group">
                   <summary
-                    className="text-sm font-medium cursor-pointer select-none list-none flex items-center gap-1.5 w-fit"
+                    className="text-base font-medium cursor-pointer select-none list-none flex items-center gap-1.5 w-fit"
                     style={{ color: "var(--accent)" }}
                   >
                     <svg
@@ -103,7 +106,7 @@ export default function PapersPage() {
                     Abstract
                   </summary>
                   <p
-                    className="mt-3 text-sm leading-relaxed pl-5 border-l-2"
+                    className="mt-3 text-base leading-relaxed pl-5 border-l-2"
                     style={{
                       color: "var(--mid)",
                       borderColor: "var(--border)",

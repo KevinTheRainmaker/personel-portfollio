@@ -30,7 +30,7 @@ function Description({ text }: { text: string }) {
   const lines = text.split("\n");
   return (
     <div
-      className="prose-desc text-sm leading-relaxed"
+      className="prose-desc text-base leading-relaxed"
       style={{ color: "var(--mid)" }}
     >
       {lines.map((line, i) => (
@@ -48,18 +48,18 @@ export default function CVPage() {
       {/* Page Header */}
       <header className="mb-12">
         <p
-          className="text-sm font-mono tracking-widest uppercase mb-3"
+          className="text-base font-mono tracking-widest uppercase mb-3"
           style={{ color: "var(--warm)" }}
         >
           Full Resume
         </p>
         <h1
-          className="font-serif text-5xl mb-3"
-          style={{ color: "var(--dark)" }}
+          className="font-sans font-bold mb-3"
+          style={{ color: "var(--dark)", fontSize: "50px" }}
         >
           Curriculum Vitae
         </h1>
-        <p className="text-lg" style={{ color: "var(--mid)" }}>
+        <p className="text-base" style={{ color: "var(--mid)" }}>
           Kangbeen Ko
         </p>
       </header>
@@ -67,7 +67,7 @@ export default function CVPage() {
       {/* ── Education ── */}
       <section id="education" className="mb-0">
         <h2
-          className="font-serif text-2xl mb-6"
+          className="font-sans font-bold text-2xl mb-6"
           style={{ color: "var(--dark)" }}
         >
           Education
@@ -97,7 +97,7 @@ export default function CVPage() {
                   )}
                   {edu.degree && (
                     <p
-                      className="text-sm mt-0.5"
+                      className="text-base mt-0.5"
                       style={{ color: "var(--mid)" }}
                     >
                       {edu.degree}
@@ -134,7 +134,7 @@ export default function CVPage() {
       {/* ── Skills ── */}
       <section id="skills" className="mb-0">
         <h2
-          className="font-serif text-2xl mb-6"
+          className="font-sans font-bold text-2xl mb-6"
           style={{ color: "var(--dark)" }}
         >
           Skills
@@ -143,7 +143,7 @@ export default function CVPage() {
           {profile.skills.map((skill, i) => (
             <div key={i}>
               <p
-                className="font-semibold text-sm mb-2"
+                className="font-semibold text-base mb-2"
                 style={{ color: "var(--dark)" }}
               >
                 {skill.title}
@@ -165,7 +165,7 @@ export default function CVPage() {
       {/* ── Experience ── */}
       <section id="experience" className="mb-0">
         <h2
-          className="font-serif text-2xl mb-6"
+          className="font-sans font-bold text-2xl mb-6"
           style={{ color: "var(--dark)" }}
         >
           Experience
@@ -193,7 +193,10 @@ export default function CVPage() {
                       {exp.company}
                     </span>
                   )}
-                  <p className="text-sm mt-0.5" style={{ color: "var(--mid)" }}>
+                  <p
+                    className="text-base mt-0.5"
+                    style={{ color: "var(--mid)" }}
+                  >
                     {exp.title}
                   </p>
                   {exp.location && (
@@ -227,7 +230,7 @@ export default function CVPage() {
       {/* ── Projects ── */}
       <section id="projects" className="mb-0">
         <h2
-          className="font-serif text-2xl mb-6"
+          className="font-sans font-bold text-2xl mb-6"
           style={{ color: "var(--dark)" }}
         >
           Projects
@@ -244,7 +247,7 @@ export default function CVPage() {
             >
               <div className="flex items-start justify-between gap-4 flex-wrap mb-2">
                 <h3
-                  className="font-serif text-lg leading-snug"
+                  className="font-sans font-semibold text-base leading-snug"
                   style={{ color: "var(--dark)" }}
                 >
                   {project.title}
@@ -257,7 +260,7 @@ export default function CVPage() {
                 </span>
               </div>
               <p
-                className="text-sm leading-relaxed mb-3"
+                className="text-base leading-relaxed mb-3"
                 style={{ color: "var(--mid)" }}
               >
                 {project.description}
@@ -299,7 +302,7 @@ export default function CVPage() {
       {/* ── Awards ── */}
       <section id="awards" className="mb-0">
         <h2
-          className="font-serif text-2xl mb-6"
+          className="font-sans font-bold text-2xl mb-6"
           style={{ color: "var(--dark)" }}
         >
           Awards
@@ -310,7 +313,7 @@ export default function CVPage() {
               <div className="flex items-start justify-between gap-4 flex-wrap">
                 <div>
                   <p
-                    className="font-medium text-sm"
+                    className="font-medium text-base"
                     style={{ color: "var(--dark)" }}
                   >
                     {award.title}
@@ -331,7 +334,7 @@ export default function CVPage() {
               </div>
               {award.description && (
                 <p
-                  className="text-sm leading-relaxed mt-1"
+                  className="text-base leading-relaxed mt-1"
                   style={{ color: "var(--mid)" }}
                 >
                   {award.description}
@@ -347,7 +350,7 @@ export default function CVPage() {
       {/* ── Other Experiences ── */}
       <section id="other" className="mb-0">
         <h2
-          className="font-serif text-2xl mb-6"
+          className="font-sans font-bold text-2xl mb-6"
           style={{ color: "var(--dark)" }}
         >
           Other Experiences
@@ -358,7 +361,7 @@ export default function CVPage() {
               <div className="flex items-start justify-between gap-4 flex-wrap">
                 <div>
                   <p
-                    className="font-medium text-sm"
+                    className="font-medium text-base"
                     style={{ color: "var(--dark)" }}
                   >
                     {item.title}
@@ -379,7 +382,7 @@ export default function CVPage() {
               </div>
               {item.description && (
                 <p
-                  className="text-sm leading-relaxed mt-1"
+                  className="text-base leading-relaxed mt-1"
                   style={{ color: "var(--mid)" }}
                 >
                   {item.description}
