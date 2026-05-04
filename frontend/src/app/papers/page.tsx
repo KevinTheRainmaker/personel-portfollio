@@ -6,6 +6,23 @@ export const metadata: Metadata = {
   description: "Academic publications and research papers by Kangbeen Ko.",
 };
 
+function getAuthorPosition(authors: string): number | null {
+  const SELF = "Ko, K.";
+  const normalized = authors.replace(/\s*&\s*/g, ", ");
+  const selfIdx = normalized.indexOf(SELF);
+  if (selfIdx === -1) return null;
+  const before = normalized.slice(0, selfIdx);
+  const matches = before.match(/[A-Z][*]?\.[*]?,\s+/g) || [];
+  return matches.length + 1;
+}
+
+function ordinal(n: number): string {
+  if (n === 1) return "1st";
+  if (n === 2) return "2nd";
+  if (n === 3) return "3rd";
+  return `${n}th`;
+}
+
 function AuthorList({ authors }: { authors: string }) {
   const SELF = "Ko, K.";
   const parts = authors.split(SELF);
@@ -54,6 +71,7 @@ export default function PapersPage() {
       <div className="space-y-6">
         {profile.publications.map((pub, i) => {
           const isHighlight = pub.highlight === true;
+          const authorPos = getAuthorPosition(pub.authors);
 
           return (
             <article
@@ -78,7 +96,12 @@ export default function PapersPage() {
                 >
                   {pub.time}
                 </span>
-                {isHighlight && <span className="tag-accent">Featured</span>}
+                <div className="flex items-center gap-2">
+                  {isHighlight && <span className="tag-accent">Featured</span>}
+                  {authorPos !== null && (
+                    <span className="tag">{ordinal(authorPos)} Author</span>
+                  )}
+                </div>
               </div>
 
               {/* Title */}
