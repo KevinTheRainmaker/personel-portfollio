@@ -1,103 +1,103 @@
 - generic [active] [ref=e1]:
-  - complementary [ref=e2]:
-    - generic [ref=e4]: KB
-    - generic [ref=e5]:
-      - generic [ref=e6]:
-        - button "Discover with My Digital Twin" [ref=e7] [cursor=pointer]:
-          - img [ref=e9]
-          - generic [ref=e11]: Discover with My Digital Twin
-        - button "Reset chat" [ref=e12] [cursor=pointer]:
-          - img [ref=e13]
-      - paragraph [ref=e16]: Answers may not always be accurate. Please verify if needed.
-      - generic [ref=e19]: Hello! My name is Kangbeen Ko. Ask anything about me!
-      - generic [ref=e20]:
-        - textbox "Type your message here..." [ref=e21]
-        - button "Send" [disabled] [ref=e22]
-    - navigation [ref=e24]:
-      - link "Home" [ref=e25] [cursor=pointer]:
-        - /url: /
-      - link "Research" [ref=e26] [cursor=pointer]:
-        - /url: /research
-      - link "Papers" [ref=e27] [cursor=pointer]:
-        - /url: /papers
-      - link "CV" [ref=e28] [cursor=pointer]:
-        - /url: /cv
-    - generic [ref=e30]:
-      - link "Email" [ref=e31] [cursor=pointer]:
-        - /url: mailto:sweetrainforyou@gmail.com
-        - img [ref=e32]
-      - link "GitHub" [ref=e35] [cursor=pointer]:
-        - /url: https://github.com/KevinTheRainmaker
-        - img [ref=e36]
-      - link "LinkedIn" [ref=e38] [cursor=pointer]:
-        - /url: https://www.linkedin.com/in/kangbeen-ko/
-        - img [ref=e39]
-      - link "Google Scholar" [ref=e41] [cursor=pointer]:
-        - /url: https://scholar.google.com/citations?user=PLACEHOLDER
-        - img [ref=e42]
-  - main [ref=e44]:
-    - generic [ref=e45]:
-      - generic [ref=e46]:
-        - generic [ref=e47]:
-          - heading "Welcome! I'm Kangbeen Ko" [level=1] [ref=e48]
-          - paragraph [ref=e49]: M.S. Student at HCIS Lab, at Gwangju Institute of Science and Technology
-          - paragraph [ref=e50]:
-            - text: I'm an
-            - strong [ref=e51]: AI × HCI researcher
-            - text: and
-            - strong [ref=e52]: product-minded builder
-            - text: ", passionate about creating technologies that meaningfully improve human life."
-          - paragraph [ref=e53]:
-            - text: I value
-            - strong [ref=e54]: responsibility
-            - text: ", embrace"
-            - strong [ref=e55]: challenges
-            - text: ", and strive to"
-            - strong [ref=e56]: move humanity forward
-            - text: through thoughtful innovation.
-          - generic [ref=e57]:
-            - link "Email" [ref=e58] [cursor=pointer]:
-              - /url: mailto:sweetrainforyou@gmail.com
-              - img [ref=e59]
-            - link "GitHub" [ref=e62] [cursor=pointer]:
-              - /url: https://github.com/KevinTheRainmaker
-              - img [ref=e63]
-            - link "LinkedIn" [ref=e65] [cursor=pointer]:
-              - /url: https://www.linkedin.com/in/kangbeen-ko/
-              - img [ref=e66]
-            - link "Google Scholar" [ref=e68] [cursor=pointer]:
-              - /url: https://scholar.google.com/citations?user=PLACEHOLDER
-              - img [ref=e69]
-        - generic [ref=e71]: KB
-      - separator [ref=e72]
-      - generic [ref=e73]:
-        - heading "Research Areas" [level=2] [ref=e74]
-        - generic [ref=e75]:
-          - generic [ref=e76]:
-            - heading "Human-Agent Interaction" [level=3] [ref=e77]
-            - paragraph [ref=e78]: Developing intelligent agents that adapt to user context and provide personalized assistance
-          - generic [ref=e79]:
-            - heading "Context-aware AI" [level=3] [ref=e80]
-            - paragraph [ref=e81]: Creating AI systems that understand and respond to environmental and user contexts
-          - generic [ref=e82]:
-            - heading "LLM-integrated Systems" [level=3] [ref=e83]
-            - paragraph [ref=e84]: Integrating large language models into everyday applications for enhanced human capabilities
-      - separator [ref=e85]
-      - generic [ref=e86]:
-        - heading "Recent Publications" [level=2] [ref=e87]
-        - generic [ref=e88]:
-          - generic [ref=e89]:
-            - 'link "LEGOLAS: Learning & Enhancing Golf Skills through LLM-Augmented System" [ref=e90] [cursor=pointer]':
-              - /url: https://programs.sigchi.org/chi/2025/program/content/194268
-              - 'heading "LEGOLAS: Learning & Enhancing Golf Skills through LLM-Augmented System" [level=3] [ref=e91]'
-            - paragraph [ref=e92]: Extended Abstracts of the CHI Conference on Human Factors in Computing Systems • May 2025
-          - generic [ref=e93]:
-            - 'link "Leveraging voice for early detection of chronic kidney disease: Enabling continuous monitoring in remote healthcare" [ref=e94] [cursor=pointer]':
-              - /url: https://www.thinkmind.org/library/eTELEMED/eTELEMED_2024/etelemed_2024_1_90_40029.html
-              - 'heading "Leveraging voice for early detection of chronic kidney disease: Enabling continuous monitoring in remote healthcare" [level=3] [ref=e95]'
-            - paragraph [ref=e96]: Proceedings of eTELEMED 2024 • May 2024
-          - generic [ref=e97]:
-            - 'link "A Survey on 3D Scene Graphs: Definition, Generation and Application" [ref=e98] [cursor=pointer]':
-              - /url: https://link.springer.com/chapter/10.1007/978-3-031-26889-2_13
-              - 'heading "A Survey on 3D Scene Graphs: Definition, Generation and Application" [level=3] [ref=e99]'
-            - paragraph [ref=e100]: International Conference on Robot Intelligence Technology and Applications • December 2022
+    - complementary [ref=e2]:
+        - generic [ref=e4]: KB
+        - generic [ref=e5]:
+            - generic [ref=e6]:
+                - button "Discover with My Digital Twin" [ref=e7] [cursor=pointer]:
+                    - img [ref=e9]
+                    - generic [ref=e11]: Discover with My Digital Twin
+                - button "Reset chat" [ref=e12] [cursor=pointer]:
+                    - img [ref=e13]
+            - paragraph [ref=e16]: Answers may not always be accurate. Please verify if needed.
+            - generic [ref=e19]: Hello! My name is Kangbeen Ko. Ask anything about me!
+            - generic [ref=e20]:
+                - textbox "Type your message here..." [ref=e21]
+                - button "Send" [disabled] [ref=e22]
+        - navigation [ref=e24]:
+            - link "Home" [ref=e25] [cursor=pointer]:
+                - /url: /
+            - link "Research" [ref=e26] [cursor=pointer]:
+                - /url: /research
+            - link "Papers" [ref=e27] [cursor=pointer]:
+                - /url: /papers
+            - link "CV" [ref=e28] [cursor=pointer]:
+                - /url: /cv
+        - generic [ref=e30]:
+            - link "Email" [ref=e31] [cursor=pointer]:
+                - /url: mailto:sweetrainforyou@gmail.com
+                - img [ref=e32]
+            - link "GitHub" [ref=e35] [cursor=pointer]:
+                - /url: https://github.com/KevinTheRainmaker
+                - img [ref=e36]
+            - link "LinkedIn" [ref=e38] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/kangbeen-ko/
+                - img [ref=e39]
+            - link "Google Scholar" [ref=e41] [cursor=pointer]:
+                - /url: https://scholar.google.com/citations?user=PLACEHOLDER
+                - img [ref=e42]
+    - main [ref=e44]:
+        - generic [ref=e45]:
+            - generic [ref=e46]:
+                - generic [ref=e47]:
+                    - heading "Welcome! I'm Kangbeen Ko" [level=1] [ref=e48]
+                    - paragraph [ref=e49]: M.S. Student at HCIS Lab, at Gwangju Institute of Science and Technology
+                    - paragraph [ref=e50]:
+                        - text: I'm an
+                        - strong [ref=e51]: AI × HCI researcher
+                        - text: and
+                        - strong [ref=e52]: product-minded builder
+                        - text: ", passionate about creating technologies that meaningfully improve human life."
+                    - paragraph [ref=e53]:
+                        - text: I value
+                        - strong [ref=e54]: responsibility
+                        - text: ", embrace"
+                        - strong [ref=e55]: challenges
+                        - text: ", and strive to"
+                        - strong [ref=e56]: move humanity forward
+                        - text: through thoughtful innovation.
+                    - generic [ref=e57]:
+                        - link "Email" [ref=e58] [cursor=pointer]:
+                            - /url: mailto:sweetrainforyou@gmail.com
+                            - img [ref=e59]
+                        - link "GitHub" [ref=e62] [cursor=pointer]:
+                            - /url: https://github.com/KevinTheRainmaker
+                            - img [ref=e63]
+                        - link "LinkedIn" [ref=e65] [cursor=pointer]:
+                            - /url: https://www.linkedin.com/in/kangbeen-ko/
+                            - img [ref=e66]
+                        - link "Google Scholar" [ref=e68] [cursor=pointer]:
+                            - /url: https://scholar.google.com/citations?user=PLACEHOLDER
+                            - img [ref=e69]
+                - generic [ref=e71]: KB
+            - separator [ref=e72]
+            - generic [ref=e73]:
+                - heading "Research Areas" [level=2] [ref=e74]
+                - generic [ref=e75]:
+                    - generic [ref=e76]:
+                        - heading "Human-Agent Interaction" [level=3] [ref=e77]
+                        - paragraph [ref=e78]: Developing intelligent agents that adapt to user context and provide personalized assistance
+                    - generic [ref=e79]:
+                        - heading "Context-aware AI" [level=3] [ref=e80]
+                        - paragraph [ref=e81]: Creating AI systems that understand and respond to environmental and user contexts
+                    - generic [ref=e82]:
+                        - heading "LLM-integrated Systems" [level=3] [ref=e83]
+                        - paragraph [ref=e84]: Integrating large language models into everyday applications for enhanced human capabilities
+            - separator [ref=e85]
+            - generic [ref=e86]:
+                - heading "Recent Publications" [level=2] [ref=e87]
+                - generic [ref=e88]:
+                    - generic [ref=e89]:
+                        - 'link "LEGOLAS: Learning & Enhancing Golf Skills through LLM-Augmented System" [ref=e90] [cursor=pointer]':
+                            - /url: https://programs.sigchi.org/chi/2025/program/content/194268
+                            - 'heading "LEGOLAS: Learning & Enhancing Golf Skills through LLM-Augmented System" [level=3] [ref=e91]'
+                        - paragraph [ref=e92]: Extended Abstracts of the CHI Conference on Human Factors in Computing Systems • May 2025
+                    - generic [ref=e93]:
+                        - 'link "Leveraging voice for early detection of chronic kidney disease: Enabling continuous monitoring in remote healthcare" [ref=e94] [cursor=pointer]':
+                            - /url: https://www.thinkmind.org/library/eTELEMED/eTELEMED_2024/etelemed_2024_1_90_40029.html
+                            - 'heading "Leveraging voice for early detection of chronic kidney disease: Enabling continuous monitoring in remote healthcare" [level=3] [ref=e95]'
+                        - paragraph [ref=e96]: Proceedings of eTELEMED 2024 • May 2024
+                    - generic [ref=e97]:
+                        - 'link "A Survey on 3D Scene Graphs: Definition, Generation and Application" [ref=e98] [cursor=pointer]':
+                            - /url: https://link.springer.com/chapter/10.1007/978-3-031-26889-2_13
+                            - 'heading "A Survey on 3D Scene Graphs: Definition, Generation and Application" [level=3] [ref=e99]'
+                        - paragraph [ref=e100]: International Conference on Robot Intelligence Technology and Applications • December 2022

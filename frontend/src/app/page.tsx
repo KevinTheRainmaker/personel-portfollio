@@ -61,7 +61,7 @@ export default function HomePage() {
   const recentPublications = profile.publications.slice(0, 3);
 
   return (
-    <div className="px-12 py-12" style={{ maxWidth: "900px" }}>
+    <div className="px-12 py-12 w-full">
       {/* Welcome section */}
       <section className="flex items-start justify-between gap-10 mb-12">
         <div className="flex-1 min-w-0">

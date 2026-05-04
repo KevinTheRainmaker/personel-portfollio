@@ -7,7 +7,10 @@
       "Bash(npm install *)",
       "Bash(npx tsc *)",
       "Bash(git checkout *)",
-      "Bash(dir /s)"
+      "Bash(dir /s)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_resize"
     ]
   }
 }
