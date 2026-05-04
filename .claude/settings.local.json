@@ -14,7 +14,11 @@
       "Bash(dir /c/Users/HCIS/Desktop/git/personel-portfollio/frontend)",
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\" -Recurse -Exclude \"frontend\", \"node_modules\" -Force)",
       "Bash(Select-Object FullName)",
-      "Bash(dir \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\")"
+      "Bash(dir \"C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\")",
+      "Bash(powershell -Command \"cd 'C:\\\\Users\\\\HCIS\\\\Desktop\\\\git\\\\personel-portfollio\\\\frontend'; npm install langfuse\")",
+      "Bash(\"/c/Program Files/nodejs/npm\" install langfuse --prefix \"/c/Users/HCIS/Desktop/git/personel-portfollio/frontend\")",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" install langfuse --prefix \"/c/Users/HCIS/Desktop/git/personel-portfollio/frontend\")",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" run build --prefix \"/c/Users/HCIS/Desktop/git/personel-portfollio/frontend\")"
     ]
   }
 }

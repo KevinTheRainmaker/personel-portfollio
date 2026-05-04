@@ -1,12 +1,32 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Langfuse } from "langfuse";
 import profileData from "@/data/profile-data.json";
 
 const OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1";
 const PRIMARY_MODEL = "openai/gpt-oss-20b:free";
 const FALLBACK_MODEL = "google/gemma-4-26b-a4b-it:free";
 
-const SYSTEM_PROMPT = `You are an AI assistant embedded in Kangbeen Ko's personal portfolio website.
+function buildSystemPrompt(): string {
+  const now = new Date();
+  const dateStr = now.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "Asia/Seoul",
+  });
+  const timeStr = now.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "Asia/Seoul",
+    timeZoneName: "short",
+  });
+
+  return `You are an AI assistant embedded in Kangbeen Ko's personal portfolio website.
 Your role is to answer questions about Kangbeen Ko's academic background, research, projects, and experiences.
+
+=== CURRENT CONTEXT ===
+Today's date: ${dateStr} (${timeStr})
+Use this date when answering time-sensitive questions (e.g., whether a conference has already occurred, how long ago something happened, current status of ongoing work).
 
 RULES:
 - Answer ONLY questions related to Kangbeen Ko and his work.
@@ -14,6 +34,7 @@ RULES:
 - Respond in the SAME LANGUAGE as the user (Korean or English).
 - Be concise, friendly, and professional.
 - When relevant, mention specific portfolio pages for more details.
+- Use the current date above to reason about past vs. future events accurately.
 
 === KANGBEEN KO — FULL PROFILE ===
 ${JSON.stringify(profileData, null, 2)}
@@ -24,6 +45,18 @@ ${JSON.stringify(profileData, null, 2)}
 - /papers: Publications and research papers
 - /research: Research interests and focus areas
 `;
+}
+
+function getLangfuse(): Langfuse | null {
+  const publicKey = process.env.LANGFUSE_PUBLIC_KEY;
+  const secretKey = process.env.LANGFUSE_SECRET_KEY;
+  if (!publicKey || !secretKey) return null;
+  return new Langfuse({
+    publicKey,
+    secretKey,
+    baseUrl: process.env.LANGFUSE_HOST ?? "https://cloud.langfuse.com",
+  });
+}
 
 async function callOpenRouter(
   messages: { role: string; content: string }[],
@@ -57,6 +90,8 @@ async function callOpenRouter(
 }
 
 export async function POST(req: NextRequest) {
+  const langfuse = getLangfuse();
+
   try {
     const { message, history = [] } = await req.json();
 
@@ -67,8 +102,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const systemPrompt = buildSystemPrompt();
     const messages = [
-      { role: "system", content: SYSTEM_PROMPT },
+      { role: "system", content: systemPrompt },
       ...history.map((m: { role: string; content: string }) => ({
         role: m.role,
         content: m.content,
@@ -76,20 +112,54 @@ export async function POST(req: NextRequest) {
       { role: "user", content: message },
     ];
 
+    const trace = langfuse?.trace({
+      name: "portfolio-chat",
+      input: { message, historyLength: history.length },
+    });
+
     let response: string;
     let modelUsed: string;
+    let generationError: string | undefined;
+
+    const generation = trace?.generation({
+      name: "openrouter-completion",
+      input: messages,
+      model: PRIMARY_MODEL,
+    });
 
     try {
       response = await callOpenRouter(messages, PRIMARY_MODEL);
       modelUsed = PRIMARY_MODEL;
-    } catch {
-      response = await callOpenRouter(messages, FALLBACK_MODEL);
-      modelUsed = FALLBACK_MODEL;
+    } catch (primaryErr) {
+      generation?.update({ model: FALLBACK_MODEL });
+      try {
+        response = await callOpenRouter(messages, FALLBACK_MODEL);
+        modelUsed = FALLBACK_MODEL;
+      } catch (fallbackErr) {
+        generationError =
+          fallbackErr instanceof Error ? fallbackErr.message : "Unknown error";
+        generation?.end({
+          output: null,
+          level: "ERROR",
+          statusMessage: generationError,
+        });
+        trace?.update({ output: { error: generationError } });
+        await langfuse?.flushAsync();
+        return NextResponse.json(
+          { error: "Chat service unavailable" },
+          { status: 503 },
+        );
+      }
     }
+
+    generation?.end({ output: response });
+    trace?.update({ output: { response, modelUsed } });
+    await langfuse?.flushAsync();
 
     return NextResponse.json({ response, model_used: modelUsed });
   } catch (err) {
     const msg = err instanceof Error ? err.message : "Unknown error";
+    await langfuse?.flushAsync();
     return NextResponse.json({ error: msg }, { status: 503 });
   }
 }
