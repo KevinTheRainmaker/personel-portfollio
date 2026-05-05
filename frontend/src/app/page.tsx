@@ -176,28 +176,29 @@ export default function HomePage() {
         >
           Research Areas
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="space-y-3">
           {siteConfig.researchAreas.map((area) => (
             <div
               key={area.title}
-              className="rounded-xl p-5 border"
+              className="flex flex-col gap-2 rounded-xl px-5 py-4 border"
               style={{
                 background: "var(--surface)",
                 borderColor: "var(--border)",
               }}
             >
               <h3
-                className="font-sans font-semibold text-base mb-2"
+                className="font-sans font-semibold text-base"
                 style={{ color: "var(--dark)" }}
               >
                 {area.title}
               </h3>
-              <p
-                className="text-base leading-relaxed"
-                style={{ color: "var(--mid)" }}
-              >
-                {area.description}
-              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {area.keywords.map((kw) => (
+                  <span key={kw} className="tag">
+                    {kw}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
