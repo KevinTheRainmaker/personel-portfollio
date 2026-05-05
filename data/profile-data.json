@@ -80,7 +80,7 @@
     },
     {
       "title": "LEGOLAS: Learning & Enhancing Golf Skills through LLM-Augmented System",
-      "authors": "Ko, K., Oh, M., Seong, M., & Kim, S. J.",
+      "authors": "Ko, K., Oh, M., Seong, M., Kim, S.",
       "journal": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
       "time": "May 2025",
       "link": "https://programs.sigchi.org/chi/2025/program/content/194268",
@@ -91,7 +91,7 @@
     },
     {
       "title": "Leveraging voice for early detection of chronic kidney disease: Enabling continuous monitoring in remote healthcare",
-      "authors": "Ko, K., Ryu, J., & Kim, S.",
+      "authors": "Ko, K., Ryu, J., Kim, S.",
       "journal": "Proceedings of eTELEMED 2024",
       "time": "May 2024",
       "link": "https://www.thinkmind.org/library/eTELEMED/eTELEMED_2024/etelemed_2024_1_90_40029.html",
@@ -99,7 +99,7 @@
     },
     {
       "title": "A Survey on 3D Scene Graphs: Definition, Generation and Application",
-      "authors": "Bae, J*., Shin, D*., Ko, K., Lee, J., & Kim, U. H.",
+      "authors": "Bae, J*., Shin, D*., Ko, K., Lee, J., Kim, U.",
       "journal": "International Conference on Robot Intelligence Technology and Applications",
       "time": "December 2022",
       "link": "https://link.springer.com/chapter/10.1007/978-3-031-26889-2_13",
@@ -110,7 +110,7 @@
     {
       "company": "GDGoC GIST",
       "companyLink": "https://gdg.community.dev/gdg-on-campus-gwangju-institute-of-science-and-technology-gwangju-south-korea/",
-      "time": "Sep. 2021 – Present",
+      "time": "Sep. 2021 – Sep. 2025",
       "title": "Core Member & AI Mentor",
       "location": "GIST, Gwangju, Korea",
       "description": "**Google Developer Group on Campus**\n**Led AI/ML track as Core R&D member (2021–2022)**\n- Organized and taught sessions on **Git, ML, and Kaggle studies**\n- Planned and hosted seminars, **GDSC x GDG 'AI in Wonderland'**\n\n**Mentored student AI projects (2022–Present)**\n- Delivered sessions on **AI config management with Hydra/Gin**\n- Currently running **'Decoding The Deep'** AI seminar (GenAI, RecSys, XAI, LLM fine-tuning)\n- Provide ongoing student projects mentorship"
