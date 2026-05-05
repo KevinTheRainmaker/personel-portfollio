@@ -6,57 +6,6 @@ export const metadata: Metadata = {
   description: `Research interests and focus areas of ${siteConfig.name}`,
 };
 
-const areas = [
-  {
-    title: "Human-Centered AI",
-    description:
-      "Designing AI systems that prioritize human values, capabilities, and experiences. My work focuses on how AI can augment human intelligence while preserving agency, interpretability, and meaningful control - especially in complex domains like healthcare, learning, and decision-making.",
-    keywords: [
-      "Human-AI Interaction",
-      "Agency",
-      "Interpretability",
-      "User-Centered Design",
-      "Augmented Intelligence",
-    ],
-  },
-  {
-    title: "LLM Applications",
-    description:
-      "Building practical applications powered by large language models that seamlessly integrate into real-world workflows. This includes conversational agents, RAG-based systems, and multi-agent pipelines that enhance productivity, reasoning, and information access.",
-    keywords: [
-      "LLM Apps",
-      "RAG",
-      "Multi-Agent Systems",
-      "Conversational AI",
-      "Workflow Integration",
-    ],
-  },
-  {
-    title: "AI-Assisted Learning",
-    description:
-      "Exploring how AI can support self-directed learning through adaptive feedback, explanation, and reflection. My work investigates how LLM-based systems can provide principle-based guidance, improve skill acquisition, and reduce dependency on external instruction.",
-    keywords: [
-      "Personalized Learning",
-      "Feedback Systems",
-      "Self-Directed Learning",
-      "Skill Acquisition",
-      "Educational AI",
-    ],
-  },
-  {
-    title: "Reliable AI",
-    description:
-      "Developing methods to ensure AI systems are trustworthy, robust, and aligned with user expectations. This includes evaluation frameworks, uncertainty handling, and design strategies that promote transparency, controllability, and safe deployment of AI in high-stakes settings.",
-    keywords: [
-      "Trustworthy AI",
-      "Robustness",
-      "Evaluation",
-      "Uncertainty",
-      "AI Safety",
-    ],
-  },
-];
-
 const researchPhilosophy = `I believe the most impactful AI research happens at the boundary between technology and human experience.
 My work is driven by a simple question: how do we build intelligent systems that genuinely help people -
 not just in controlled lab settings, but in the messy, unpredictable flow of everyday life?`;
@@ -95,7 +44,7 @@ export default function ResearchPage() {
           Focus Areas
         </h2>
         <div className="space-y-6">
-          {areas.map((area, i) => (
+          {siteConfig.researchAreas.map((area, i) => (
             <div
               key={area.title}
               className="rounded-xl p-6 border"

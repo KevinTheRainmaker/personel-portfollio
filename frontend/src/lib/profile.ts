@@ -11,19 +11,52 @@ export const siteConfig = {
   bio2: "I value responsibility, embrace challenges, and strive to move humanity forward through thoughtful innovation.",
   researchAreas: [
     {
-      title: "Human-Agent Interaction",
+      title: "Human-Centered AI",
       description:
-        "Developing intelligent agents that adapt to user context and provide personalized assistance",
+        "Designing AI systems that prioritize human values, capabilities, and experiences. My work focuses on how AI can augment human intelligence while preserving agency, interpretability, and meaningful control - especially in complex domains like healthcare, learning, and decision-making.",
+      keywords: [
+        "Human-AI Interaction",
+        "Agency",
+        "Interpretability",
+        "User-Centered Design",
+        "Augmented Intelligence",
+      ],
     },
     {
-      title: "Context-aware AI",
+      title: "LLM Applications",
       description:
-        "Creating AI systems that understand and respond to environmental and user contexts",
+        "Building practical applications powered by large language models that seamlessly integrate into real-world workflows. This includes conversational agents, RAG-based systems, and multi-agent pipelines that enhance productivity, reasoning, and information access.",
+      keywords: [
+        "LLM Apps",
+        "RAG",
+        "Multi-Agent Systems",
+        "Conversational AI",
+        "Workflow Integration",
+      ],
     },
     {
-      title: "LLM-integrated Systems",
+      title: "AI-Assisted Learning",
       description:
-        "Integrating large language models into everyday applications for enhanced human capabilities",
+        "Exploring how AI can support self-directed learning through adaptive feedback, explanation, and reflection. My work investigates how LLM-based systems can provide principle-based guidance, improve skill acquisition, and reduce dependency on external instruction.",
+      keywords: [
+        "Personalized Learning",
+        "Feedback Systems",
+        "Self-Directed Learning",
+        "Skill Acquisition",
+        "Educational AI",
+      ],
+    },
+    {
+      title: "Reliable AI",
+      description:
+        "Developing methods to ensure AI systems are trustworthy, robust, and aligned with user expectations. This includes evaluation frameworks, uncertainty handling, and design strategies that promote transparency, controllability, and safe deployment of AI in high-stakes settings.",
+      keywords: [
+        "Trustworthy AI",
+        "Robustness",
+        "Evaluation",
+        "Uncertainty",
+        "AI Safety",
+      ],
     },
   ],
   email: "kangbeen.ko@gm.gist.ac.kr",

@@ -225,7 +225,7 @@ export default function HomePage() {
                   className="group block"
                 >
                   <h3
-                    className="font-sans font-semibold text-base leading-snug mb-1 group-hover:opacity-70 transition-opacity"
+                    className="font-sans font-semibold text-base leading-snug mb-1 break-words group-hover:opacity-70 transition-opacity"
                     style={{ color: "var(--dark)" }}
                   >
                     {pub.title}
@@ -233,7 +233,7 @@ export default function HomePage() {
                 </a>
               ) : (
                 <h3
-                  className="font-sans font-semibold text-base leading-snug mb-1"
+                  className="font-sans font-semibold text-base leading-snug mb-1 break-words"
                   style={{ color: "var(--dark)" }}
                 >
                   {pub.title}
