@@ -189,7 +189,7 @@ export default function Sidebar() {
 
   return (
     <aside
-      className="shrink-0 border-r flex flex-col overflow-hidden"
+      className="hidden md:flex shrink-0 border-r flex-col overflow-hidden"
       style={{
         width: "380px",
         background: "var(--surface)",

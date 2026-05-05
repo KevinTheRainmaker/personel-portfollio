@@ -44,7 +44,7 @@ export default function PapersPage() {
   const total = profile.publications.length;
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16 animate-fade-up">
+    <div className="max-w-3xl mx-auto px-4 py-8 md:px-6 md:py-16 animate-fade-up">
       {/* Page Header */}
       <header className="mb-12">
         <p
@@ -55,8 +55,8 @@ export default function PapersPage() {
         </p>
         <div className="flex items-baseline gap-3 mb-3">
           <h1
-            className="font-sans font-bold"
-            style={{ color: "var(--dark)", fontSize: "50px" }}
+            className="font-sans font-bold text-4xl md:text-[50px]"
+            style={{ color: "var(--dark)" }}
           >
             Publications
           </h1>
@@ -77,7 +77,7 @@ export default function PapersPage() {
             <article
               key={i}
               className={[
-                "rounded-xl p-6 border transition-shadow hover:shadow-md",
+                "rounded-xl p-4 md:p-6 border transition-shadow hover:shadow-md",
                 isHighlight ? "border-l-4" : "",
               ]
                 .filter(Boolean)

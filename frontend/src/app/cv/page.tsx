@@ -44,7 +44,7 @@ function Description({ text }: { text: string }) {
 
 export default function CVPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16 animate-fade-up">
+    <div className="max-w-3xl mx-auto px-4 py-8 md:px-6 md:py-16 animate-fade-up">
       {/* Page Header */}
       <header className="mb-12">
         <p
@@ -54,8 +54,8 @@ export default function CVPage() {
           Full Resume
         </p>
         <h1
-          className="font-sans font-bold mb-3"
-          style={{ color: "var(--dark)", fontSize: "50px" }}
+          className="font-sans font-bold mb-3 text-4xl md:text-[50px]"
+          style={{ color: "var(--dark)" }}
         >
           Curriculum Vitae
         </h1>

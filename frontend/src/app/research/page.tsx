@@ -50,7 +50,7 @@ not just in controlled lab settings, but in the messy, unpredictable flow of eve
 
 export default function ResearchPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16 animate-fade-up">
+    <div className="max-w-3xl mx-auto px-4 py-8 md:px-6 md:py-16 animate-fade-up">
       {/* Header */}
       <div className="mb-14">
         <p
@@ -60,8 +60,8 @@ export default function ResearchPage() {
           Research
         </p>
         <h1
-          className="font-sans font-bold mb-5"
-          style={{ color: "var(--dark)", fontSize: "50px" }}
+          className="font-sans font-bold mb-5 text-4xl md:text-[50px]"
+          style={{ color: "var(--dark)" }}
         >
           Research Interests
         </h1>

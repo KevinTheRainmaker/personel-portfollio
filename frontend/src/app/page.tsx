@@ -62,13 +62,13 @@ export default function HomePage() {
   const recentPublications = profile.publications.slice(0, 3);
 
   return (
-    <div className="px-12 py-12 w-full">
+    <div className="px-4 py-8 md:px-12 md:py-12 w-full">
       {/* Welcome section */}
-      <section className="flex items-start justify-between gap-10 mb-12">
+      <section className="flex flex-col-reverse md:flex-row md:items-start md:justify-between gap-6 md:gap-10 mb-12">
         <div className="flex-1 min-w-0">
           <h1
-            className="font-sans font-bold leading-tight mb-3"
-            style={{ color: "var(--dark)", fontSize: "50px" }}
+            className="font-sans font-bold leading-tight mb-3 text-4xl md:text-[50px]"
+            style={{ color: "var(--dark)" }}
           >
             Welcome! I&apos;m{" "}
             <span style={{ color: "var(--name)" }}>Kangbeen Ko</span>
@@ -151,16 +151,13 @@ export default function HomePage() {
         </div>
 
         {/* Profile photo */}
-        <div
-          className="shrink-0 rounded-full overflow-hidden"
-          style={{ width: "220px", height: "220px" }}
-        >
+        <div className="shrink-0 rounded-full overflow-hidden w-24 h-24 md:w-[220px] md:h-[220px]">
           <Image
             src="/images/profile/avatar.png"
             alt="Kangbeen Ko"
             width={220}
             height={220}
-            className="object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
       </section>
@@ -179,7 +176,7 @@ export default function HomePage() {
         >
           Research Areas
         </h2>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {siteConfig.researchAreas.map((area) => (
             <div
               key={area.title}
