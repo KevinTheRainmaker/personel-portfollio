@@ -10,7 +10,7 @@ const areas = [
   {
     title: "Human-Centered AI",
     description:
-      "Designing AI systems that prioritize human values, capabilities, and experiences. My work focuses on how AI can augment human intelligence while preserving agency, interpretability, and meaningful control — especially in complex domains like healthcare, learning, and decision-making.",
+      "Designing AI systems that prioritize human values, capabilities, and experiences. My work focuses on how AI can augment human intelligence while preserving agency, interpretability, and meaningful control - especially in complex domains like healthcare, learning, and decision-making.",
     keywords: [
       "Human-AI Interaction",
       "Agency",
@@ -58,7 +58,7 @@ const areas = [
 ];
 
 const researchPhilosophy = `I believe the most impactful AI research happens at the boundary between technology and human experience.
-My work is driven by a simple question: how do we build intelligent systems that genuinely help people —
+My work is driven by a simple question: how do we build intelligent systems that genuinely help people -
 not just in controlled lab settings, but in the messy, unpredictable flow of everyday life?`;
 
 export default function ResearchPage() {
@@ -167,7 +167,7 @@ export default function ResearchPage() {
               className="font-medium text-base"
               style={{ color: "var(--dark)" }}
             >
-              M.S. Candidate — Human-Centered Intelligent System Lab
+              M.S. Candidate - Human-Centered Intelligent System Lab
             </p>
             <p className="text-base" style={{ color: "var(--mid)" }}>
               GIST (Gwangju Institute of Science and Technology) · Mar. 2025 –
@@ -201,7 +201,7 @@ export default function ResearchPage() {
           style={{ color: "var(--mid)" }}
         >
           <p>
-            My journey started in software engineering — building products at a
+            My journey started in software engineering - building products at a
             startup, competing in hackathons, and learning what it means to ship
             real software to real users. That grounding keeps me focused on
             practicality: research should ultimately be deployable.
@@ -214,7 +214,7 @@ export default function ResearchPage() {
           </p>
           <p>
             Today, I design and study AI systems through the lens of the people
-            who use them — asking not just &ldquo;does this work?&rdquo; but
+            who use them - asking not just &ldquo;does this work?&rdquo; but
             &ldquo;does this help, and why?&rdquo;
           </p>
         </div>
