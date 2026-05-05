@@ -47,6 +47,9 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.bio,
   },
+  icons: {
+    icon: "/penguin.ico",
+  },
 };
 
 export default function RootLayout({
