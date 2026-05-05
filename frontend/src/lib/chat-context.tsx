@@ -1,12 +1,23 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import type { ChatMessage } from "@/lib/types";
+
+const STORAGE_KEY = "chat-messages";
 
 const INITIAL_MESSAGE: ChatMessage = {
   role: "assistant",
   content: "Hello! My name is Kangbeen Ko. Ask anything about me!",
 };
+
+function loadMessages(): ChatMessage[] {
+  if (typeof window === "undefined") return [INITIAL_MESSAGE];
+  try {
+    const saved = sessionStorage.getItem(STORAGE_KEY);
+    if (saved) return JSON.parse(saved) as ChatMessage[];
+  } catch {}
+  return [INITIAL_MESSAGE];
+}
 
 interface ChatContextValue {
   messages: ChatMessage[];
@@ -23,10 +34,16 @@ interface ChatContextValue {
 const ChatContext = createContext<ChatContextValue | null>(null);
 
 export function ChatProvider({ children }: { children: React.ReactNode }) {
-  const [messages, setMessages] = useState<ChatMessage[]>([INITIAL_MESSAGE]);
+  const [messages, setMessages] = useState<ChatMessage[]>(loadMessages);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [chatOpen, setChatOpen] = useState(true);
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+    } catch {}
+  }, [messages]);
 
   function resetChat() {
     setMessages([INITIAL_MESSAGE]);
