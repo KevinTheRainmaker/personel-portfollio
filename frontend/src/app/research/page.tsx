@@ -8,38 +8,51 @@ export const metadata: Metadata = {
 
 const areas = [
   {
-    title: "Human-Agent Interaction",
+    title: "Human-Centered AI",
     description:
-      "Designing and evaluating AI agents that collaborate naturally with humans. My work explores how LLM-powered agents can support skill learning, decision-making, and daily tasks — with a focus on trust, transparency, and appropriate autonomy.",
+      "Designing AI systems that prioritize human values, capabilities, and experiences. My work focuses on how AI can augment human intelligence while preserving agency, interpretability, and meaningful control — especially in complex domains like healthcare, learning, and decision-making.",
     keywords: [
-      "LLM Agents",
-      "Trust",
-      "Transparency",
-      "Skill Learning",
-      "Collaborative AI",
+      "Human-AI Interaction",
+      "Agency",
+      "Interpretability",
+      "User-Centered Design",
+      "Augmented Intelligence",
     ],
   },
   {
-    title: "Context-Aware AI Systems",
+    title: "LLM Applications",
     description:
-      "Building AI systems that understand and adapt to the user's context — physical, cognitive, and situational. This includes personalized feedback systems, health monitoring via voice and multimodal signals, and adaptive interfaces that respond to real-world conditions.",
+      "Building practical applications powered by large language models that seamlessly integrate into real-world workflows. This includes conversational agents, RAG-based systems, and multi-agent pipelines that enhance productivity, reasoning, and information access.",
     keywords: [
-      "Personalization",
-      "Multimodal AI",
-      "Health Monitoring",
-      "Adaptive Systems",
-    ],
-  },
-  {
-    title: "LLM-Integrated Applications",
-    description:
-      "Developing production-grade systems that integrate large language models into human workflows. From RAG pipelines and fine-tuning strategies to evaluation frameworks, I focus on making LLMs reliable, explainable, and genuinely useful in real-world contexts.",
-    keywords: [
+      "LLM Apps",
       "RAG",
-      "Fine-tuning",
-      "LLM Evaluation",
-      "Chatbots",
-      "Prompt Engineering",
+      "Multi-Agent Systems",
+      "Conversational AI",
+      "Workflow Integration",
+    ],
+  },
+  {
+    title: "AI-Assisted Learning",
+    description:
+      "Exploring how AI can support self-directed learning through adaptive feedback, explanation, and reflection. My work investigates how LLM-based systems can provide principle-based guidance, improve skill acquisition, and reduce dependency on external instruction.",
+    keywords: [
+      "Personalized Learning",
+      "Feedback Systems",
+      "Self-Directed Learning",
+      "Skill Acquisition",
+      "Educational AI",
+    ],
+  },
+  {
+    title: "Reliable AI",
+    description:
+      "Developing methods to ensure AI systems are trustworthy, robust, and aligned with user expectations. This includes evaluation frameworks, uncertainty handling, and design strategies that promote transparency, controllability, and safe deployment of AI in high-stakes settings.",
+    keywords: [
+      "Trustworthy AI",
+      "Robustness",
+      "Evaluation",
+      "Uncertainty",
+      "AI Safety",
     ],
   },
 ];
