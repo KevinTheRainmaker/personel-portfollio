@@ -140,8 +140,8 @@ export default function PapersPage() {
                   />
                 )}
 
-              {/* Abstract (collapsible) */}
-              {pub.abstract && (
+              {/* Summary (collapsible) */}
+              {pub.summary && (
                 <details className="mb-4 group">
                   <summary
                     className="text-base font-medium cursor-pointer select-none list-none flex items-center gap-1.5 w-fit"
@@ -158,7 +158,7 @@ export default function PapersPage() {
                     >
                       <path d="M9 18l6-6-6-6" />
                     </svg>
-                    Abstract
+                    Summary
                   </summary>
                   <p
                     className="mt-3 text-base leading-relaxed pl-5 border-l-2"
@@ -167,7 +167,7 @@ export default function PapersPage() {
                       borderColor: "var(--border)",
                     }}
                   >
-                    {pub.abstract}
+                    {pub.summary}
                   </p>
                 </details>
               )}

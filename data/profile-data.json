@@ -59,7 +59,8 @@
       "abstract": "Child language therapy for developmental language disorder relies on clinicians' interpretive judgments, which directly shape children's developmental trajectories. As artificial intelligence (AI) and large language models (LLMs) are integrated into therapeutic workflows, questions arise regarding how to support interpretation without undermining professional agency and accountability. We examine this through a within-subjects study with eight Speech-Language Pathologists, comparing four human-AI collaboration modes that vary in AI autonomy and interaction structure. By situating these configurations within the domain of clinical interpretation, the study provides an empirical account of how different forms of AI assistance are experienced in practice. While greater autonomy reduced effort and increased perceived usefulness, it diminished clinicians' sense of control and professional identity. Despite comparable efficiency, participants consistently preferred a collaborative dialogue mode. These findings show that differences in adoption intention between AI-assisted configurations cannot be fully explained by perceived usefulness or effort reduction alone, but are associated with how interaction structures position clinicians within the interpretive process. They further suggest that, in contrast to more general-purpose domains, the use of AI in clinical interpretive work is shaped by the need to preserve authorship and professional agency. This study highlights the role of interaction structure in shaping professional experience and informs design principles for AI systems supporting clinical interpretation.",
       "thumbnailWidth": 8001,
       "thumbnailHeight": 3562,
-      "thumbnailAlt": "Clinician and AI jointly interpreting a child language therapy session, balancing agency and efficiency."
+      "thumbnailAlt": "Clinician and AI jointly interpreting a child language therapy session, balancing agency and efficiency.",
+      "summary": "In a study with eight speech-language pathologists, more autonomous AI reduced effort but weakened clinicians' sense of control and professional identity. Participants preferred collaborative dialogue despite similar efficiency. The findings suggest that AI for clinical interpretation should preserve clinicians' authorship and decision-making role, making professional agency a design goal alongside efficiency."
     },
     {
       "title": "MagToTheFuture: Transforming Passive Objects into Circuit-Free Haptic Devices via Magnetic Fields",
@@ -72,7 +73,8 @@
       "thumbnailWidth": 500,
       "thumbnailHeight": 281,
       "thumbnailAlt": "MagToTheFuture demonstration of magnetic-field haptic feedback through passive objects.",
-      "thumbnailPoster": "/images/publications/MagToTheFuture_poster.png"
+      "thumbnailPoster": "/images/publications/MagToTheFuture_poster.png",
+      "summary": "MagToTheFuture uses external magnetic fields to deliver force, vibration, and localized warmth through passive patches attached to everyday objects. Keeping the electronics in the surrounding platform enables multimodal haptic feedback without embedding powered actuators in each object, opening a path to augmenting ordinary artifacts while retaining their familiar physical form."
     },
     {
       "title": "PardonMix: Unpacking Ambiguity in Semantic Audio Mixing for Adaptive Interface Design",
@@ -85,7 +87,8 @@
       "abstract": "Audio mixing requires sophisticated parameter control and accumulated listening experience. In collaborative workflows, novice musicians often struggle to convey their auditory intent to professional engineers, creating a semantic gap between abstract descriptors and technical execution. While prior studies have mapped descriptive terms to parameters by focusing on minimizing ambiguity, we propose that identifying types of ambiguity can serve as a key to bridging this communication gap. We conducted a formative study analyzing mixing parameter vectors from 10 professional engineers for 18 abstract descriptors, identifying distinct types of ambiguity: High Consensus, Intensity Variance, and Directional Divergence. We propose PardonMix, an adaptive interface strategy that dynamically allocates disambiguation widgets; direct automation for high consensus terms, degree control for intensity varying terms, and exploratory gallery for divergent terms. PardonMix seeks to bridge the semantic gap by embracing ambiguity, facilitating smoother collaboration that ensures the novice’s artistic vision is precisely translated into technical execution.",
       "thumbnailWidth": 1280,
       "thumbnailHeight": 563,
-      "thumbnailAlt": "PardonMix workflow from audio-mixing descriptors to three ambiguity categories and adaptive interface designs."
+      "thumbnailAlt": "PardonMix workflow from audio-mixing descriptors to three ambiguity categories and adaptive interface designs.",
+      "summary": "A study with 10 professional audio engineers found that ambiguous mixing terms differ in whether engineers agree on a setting, disagree on its strength, or interpret it in different directions. PardonMix maps these differences to automation, intensity controls, and exploratory alternatives. Its central design implication is that interfaces should adapt to the kind of ambiguity to better preserve musicians' intent."
     },
     {
       "title": "Demonstrating InteractiSense: An Interactive Tool for Supporting Social Engagement for Children with ASD",
@@ -98,7 +101,8 @@
       "abstract": "Children with autism spectrum disorder (ASD) are prone to disengagement during social activities, which limits opportunities for communication and peer interaction. We present InteractiSense, a spherical, sensing-integrated tangible prototype and cooperative serious game (SG) that targets social and collaborative scenarios for children with ASD. The prototype embeds seven sensors in a soft graspable body and streams multimodal data during play, while SG modules translate imitation, joint attention, and turn-taking objectives into shared gameplay. Prior to this demo, a preliminary study with 15 children with ASD has examined data stability and in-game experience. In this Interactive Demo, attendees experience InteractiSense through paired gameplay and a real-time visualization interface that exposes engagement-related signals. The demo aims to prompt discussion within the CHI community on inclusive SG content, tangible input mechanisms, and opportunities for physical AI systems in developmental contexts.",
       "thumbnailWidth": 1280,
       "thumbnailHeight": 703,
-      "thumbnailAlt": "InteractiSense sensor-equipped handheld device and a turn-taking game for social engagement."
+      "thumbnailAlt": "InteractiSense sensor-equipped handheld device and a turn-taking game for social engagement.",
+      "summary": "InteractiSense combines a soft, sensor-equipped object with cooperative games that turn imitation, joint attention, and turn-taking into shared play for children with ASD. It illustrates how tangible interaction and embedded sensing can bring social play and engagement-related observations into the same interface. A preliminary study with 15 children explored feasibility and play experience, without establishing therapeutic effectiveness."
     },
     {
       "title": "LEGOLAS: Learning & Enhancing Golf Skills through LLM-Augmented System",
@@ -109,7 +113,7 @@
       "thumbnail": "/images/publications/LEGOLAS_video_figure.gif",
       "highlight": true,
       "abstract": "Abstract summary: This study examines how large language models and retrieval-augmented generation can provide verbal feedback for golf self-training. Unlike visual error displays alone, the feedback explains causes and possible corrections. The study reports improvements in learners' mental representations and continued skill development. Combining verbal and visual feedback supports learning efficiency and confidence in self-assessment without increasing cognitive load. The approach aims to make expert-informed feedback more accessible during independent practice.",
-      "summary": "**Summary**\nExisting self-training systems can visualize movement errors but **lack explanations for causes and corrections**, limiting users' ability to improve independently. To bridge this gap, the study introduced a **LLM and RAG-based architecture** that delivers **personalized, principle-based verbal feedback**. \nThe system was developed using 3D motion capture, joint-level error detection, and **verbal coaching via TTS**. In a **4-condition user study (n=12)**, even **low-frequency feedback** led to sustained accuracy gains, indicating **improved self-directed learning** and **reduced dependence on external feedback**.\n\n**Key Results**\n- **Significant improvement in movement accuracy** with verbal feedback *(F(1,11) = 11.623, p < 0.01)*\n- **Increased self-evaluation confidence**, with interaction effects across feedback types *(F(1,11) = 5.410, p < 0.05)*\n- **No increase in cognitive load** under verbal feedback conditions *(NASA-TLX)*",
+      "summary": "LEGOLAS combines LLM- and retrieval-based verbal guidance with visual feedback to help golfers understand movement errors and how to correct them during self-training. Reported gains in learning efficiency and self-assessment confidence, without increased cognitive load, suggest that automated coaching should explain the reasons behind corrections to support more informed independent practice.",
       "thumbnailWidth": 800,
       "thumbnailHeight": 450,
       "thumbnailAlt": "LEGOLAS golf-swing replay comparing target and user motion with LLM-generated verbal feedback.",
@@ -122,7 +126,8 @@
       "time": "May 2024",
       "link": "https://www.thinkmind.org/library/eTELEMED/eTELEMED_2024/etelemed_2024_1_90_40029.html",
       "highlight": false,
-      "abstract": "Abstract summary: This paper explores voice-based machine learning as a non-invasive supplement to conventional chronic kidney disease assessment. It uses vocal changes associated with the condition as potential indicators and reports an F1 score of 0.86. The study discusses how this approach could support remote monitoring and telemedicine, alongside existing clinical tests."
+      "abstract": "Abstract summary: This paper explores voice-based machine learning as a non-invasive supplement to conventional chronic kidney disease assessment. It uses vocal changes associated with the condition as potential indicators and reports an F1 score of 0.86. The study discusses how this approach could support remote monitoring and telemedicine, alongside existing clinical tests.",
+      "summary": "This study explores how voice features can complement basic health information when distinguishing CKD stages 3–5 from healthy cases and stages 1–2. The findings point toward a low-burden supplement for remote severity assessment. Clinical use and reliable monitoring over time still require further validation, rather than treating voice analysis as a replacement for established tests."
     },
     {
       "title": "A Survey on 3D Scene Graphs: Definition, Generation and Application",
@@ -131,7 +136,8 @@
       "time": "March 2023",
       "link": "https://link.springer.com/chapter/10.1007/978-3-031-26889-2_13",
       "highlight": false,
-      "abstract": "Abstract summary: This survey reviews how 3D scene graphs represent objects, their properties, and relationships in an environment. It clarifies definitions, organizes advances in graph generation, examines applications, and identifies future directions for 3D scene understanding."
+      "abstract": "Abstract summary: This survey reviews how 3D scene graphs represent objects, their properties, and relationships in an environment. It clarifies definitions, organizes advances in graph generation, examines applications, and identifies future directions for 3D scene understanding.",
+      "summary": "This survey organizes 3D scene graph research around definitions, generation methods, and applications, clarifying how objects, their properties, and their relationships can be represented together. It highlights the value of relational scene representations for intelligent agents: understanding how an environment is structured can support richer reasoning than recognizing individual objects alone."
     }
   ],
   "experiences": [

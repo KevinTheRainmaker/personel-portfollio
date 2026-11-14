@@ -30,6 +30,17 @@ test("publication titles are unique and required metadata is present", () => {
   }
 });
 
+test("every publication has a concise, display-ready summary", () => {
+  for (const publication of publications) {
+    assert.equal(typeof publication.summary, "string", `${publication.title}: missing summary`);
+    const summary = publication.summary.trim();
+    assert.ok(summary.length > 0, `${publication.title}: empty summary`);
+    assert.ok(summary.split(/\s+/).length <= 100, `${publication.title}: summary exceeds 100 words`);
+    assert.doesNotMatch(summary, /^(abstract|summary)\s*:/i);
+    assert.doesNotMatch(summary, /\*\*|\n|<[^>]+>/, `${publication.title}: summary must be plain text`);
+  }
+});
+
 test("publication media exists with accurate dimensions and alternative text", () => {
   for (const publication of publications) {
     if (!publication.thumbnail) continue;
