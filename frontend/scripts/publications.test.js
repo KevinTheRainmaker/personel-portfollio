@@ -41,6 +41,18 @@ test("every publication has a concise, display-ready summary", () => {
   }
 });
 
+test("featured selection includes MagToTheFuture and excludes InteractiSense and CKD", () => {
+  const findPublication = (titlePart) => {
+    const publication = publications.find((p) => p.title.includes(titlePart));
+    assert.ok(publication, `Missing publication: ${titlePart}`);
+    return publication;
+  };
+
+  assert.equal(findPublication("MagToTheFuture:").highlight, true);
+  assert.equal(findPublication("Demonstrating InteractiSense:").highlight, false);
+  assert.equal(findPublication("chronic kidney disease").highlight, false);
+});
+
 test("publication media exists with accurate dimensions and alternative text", () => {
   for (const publication of publications) {
     if (!publication.thumbnail) continue;
