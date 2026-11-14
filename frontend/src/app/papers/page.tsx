@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { profile } from "@/lib/profile";
+import PublicationMedia from "@/components/PublicationMedia";
 
 export const metadata: Metadata = {
   title: "Publications",
@@ -63,7 +64,7 @@ export default function PapersPage() {
           <span className="tag-accent text-xs font-mono">{total}</span>
         </div>
         <p className="text-base" style={{ color: "var(--mid)" }}>
-          Peer-reviewed papers and conference proceedings. Sorted newest first.
+          Publications and manuscripts under review.
         </p>
       </header>
 
@@ -124,6 +125,20 @@ export default function PapersPage() {
               >
                 {pub.journal}
               </p>
+
+              {pub.thumbnail &&
+                pub.thumbnailWidth &&
+                pub.thumbnailHeight &&
+                pub.thumbnailAlt && (
+                  <PublicationMedia
+                    src={pub.thumbnail}
+                    width={pub.thumbnailWidth}
+                    height={pub.thumbnailHeight}
+                    alt={pub.thumbnailAlt}
+                    title={pub.title}
+                    poster={pub.thumbnailPoster}
+                  />
+                )}
 
               {/* Abstract (collapsible) */}
               {pub.abstract && (

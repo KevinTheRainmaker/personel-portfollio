@@ -19,6 +19,10 @@ export interface Publication {
   time: string;
   link?: string;
   thumbnail?: string;
+  thumbnailWidth?: number;
+  thumbnailHeight?: number;
+  thumbnailAlt?: string;
+  thumbnailPoster?: string;
   highlight?: boolean;
   abstract?: string;
   summary?: string;

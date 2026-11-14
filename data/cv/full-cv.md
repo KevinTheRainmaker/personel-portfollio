@@ -178,15 +178,63 @@ co-designed with experts — reducing the adaptation process from over a day to 
 
 ## Publications
 
+## MagToTheFuture: Transforming Passive Objects into Circuit-Free Haptic Devices via Magnetic Fields
+
+**Authors**: Park, J., Kang, S., Ko, K., Kim, G., Shin, S., Kang, Y., Matusik, W., Rus, D., Kim, S. J.
+
+**Journal**: Proceedings of the 39th Annual ACM Symposium on User Interface Software and Technology (UIST 2026)
+
+**Published**: 2026
+
+**Link**: [View Publication](https://dl.acm.org/doi/10.1145/3830398.3830652)
+
+**Featured**: No
+
+![MagToTheFuture: Transforming Passive Objects into Circuit-Free Haptic Devices via Magnetic Fields](/images/publications/MagToTheFuture.gif)
+
+---
+
+## PardonMix: Unpacking Ambiguity in Semantic Audio Mixing for Adaptive Interface Design
+
+**Authors**: Kim, D., Ko, K., Oh, J., Kim, S.
+
+**Journal**: Extended Abstracts of the CHI Conference on Human Factors in Computing Systems
+
+**Published**: April 2026
+
+**Link**: [View Publication](https://dl.acm.org/doi/10.1145/3772363.3798647)
+
+**Featured**: Yes
+
+![PardonMix: Unpacking Ambiguity in Semantic Audio Mixing for Adaptive Interface Design](/images/publications/PardonMix.png)
+
+---
+
+## Demonstrating InteractiSense: An Interactive Tool for Supporting Social Engagement for Children with ASD
+
+**Authors**: Kim, W.*, Lim, C.*, Seong, M., Ko, K., Kim, S.
+
+**Journal**: Extended Abstracts of the CHI Conference on Human Factors in Computing Systems
+
+**Published**: April 2026
+
+**Link**: [View Publication](https://dl.acm.org/doi/10.1145/3772363.3799141)
+
+**Featured**: Yes
+
+![Demonstrating InteractiSense: An Interactive Tool for Supporting Social Engagement for Children with ASD](/images/publications/InteractiSense.png)
+
+---
+
 ## LEGOLAS: Learning & Enhancing Golf Skills through LLM-Augmented System
 
 **Authors**: Ko, K., Oh, M., Seong, M., & Kim, S. J.
 
 **Journal**: Extended Abstracts of the CHI Conference on Human Factors in Computing Systems
 
-**Published**: May 2025
+**Published**: April 2025
 
-**Link**: [View Publication](https://programs.sigchi.org/chi/2025/program/content/194268)
+**Link**: [View Publication](https://dl.acm.org/doi/10.1145/3706599.3720141)
 
 **Featured**: Yes
 
@@ -208,11 +256,11 @@ co-designed with experts — reducing the adaptation process from over a day to 
 
 ## A Survey on 3D Scene Graphs: Definition, Generation and Application
 
-**Authors**: Bae, J*., Shin, D*., Ko, K., Lee, J., & Kim, U. H.
+**Authors**: Bae, J.*, Shin, D.*, Ko, K., Lee, J., & Kim, U.-H.
 
-**Journal**: International Conference on Robot Intelligence Technology and Applications
+**Journal**: Robot Intelligence Technology and Applications 7 (RiTA 2022)
 
-**Published**: December 2022
+**Published**: March 2023
 
 **Link**: [View Publication](https://link.springer.com/chapter/10.1007/978-3-031-26889-2_13)
 
