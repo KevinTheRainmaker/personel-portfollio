@@ -45,9 +45,9 @@ export default function PapersPage() {
   const total = profile.publications.length;
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8 md:px-6 md:py-16 animate-fade-up">
+    <div className="w-full max-w-[1440px] mx-auto px-4 py-8 md:px-8 md:py-12 xl:px-12 xl:py-16 animate-fade-up">
       {/* Page Header */}
-      <header className="mb-12">
+      <header className="mb-8 md:mb-10">
         <p
           className="text-base font-mono tracking-widest uppercase mb-3"
           style={{ color: "var(--warm)" }}
@@ -73,12 +73,18 @@ export default function PapersPage() {
         {profile.publications.map((pub, i) => {
           const isHighlight = pub.highlight === true;
           const authorPos = getAuthorPosition(pub.authors);
+          const hasMedia = Boolean(
+            pub.thumbnail && pub.thumbnailWidth && pub.thumbnailHeight && pub.thumbnailAlt
+          );
 
           return (
             <article
               key={i}
               className={[
-                "rounded-xl p-4 md:p-6 border transition-shadow hover:shadow-md",
+                "rounded-xl p-4 md:p-6 border transition-shadow hover:shadow-md min-w-0",
+                hasMedia
+                  ? "xl:grid xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] xl:grid-rows-[auto_1fr] xl:gap-x-8"
+                  : "",
                 isHighlight ? "border-l-4" : "",
               ]
                 .filter(Boolean)
@@ -89,47 +95,51 @@ export default function PapersPage() {
                 borderLeftColor: isHighlight ? "var(--accent)" : undefined,
               }}
             >
-              {/* Top row: year + featured badge */}
-              <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
-                <span
-                  className="text-xs font-mono"
-                  style={{ color: "var(--warm)" }}
-                >
-                  {pub.time}
-                </span>
-                <div className="flex items-center gap-2">
-                  {isHighlight && <span className="tag-accent">Featured</span>}
-                  {authorPos !== null && authorPos <= 2 && (
-                    <span className="tag">{ordinal(authorPos)} Author</span>
-                  )}
+              <div className="min-w-0 xl:col-start-1 xl:row-start-1">
+                {/* Top row: year + featured badge */}
+                <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
+                  <span
+                    className="text-xs font-mono"
+                    style={{ color: "var(--warm)" }}
+                  >
+                    {pub.time}
+                  </span>
+                  <div className="flex items-center gap-2">
+                    {isHighlight && <span className="tag-accent">Featured</span>}
+                    {authorPos !== null && authorPos <= 2 && (
+                      <span className="tag">{ordinal(authorPos)} Author</span>
+                    )}
+                  </div>
                 </div>
+
+                {/* Title */}
+                <h2
+                  className="font-sans font-semibold text-base md:text-lg leading-snug mb-2"
+                  style={{ color: "var(--dark)" }}
+                >
+                  {pub.title}
+                </h2>
+
+                {/* Authors */}
+                <p className="text-base mb-1" style={{ color: "var(--mid)" }}>
+                  <AuthorList authors={pub.authors} />
+                </p>
+
+                {/* Journal */}
+                <p
+                  className="text-base italic mb-4"
+                  style={{ color: "var(--mid)" }}
+                >
+                  {pub.journal}
+                </p>
+
               </div>
-
-              {/* Title */}
-              <h2
-                className="font-sans font-semibold text-base leading-snug mb-2"
-                style={{ color: "var(--dark)" }}
-              >
-                {pub.title}
-              </h2>
-
-              {/* Authors */}
-              <p className="text-base mb-1" style={{ color: "var(--mid)" }}>
-                <AuthorList authors={pub.authors} />
-              </p>
-
-              {/* Journal */}
-              <p
-                className="text-base italic mb-4"
-                style={{ color: "var(--mid)" }}
-              >
-                {pub.journal}
-              </p>
 
               {pub.thumbnail &&
                 pub.thumbnailWidth &&
                 pub.thumbnailHeight &&
                 pub.thumbnailAlt && (
+                  <div className="min-w-0 xl:col-start-2 xl:row-start-1 xl:row-span-2">
                   <PublicationMedia
                     src={pub.thumbnail}
                     width={pub.thumbnailWidth}
@@ -138,61 +148,64 @@ export default function PapersPage() {
                     title={pub.title}
                     poster={pub.thumbnailPoster}
                   />
+                  </div>
                 )}
 
-              {/* Summary (collapsible) */}
-              {pub.summary && (
-                <details className="mb-4 group">
-                  <summary
-                    className="text-base font-medium cursor-pointer select-none list-none flex items-center gap-1.5 w-fit"
-                    style={{ color: "var(--accent)" }}
+              <div className="min-w-0 xl:col-start-1 xl:row-start-2">
+                {/* Summary (collapsible) */}
+                {pub.summary && (
+                  <details className="mb-4 group">
+                    <summary
+                      className="text-base font-medium cursor-pointer select-none list-none flex items-center gap-1.5 w-fit"
+                      style={{ color: "var(--accent)" }}
+                    >
+                      <svg
+                        className="transition-transform group-open:rotate-90"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path d="M9 18l6-6-6-6" />
+                      </svg>
+                      Summary
+                    </summary>
+                    <p
+                      className="mt-3 text-base leading-relaxed pl-5 border-l-2"
+                      style={{
+                        color: "var(--mid)",
+                        borderColor: "var(--border)",
+                      }}
+                    >
+                      {pub.summary}
+                    </p>
+                  </details>
+                )}
+
+                {/* Read Paper button */}
+                {pub.link && (
+                  <a
+                    href={pub.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-ghost text-xs"
                   >
+                    Read Paper
                     <svg
-                      className="transition-transform group-open:rotate-90"
-                      width="14"
-                      height="14"
+                      width="12"
+                      height="12"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
                     >
-                      <path d="M9 18l6-6-6-6" />
+                      <path d="M7 17L17 7M17 7H7M17 7v10" />
                     </svg>
-                    Summary
-                  </summary>
-                  <p
-                    className="mt-3 text-base leading-relaxed pl-5 border-l-2"
-                    style={{
-                      color: "var(--mid)",
-                      borderColor: "var(--border)",
-                    }}
-                  >
-                    {pub.summary}
-                  </p>
-                </details>
-              )}
-
-              {/* Read Paper button */}
-              {pub.link && (
-                <a
-                  href={pub.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-ghost text-xs"
-                >
-                  Read Paper
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M7 17L17 7M17 7H7M17 7v10" />
-                  </svg>
-                </a>
-              )}
+                  </a>
+                )}
+              </div>
             </article>
           );
         })}

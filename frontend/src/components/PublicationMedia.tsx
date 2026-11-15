@@ -54,7 +54,7 @@ export default function PublicationMedia({
           alt={alt}
           width={width}
           height={height}
-          sizes="(min-width: 768px) 672px, calc(100vw - 64px)"
+          sizes="(min-width: 1820px) 590px, (min-width: 1280px) calc(46vw - 258px), (min-width: 768px) calc(100vw - 494px), calc(100vw - 66px)"
           className="block h-full w-full object-contain"
           loading="lazy"
           unoptimized={playing}
