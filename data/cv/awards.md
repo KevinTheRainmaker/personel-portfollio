@@ -9,7 +9,7 @@ description: "Recognitions and achievements"
 
 **Date**: 2020
 
-Developed an AI model for forecasting solar power generation and optimizing energy scheduling on campus
+Developed an AI model to forecast campus solar power generation and support energy scheduling based on expected supply.
 
 ---
 
@@ -19,7 +19,7 @@ Developed an AI model for forecasting solar power generation and optimizing ener
 
 **Date**: 2021
 
-A job aggregator that lets users search across all platforms and receive email for saved interests.
+Built a job aggregator to reduce fragmented searches across hiring platforms, combining job listings with email alerts for saved interests.
 
 ---
 
@@ -29,7 +29,7 @@ A job aggregator that lets users search across all platforms and receive email f
 
 **Date**: 2023
 
-Developed a service enabling children to converse with their own drawn characters, featuring customizable TTS models built from parental voice recordings.
+Developed a service that turns children's drawings into conversational characters, with customizable TTS based on parental voice recordings.
 
 ---
 
@@ -39,7 +39,7 @@ Developed a service enabling children to converse with their own drawn character
 
 **Date**: 2023
 
-Developed a self-guided mental wellness platform powered by an LLM-based chatbot that provides psychological wellness framework to help users structure negative thoughts and ease emotional distress.
+Developed an LLM-based conversation platform that helps users put difficult thoughts into words and organize them using a psychological wellness framework.
 
 ---
 
@@ -49,7 +49,7 @@ Developed a self-guided mental wellness platform powered by an LLM-based chatbot
 
 **Date**: 2023
 
-Built a deep learning model for cerebral aneurysm localization using cerebral angiography imaging data.
+Built a deep learning model to localize cerebral aneurysms in angiography images, exploring automated support for identifying relevant regions in medical imaging.
 
 ---
 
@@ -59,4 +59,4 @@ Built a deep learning model for cerebral aneurysm localization using cerebral an
 
 **Date**: 2024
 
-Developed a multimodal LLM-based online shopping assistant for visually impaired users, capable of extracting on-screen information and providing voice-based responses to user queries.
+Developed a multimodal LLM-based shopping assistant that turns on-screen information into voice-based answers, helping visually impaired users access product information through their own questions.

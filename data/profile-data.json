@@ -60,7 +60,7 @@
       "thumbnailWidth": 8001,
       "thumbnailHeight": 3562,
       "thumbnailAlt": "Clinician and AI jointly interpreting a child language therapy session, balancing agency and efficiency.",
-      "summary": "In a study with eight speech-language pathologists, more autonomous AI reduced effort but weakened clinicians' sense of control and professional identity. Participants preferred collaborative dialogue despite similar efficiency. The findings suggest that AI for clinical interpretation should preserve clinicians' authorship and decision-making role, making professional agency a design goal alongside efficiency."
+      "summary": "When AI helps interpret a child's language, clinicians still need to shape and take responsibility for that interpretation. In a study with eight speech-language pathologists, greater AI autonomy reduced effort but weakened perceived control and professional identity; participants preferred collaborative dialogue despite similar efficiency. The study suggests designing AI assistance around clinicians' participation in interpretation, preserving authorship alongside reducing workload."
     },
     {
       "title": "MagToTheFuture: Transforming Passive Objects into Circuit-Free Haptic Devices via Magnetic Fields",
@@ -113,7 +113,7 @@
       "thumbnail": "/images/publications/LEGOLAS_video_figure.gif",
       "highlight": true,
       "abstract": "Abstract summary: This study examines how large language models and retrieval-augmented generation can provide verbal feedback for golf self-training. Unlike visual error displays alone, the feedback explains causes and possible corrections. The study reports improvements in learners' mental representations and continued skill development. Combining verbal and visual feedback supports learning efficiency and confidence in self-assessment without increasing cognitive load. The approach aims to make expert-informed feedback more accessible during independent practice.",
-      "summary": "LEGOLAS combines LLM- and retrieval-based verbal guidance with visual feedback to help golfers understand movement errors and how to correct them during self-training. Reported gains in learning efficiency and self-assessment confidence, without increased cognitive load, suggest that automated coaching should explain the reasons behind corrections to support more informed independent practice.",
+      "summary": "Seeing a swing error does not necessarily tell a golfer why it happened or how to correct it. LEGOLAS combines visual feedback with LLM- and retrieval-based verbal guidance to make expert-informed explanations available during self-training. Reported improvements in learning efficiency and self-assessment confidence, without increased cognitive load, suggest that automated feedback should help learners understand corrections and judge their own practice, rather than only display deviations.",
       "thumbnailWidth": 800,
       "thumbnailHeight": 450,
       "thumbnailAlt": "LEGOLAS golf-swing replay comparing target and user motion with LLM-generated verbal feedback.",
@@ -127,7 +127,7 @@
       "link": "https://www.thinkmind.org/library/eTELEMED/eTELEMED_2024/etelemed_2024_1_90_40029.html",
       "highlight": false,
       "abstract": "Abstract summary: This paper explores voice-based machine learning as a non-invasive supplement to conventional chronic kidney disease assessment. It uses vocal changes associated with the condition as potential indicators and reports an F1 score of 0.86. The study discusses how this approach could support remote monitoring and telemedicine, alongside existing clinical tests.",
-      "summary": "This study explores how voice features can complement basic health information when distinguishing CKD stages 3–5 from healthy cases and stages 1–2. The findings point toward a low-burden supplement for remote severity assessment. Clinical use and reliable monitoring over time still require further validation, rather than treating voice analysis as a replacement for established tests."
+      "summary": "Assessing kidney disease usually depends on clinical tests, which limits opportunities for low-burden remote assessment. This study examines whether voice features, combined with basic health information, can distinguish CKD stages 3–5 from healthy cases and stages 1–2. It explores making health-status information more accessible through a familiar input: speech. The results motivate further validation for remote severity assessment, not replacement of established tests or a claim of reliable long-term monitoring."
     },
     {
       "title": "A Survey on 3D Scene Graphs: Definition, Generation and Application",
@@ -155,7 +155,7 @@
       "time": "Jun. 2023 – July. 2024",
       "title": "Research Intern",
       "location": "Seoul, Korea",
-      "description": "**Initial MVP development team for SickGPT, a chatbot for medical record understanding**\n- Designed a role-playing pipeline where agents interact to generate dialogue data, which was then used to fine-tune LLaMA2-7B.\n- Developed an evaluation module measuring question relevance, BLEU score, and answer grounding\n**Authored a research paper on ML-based severity prediction for Chronic Kidney Disease**\n- Built a voice-based CKD severity prediction model\n- Proposed clinically grounded features and validated statistical significance\n- Published a research paper in eTELEMED 2024 (Advisor: Prof. Sejoong Kim)"
+      "description": "**Contributed to the initial SickGPT MVP team, supporting medical record understanding through conversation**\n- Designed a role-playing pipeline to generate dialogue data for fine-tuning LLaMA2-7B, connecting medical-record content with conversational questions and answers.\n- Developed an evaluation module for question relevance, BLEU score, and answer grounding to check whether responses addressed the question and remained tied to the record.\n**Authored a research paper on ML-based severity prediction for Chronic Kidney Disease**\n- Built a voice-based CKD severity prediction model\n- Proposed clinically grounded features and validated statistical significance\n- Published a research paper in eTELEMED 2024 (Advisor: Prof. Sejoong Kim)"
     },
     {
       "company": "GroupByHR Inc.",
@@ -163,13 +163,13 @@
       "time": "Jul. 2021 – Aug. 2022",
       "title": "Co-founder & AI Researcher",
       "location": "Seoul, Korea",
-      "description": "**Data-driven Hiring platform for Early-stage Startups**\n- **Co-founded** startup from 2021\n- Raised **Seed-round funding** from two Venture Capitalists\n- Built **Personalized and Real-time Position Recommendation Algorithms** using GNNs\n- Led **2022 Tech Incubator Program for Startup (TIPS)**"
+      "description": "**Data-driven hiring platform connecting candidates with early-stage startup opportunities**\n- **Co-founded** startup from 2021\n- Raised **Seed-round funding** from two Venture Capitalists\n- Built **personalized, real-time position recommendation algorithms** using GNNs to surface opportunities relevant to each candidate.\n- Led **2022 Tech Incubator Program for Startup (TIPS)**"
     }
   ],
   "projects": [
     {
       "title": "Soridam: Keeping Family Voices and Emotions Alive, Wherever You Are",
-      "description": "Developed a family-oriented social networking app enabling communication through photos and voice messages across different regions and time zones. Integrated voice-based emotion recognition to preview messages with emotional emojis, and included a feature for revisiting memories by listening to archived voices of late family members.",
+      "description": "Family members living in different regions and time zones may miss the tone and everyday moments that make communication feel personal. Soridam combines photos and voice messages in a family-oriented social app, with emotion-recognition-based emoji previews and an archive for revisiting familiar voices. The project explores how voice can carry emotional context and preserve shared memories when family members cannot be together.",
       "thumbnail": "/images/projects/soridam.png",
       "link": "https://www.youtube.com/watch?v=LrO6cmoMTF4",
       "time": "2022",
@@ -177,7 +177,7 @@
     },
     {
       "title": "Be With You: A Soft Hug for Every Silent Struggle",
-      "description": "Developed a self-guided mental wellness platform powered by an LLM-based chatbot that provides psychological wellness framework to help users structure negative thoughts and ease emotional distress. With each response, comforting capybara characters gather around the user, culminating in a personalized message of encouragement generated by the LLM.",
+      "description": "Putting difficult feelings into words can be a barrier to reflecting on them. Be With You uses an LLM-based conversation guided by a psychological wellness framework to help users describe and organize their thoughts. Capybara characters and a personalized message of encouragement accompany the conversation. The project explores a gentle entry point to self-guided emotional reflection through conversation and affective feedback.",
       "thumbnail": "/images/projects/be_with_you.png",
       "link": "https://youtu.be/BK_KMwFTS7g",
       "time": "2024",
@@ -190,7 +190,7 @@
     },
     {
       "title": "Peach Seoga: Text Simplification Platform for Slow Learners",
-      "description": "Collaborated with the non-profit Peach Market to develop an LLM-powered service that generates easy-to-read draft texts for learners with cognitive or developmental challenges. By uploading original content and selecting a desired format, users receive drafts based on prompts co-designed with experts — reducing the adaptation process from over a day to under one minute.",
+      "description": "Adapting everyday information into easy-to-read materials takes repeated work from educators and accessibility specialists. With the non-profit Peach Market, I helped develop an LLM-powered service that turns source content into accessible drafts for learners with cognitive or developmental challenges. Prompts were co-designed with experts, and users choose the output format. The service supports the drafting step so specialists can focus on reviewing and adapting materials to learners' needs.",
       "thumbnail": "/images/projects/peach_seoga.png",
       "link": "https://ai.peachseoga.com/",
       "time": "2024-2025",
@@ -202,37 +202,37 @@
       "title": "GIST Creative Convergence Competition 2nd Prize",
       "organization": "Gwangju Institute of Science and Technology",
       "time": "2020",
-      "description": "Developed an AI model for forecasting solar power generation and optimizing energy scheduling on campus"
+      "description": "Developed an AI model to forecast campus solar power generation and support energy scheduling based on expected supply."
     },
     {
       "title": "Oasis Hackathon Special Awards",
       "organization": "Honam ICT Innovation Square",
       "time": "2021",
-      "description": "A job aggregator that lets users search across all platforms and receive email for saved interests."
+      "description": "Built a job aggregator to reduce fragmented searches across hiring platforms, combining job listings with email alerts for saved interests."
     },
     {
       "title": "GIST Demo Day 2nd Prize",
       "organization": "Gwangju Institute of Science and Technology",
       "time": "2023",
-      "description": "Developed a service enabling children to converse with their own drawn characters, featuring customizable TTS models built from parental voice recordings."
+      "description": "Developed a service that turns children's drawings into conversational characters, with customizable TTS based on parental voice recordings."
     },
     {
       "title": "GDSC GIST Hackathon 2nd Prize",
       "organization": "Gwangju Institute of Science and Technology",
       "time": "2023",
-      "description": "Developed a self-guided mental wellness platform powered by an LLM-based chatbot that provides psychological wellness framework to help users structure negative thoughts and ease emotional distress."
+      "description": "Developed an LLM-based conversation platform that helps users put difficult thoughts into words and organize them using a psychological wellness framework."
     },
     {
       "title": "K-ium Medical AI Competition Excellence Award",
       "organization": "Pusan National University Hospital",
       "time": "2023",
-      "description": "Built a deep learning model for cerebral aneurysm localization using cerebral angiography imaging data."
+      "description": "Built a deep learning model to localize cerebral aneurysms in angiography images, exploring automated support for identifying relevant regions in medical imaging."
     },
     {
       "title": "UN AI4Good Hackathon Chairman's Award, Innopolis Foundation",
       "organization": "Ministry of Science and ICT, Korea",
       "time": "2024",
-      "description": "Developed a multimodal LLM-based online shopping assistant for visually impaired users, capable of extracting on-screen information and providing voice-based responses to user queries."
+      "description": "Developed a multimodal LLM-based shopping assistant that turns on-screen information into voice-based answers, helping visually impaired users access product information through their own questions."
     }
   ],
   "otherExperiences": [

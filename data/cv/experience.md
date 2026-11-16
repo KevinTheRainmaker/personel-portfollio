@@ -38,11 +38,11 @@ description: "Work experience and professional career details"
 
 **Location**: Seoul, Korea
 
-**Initial MVP development team for SickGPT, a chatbot for medical record understanding**
+**Contributed to the initial SickGPT MVP team, supporting medical record understanding through conversation**
 
-    					- Designed a role-playing pipeline where agents interact to generate dialogue data, which was then used to fine-tune LLaMA2-7B.
+- Designed a role-playing pipeline to generate dialogue data for fine-tuning LLaMA2-7B, connecting medical-record content with conversational questions and answers.
 
-    					- Developed an evaluation module measuring question relevance, BLEU score, and answer grounding
+- Developed an evaluation module for question relevance, BLEU score, and answer grounding to check whether responses addressed the question and remained tied to the record.
 
     				  **Authored a research paper on ML-based severity prediction for Chronic Kidney Disease**
 
@@ -62,12 +62,12 @@ description: "Work experience and professional career details"
 
 **Location**: Seoul, Korea
 
-**Data-driven Hiring platform for Early-stage Startups**
+**Data-driven hiring platform connecting candidates with early-stage startup opportunities**
 
     				- **Co-founded** startup from 2021
 
     				- Raised **Seed-round funding** from two Venture Capitalists
 
-    				- Built **Personalized and Real-time Position Recommendation Algorithms** using GNNs
+- Built **personalized, real-time position recommendation algorithms** using GNNs to surface opportunities relevant to each candidate.
 
     				- Led **2022 Tech Incubator Program for Startup (TIPS)**

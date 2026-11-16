@@ -83,18 +83,19 @@ export default function HomePage() {
             style={{ color: "var(--dark)" }}
           >
             I&apos;m an <strong>AI × HCI researcher</strong> and{" "}
-            <strong>product-minded builder</strong>, passionate about creating
-            technologies that meaningfully improve human life.
+            <strong>product-minded builder</strong>. I build tools that help people
+            understand unfamiliar information, express what they want, and put
+            that understanding into action.
           </p>
 
           <p
             className="text-base leading-relaxed mb-8"
             style={{ color: "var(--dark)" }}
           >
-            I value <strong>responsibility</strong>, embrace{" "}
-            <strong>challenges</strong>, and strive to{" "}
-            <strong>move humanity forward</strong> through thoughtful
-            innovation.
+            My work spans <strong>accessible information</strong>,{" "}
+            <strong>learning and reflection</strong>, and{" "}
+            <strong>human–AI collaboration</strong>. I study how AI can reduce
+            effort while keeping people involved in the judgments that matter.
           </p>
 
           {/* Social icons */}

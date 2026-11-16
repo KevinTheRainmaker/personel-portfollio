@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   description: `Research interests and focus areas of ${siteConfig.name}`,
 };
 
-const researchPhilosophy = `I believe the most impactful AI research happens at the boundary between technology and human experience.
-My work is driven by a simple question: how do we build intelligent systems that genuinely help people -
-not just in controlled lab settings, but in the messy, unpredictable flow of everyday life?`;
+const researchPhilosophy = `I work on the gaps between having information, understanding it, and being able to act on it.
+My projects use AI and interaction design to make expertise more accessible, help people express their intentions,
+and support action without taking them out of important judgments.`;
 
 export default function ResearchPage() {
   return (
@@ -150,21 +150,23 @@ export default function ResearchPage() {
           style={{ color: "var(--mid)" }}
         >
           <p>
-            My journey started in software engineering - building products at a
-            startup, competing in hackathons, and learning what it means to ship
-            real software to real users. That grounding keeps me focused on
-            practicality: research should ultimately be deployable.
+            My earlier work ranged from personalized job recommendations at
+            GroupByHR to family voice-sharing in Soridam. These projects addressed
+            different barriers: finding relevant opportunities and carrying
+            emotional context across distance and time zones.
           </p>
           <p>
-            Through internships at SNUBH Medical AI Center and GroupByHR, I saw
-            firsthand how AI could either empower or frustrate people depending
-            on how thoughtfully it was designed. Those experiences shaped my
-            conviction that HCI and AI belong together.
+            Medical AI work at SNUBH, easy-to-read drafting with Peach Market,
+            and golf self-training in LEGOLAS brought a related question into
+            focus: how can specialized information become something a person
+            can understand and use in their own situation?
           </p>
           <p>
-            Today, I design and study AI systems through the lens of the people
-            who use them - asking not just &ldquo;does this work?&rdquo; but
-            &ldquo;does this help, and why?&rdquo;
+            My recent work extends this question to human–AI collaboration.
+            As systems take on more interpretation and execution, I study how
+            people can still express what matters, evaluate the assistance,
+            and shape the outcome. This is a developing research direction,
+            grounded in the practical problems of the projects I build.
           </p>
         </div>
       </section>
