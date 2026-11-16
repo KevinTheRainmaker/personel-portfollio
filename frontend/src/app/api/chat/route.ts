@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Langfuse } from "langfuse";
-import { buildSystemPrompt } from "@/lib/chat-prompt";
+import { buildSystemPrompt, validateResponseLinks } from "@/lib/chat-prompt";
 
 const OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1";
 const PRIMARY_MODEL = "google/gemini-3-flash-preview";
@@ -111,6 +111,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    response = validateResponseLinks(response);
     generation?.end({ output: response });
     trace?.update({ output: { response, modelUsed } });
     await langfuse?.flushAsync();

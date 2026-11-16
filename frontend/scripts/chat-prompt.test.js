@@ -17,7 +17,7 @@ function loadTs(file, imports) {
 }
 const profileData = JSON.parse(fs.readFileSync(path.join(root, '..', 'data/profile-data.json'), 'utf8'));
 const profileModule = loadTs('src/lib/profile.ts', { '../data/profile-data.json': profileData });
-const { buildSystemPrompt } = loadTs('src/lib/chat-prompt.ts', { './profile': profileModule });
+const { buildSystemPrompt, validateResponseLinks } = loadTs('src/lib/chat-prompt.ts', { './profile': profileModule });
 const prompt = buildSystemPrompt(new Date('2026-11-16T16:00:00Z'));
 test('chat receives the same current research narrative and position as the site', () => {
   for (const text of [profileModule.siteConfig.bio2, profileModule.siteConfig.title, ...profileModule.siteConfig.researchAreas.map(a => a.title)]) assert.ok(prompt.includes(text));
@@ -38,4 +38,12 @@ test('home emphasizes connected capabilities and agency without the pink accent'
   assert.ok(page.includes('<strong key={index}>'));
   assert.ok(!page.includes('--rq-accent'));
   assert.ok(!css.includes('--rq-accent'));
+});
+
+test('response links retain verified paper and page URLs but remove invented destinations', () => {
+  const paper = profileData.publications.find(p => p.link);
+  assert.equal(validateResponseLinks(`[Paper](${paper.link})`), `[Paper](${paper.link})`);
+  assert.equal(validateResponseLinks('[Research](/research)'), '[Research](/research)');
+  assert.equal(validateResponseLinks('[Peach Seoga](/projects)'), 'Peach Seoga');
+  assert.equal(validateResponseLinks('[Paper](https://example.com/invented)'), 'Paper');
 });
