@@ -91,15 +91,12 @@ export default function HomePage() {
             style={{ color: "var(--dark)" }}
           >
             {siteConfig.bio2
-              .split(/(extend human capabilities|without replacing or overwhelming the people they support)/)
+              .split(/(how AI and interactive systems can extend human capabilities|how people can retain their agency without being replaced or overwhelmed by AI)/)
               .map((text, index) =>
                 index % 2 === 1 ? (
-                  <span
-                    key={index}
-                    style={{ color: index === 1 ? "var(--rq-capability)" : "var(--rq-agency)" }}
-                  >
+                  <strong key={index} style={{ color: "var(--rq-accent)" }}>
                     {text}
-                  </span>
+                  </strong>
                 ) : text
               )}
           </p>

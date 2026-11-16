@@ -15,8 +15,7 @@
   --border: #e5e3df;
   --name: #e879b3;
   --send: #4f46e5;
-  --rq-capability: #4f46e5;
-  --rq-agency: #a02c6d;
+  --rq-accent: #e979b3;
 }
 
 .dark {
@@ -32,8 +31,7 @@
   --border: #2a2520;
   --name: #f9a8d4;
   --send: #818cf8;
-  --rq-capability: #a5b4fc;
-  --rq-agency: #f9a8d4;
+  --rq-accent: #e979b3;
 }
 
 * {

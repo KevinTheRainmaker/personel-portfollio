@@ -8,7 +8,7 @@ export const siteConfig = {
   title:
     "Ph.D. Student at HCIS Lab, Gwangju Institute of Science and Technology",
   bio: "I study interactions that help people understand, create, and act with AI while retaining their judgment and agency.",
-  bio2: "My work explores how AI and interactive systems can extend human capabilities without replacing or overwhelming the people they support.",
+  bio2: "My work explores how AI and interactive systems can extend human capabilities and how people can retain their agency without being replaced or overwhelmed by AI.",
   researchAreas: [
     {
       title: "Human–AI Interaction",
