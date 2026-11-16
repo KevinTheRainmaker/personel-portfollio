@@ -7,6 +7,19 @@ export const siteConfig = {
   name: "Kangbeen Ko",
   title:
     "Ph.D. Student at HCIS Lab, Gwangju Institute of Science and Technology",
+  identity: { research: "AI × HCI researcher", practice: "product-minded builder" },
+  currentPosition: {
+    role: "Ph.D. Student (M.S./Ph.D. Integrated Course)",
+    lab: "Human-Centered Intelligent System Lab",
+    institution: "GIST (Gwangju Institute of Science and Technology)",
+    period: "Mar. 2025 – Present",
+    advisor: "Prof. SeungJun Kim",
+  },
+  background: [
+    "I have been interested in using AI to support people in their work and everyday lives. At GroupByHR, I worked on AI-based recruitment recommendations to help early-stage startups find suitable talent. With Peach Seoga, I explored AI-assisted easy-to-read drafting to make information easier to understand and use.",
+    "Through this work, I began to ask what role people should play as AI becomes more capable. What should people continue to judge, contribute, and shape when working with AI? This question led me to study Human–Computer Interaction.",
+    "I now study how people can work with AI in ways that extend their capabilities without replacing them or overwhelming them with the effort of managing it. I am especially interested in how people can delegate work while still bringing their own expertise, understanding the process, and shaping the outcome.",
+  ],
   bio: "I study interactions that help people understand, create, and act with AI while retaining their judgment and agency.",
   bio2: "My work explores how AI and interactive systems can extend human capabilities while preserving people’s agency, so that support empowers rather than replaces or overwhelms them.",
   researchAreas: [
@@ -32,7 +45,7 @@ export const siteConfig = {
   email: "kangbeen.ko@gm.gist.ac.kr",
   links: {
     github: "https://github.com/KevinTheRainmaker",
-    linkedin: "www.linkedin.com/in/kevin-the-rainmaker",
+    linkedin: "https://www.linkedin.com/in/kevin-the-rainmaker",
     scholar: "https://scholar.google.com/citations?user=0wA0FGgAAAAJ",
     lab: "https://sites.google.com/view/gist-hcis-lab/home",
     instagram: "https://www.instagram.com/lucete_lactea/",

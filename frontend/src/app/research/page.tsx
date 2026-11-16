@@ -114,14 +114,13 @@ export default function ResearchPage() {
               className="font-medium text-base"
               style={{ color: "var(--dark)" }}
             >
-              Ph.D. Student (M.S./Ph.D. Integrated Course) - Human-Centered Intelligent System Lab
+              {siteConfig.currentPosition.role} - {siteConfig.currentPosition.lab}
             </p>
             <p className="text-base" style={{ color: "var(--mid)" }}>
-              GIST (Gwangju Institute of Science and Technology) · Mar. 2025 –
-              Present
+              {siteConfig.currentPosition.institution} · {siteConfig.currentPosition.period}
             </p>
             <p className="text-base mt-1" style={{ color: "var(--muted)" }}>
-              Advisor: Prof. SeungJun Kim
+              Advisor: {siteConfig.currentPosition.advisor}
             </p>
           </div>
           <a
@@ -147,26 +146,9 @@ export default function ResearchPage() {
           className="space-y-4 text-base leading-relaxed"
           style={{ color: "var(--mid)" }}
         >
-          <p>
-            I have been interested in using AI to support people in their work
-            and everyday lives. At GroupByHR, I worked on AI-based recruitment
-            recommendations to help early-stage startups find suitable talent.
-            With Peach Seoga, I explored AI-assisted easy-to-read drafting to
-            make information easier to understand and use.
-          </p>
-          <p>
-            Through this work, I began to ask what role people should play as
-            AI becomes more capable. What should people continue to judge,
-            contribute, and shape when working with AI? This question led me
-            to study Human–Computer Interaction.
-          </p>
-          <p>
-            I now study how people can work with AI in ways that extend their
-            capabilities without replacing them or overwhelming them with the
-            effort of managing it. I am especially interested in how people
-            can delegate work while still bringing their own expertise,
-            understanding the process, and shaping the outcome.
-          </p>
+          {siteConfig.background.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
       </section>
     </div>

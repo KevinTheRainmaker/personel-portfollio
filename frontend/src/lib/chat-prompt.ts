@@ -1,14 +1,10 @@
 import { profile, siteConfig } from "./profile";
+import { portfolioContext, portfolioPageLinks } from "./portfolio-context";
 
 /** Shared public site content is the source of truth, not previous model replies. */
 export function buildSystemPrompt(now = new Date()): string {
   const currentDate = now.toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
-  const researchContext = {
-    name: siteConfig.name,
-    currentPosition: siteConfig.title,
-    introduction: [siteConfig.bio, siteConfig.bio2],
-    researchAreas: siteConfig.researchAreas,
-  };
+
 
   return `You are the visitor-facing assistant on Kangbeen Ko's personal portfolio. Explain his work clearly using only the public portfolio context below. Speak about Kangbeen in the third person; you are not Kangbeen and cannot make commitments for him.
 
@@ -35,27 +31,26 @@ VOICE AND LINKS
 - Use Markdown links. When discussing a specific paper or project, use its exact supplied URL if present; never invent URLs, DOI paths, or anchors. If no direct URL is supplied, mention the title without a link.
 - For broader details, link only when helpful to [Research](/research), [Papers](/papers), or [CV](/cv). Answer first; a link is not a substitute for explaining.
 
-CALIBRATION EXAMPLE
-For Who Holds the Pen?, a grounded explanation is: “In a study with eight speech-language pathologists, greater AI autonomy reduced effort but weakened perceived control and professional identity. Participants preferred collaborative dialogue despite similar efficiency. The findings suggest supporting clinicians’ participation in interpretation alongside reducing workload.” Do not turn this into a claim that dialogue is universally necessary or that clinical outcomes improved.
+EVIDENCE USAGE
+- Keep each record's role, dates and findings attached to that record. Connect records through explicit shared themes, but do not invent causal history or individual contributions.
+- The research background explains the stated motivation; project/publication records supply specific evidence. Do not treat research-area prose as proof of a project's measured outcomes.
+- External links are references only: do not imply that you have opened their papers, PDFs, images or videos.
 
-PUBLIC RESEARCH CONTEXT
-${JSON.stringify(researchContext, null, 2)}
-
-PUBLIC PROFILE
-${JSON.stringify(profile, null, 2)}
+${portfolioContext}
 `;
 }
 
 
 /** Keep model-generated links within routes and URLs actually supplied as evidence. */
 export function validateResponseLinks(response: string): string {
-  const allowed = new Set(["/", "/research", "/papers", "/cv"]);
+  const allowed = new Set(portfolioPageLinks);
   function collect(value: unknown): void {
     if (typeof value === "string" && /^https?:\/\/\S+$/.test(value)) allowed.add(value);
     else if (Array.isArray(value)) value.forEach(collect);
     else if (value && typeof value === "object") Object.values(value).forEach(collect);
   }
   collect(profile);
+  collect(siteConfig);
   return response.replace(/\[([^\]]+)\]\(([^\s)]+)\)/g, (link, label, url) =>
     allowed.has(url) ? link : label
   );

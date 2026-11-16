@@ -17,7 +17,8 @@ function loadTs(file, imports) {
 }
 const profileData = JSON.parse(fs.readFileSync(path.join(root, '..', 'data/profile-data.json'), 'utf8'));
 const profileModule = loadTs('src/lib/profile.ts', { '../data/profile-data.json': profileData });
-const { buildSystemPrompt, validateResponseLinks } = loadTs('src/lib/chat-prompt.ts', { './profile': profileModule });
+const contextModule = loadTs('src/lib/portfolio-context.ts', { './profile': profileModule });
+const { buildSystemPrompt, validateResponseLinks } = loadTs('src/lib/chat-prompt.ts', { './profile': profileModule, './portfolio-context': contextModule });
 const prompt = buildSystemPrompt(new Date('2026-11-16T16:00:00Z'));
 test('chat receives the same current research narrative and position as the site', () => {
   for (const text of [profileModule.siteConfig.bio2, profileModule.siteConfig.title, ...profileModule.siteConfig.researchAreas.map(a => a.title)]) assert.ok(prompt.includes(text));
@@ -47,3 +48,42 @@ test('response links retain verified paper and page URLs but remove invented des
   assert.equal(validateResponseLinks('[Peach Seoga](/projects)'), 'Peach Seoga');
   assert.equal(validateResponseLinks('[Paper](https://example.com/invented)'), 'Paper');
 });
+
+
+test('every profile record and every site config field enters full context without retrieval', () => {
+  for (const records of Object.values(profileData)) {
+    for (const record of records) assert.ok(prompt.includes(JSON.stringify(record)));
+  }
+  assert.ok(prompt.includes(JSON.stringify(profileModule.siteConfig)));
+});
+
+test('background and position are rendered from the same source used by chat', () => {
+  const researchPage = fs.readFileSync(path.join(root, 'src/app/research/page.tsx'), 'utf8');
+  assert.ok(researchPage.includes('siteConfig.background.map'));
+  for (const field of ['role', 'lab', 'institution', 'period', 'advisor']) {
+    assert.ok(researchPage.includes(`siteConfig.currentPosition.${field}`));
+    assert.ok(prompt.includes(profileModule.siteConfig.currentPosition[field]));
+  }
+  for (const paragraph of profileModule.siteConfig.background) assert.ok(prompt.includes(paragraph));
+});
+
+test('future fields and sections are included without a second curated knowledge file', () => {
+  const output = contextModule.buildPortfolioContext({ projects: [{title: 'Test', newContextField: 'Unique evidence'}], futureSection: [{detail: 'New record'}] }, {futureConfig: 'Site fact'});
+  for (const value of ['Unique evidence', 'New record', 'Site fact']) assert.ok(output.includes(value));
+});
+
+test('site social links and verified CV anchors survive link validation', () => {
+  for (const url of [...Object.values(profileModule.siteConfig.links), '/cv#projects']) {
+    assert.equal(validateResponseLinks(`[Source](${url})`), `[Source](${url})`);
+  }
+  assert.equal(validateResponseLinks('[Unknown](/cv#invented)'), 'Unknown');
+});
+
+test('linked resources are not misrepresented as ingested content', () => {
+  assert.ok(prompt.includes('Linked PDFs, external websites, images and videos are not read'));
+  assert.ok(prompt.includes('do not imply that you have opened'));
+});
+
+if (process.env.CHAT_CONTEXT_REPORT === '1') {
+  console.log(JSON.stringify({ contextCharacters: contextModule.portfolioContext.length, systemPromptCharacters: prompt.length, approximateTokensCharsDiv4: Math.ceil(prompt.length / 4), recordCounts: Object.fromEntries(Object.entries(profileData).map(([key, records]) => [key, records.length])) }, null, 2));
+}

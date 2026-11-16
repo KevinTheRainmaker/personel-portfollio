@@ -82,8 +82,8 @@ export default function HomePage() {
             className="text-base leading-relaxed mb-4"
             style={{ color: "var(--dark)" }}
           >
-            I&apos;m an <strong>AI × HCI researcher</strong> and{" "}
-            <strong>product-minded builder</strong>. {siteConfig.bio}
+            I&apos;m an <strong>{siteConfig.identity.research}</strong> and{" "}
+            <strong>{siteConfig.identity.practice}</strong>. {siteConfig.bio}
           </p>
 
           <p
