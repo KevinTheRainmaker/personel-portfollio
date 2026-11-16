@@ -10,7 +10,8 @@
     "test:publications": "node --test scripts/publications.test.js",
     "sync-data": "node scripts/sync-data.js",
     "predev": "node scripts/sync-data.js",
-    "prebuild": "node scripts/sync-data.js"
+    "prebuild": "node scripts/sync-data.js",
+    "test:chat": "node --test scripts/chat-prompt.test.js"
   },
   "dependencies": {
     "langfuse": "^3.38.20",
