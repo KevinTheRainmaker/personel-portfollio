@@ -87,3 +87,9 @@ test('linked resources are not misrepresented as ingested content', () => {
 if (process.env.CHAT_CONTEXT_REPORT === '1') {
   console.log(JSON.stringify({ contextCharacters: contextModule.portfolioContext.length, systemPromptCharacters: prompt.length, approximateTokensCharsDiv4: Math.ceil(prompt.length / 4), recordCounts: Object.fromEntries(Object.entries(profileData).map(([key, records]) => [key, records.length])) }, null, 2));
 }
+
+
+test('prompt forbids carrying undergraduate affiliation into graduate facts or inferring duties from authorship', () => {
+  assert.ok(prompt.includes('A bachelor’s major does not identify the current graduate department'));
+  assert.ok(prompt.includes('Author order establishes author order only'));
+});
