@@ -148,25 +148,24 @@ export default function ResearchPage() {
           style={{ color: "var(--mid)" }}
         >
           <p>
-            My earlier work ranged from personalized job recommendations at
-            GroupByHR to family voice-sharing in Soridam. These projects addressed
-            different barriers: finding relevant opportunities and carrying
-            emotional context across distance and time zones.
+            I have been interested in using AI to support people in their work
+            and everyday lives. At GroupByHR, I worked on AI-based recruitment
+            recommendations to help early-stage startups find suitable talent.
+            With Peach Seoga, I explored AI-assisted easy-to-read drafting to
+            make information easier to understand and use.
           </p>
           <p>
-            Medical AI work at SNUBH, easy-to-read drafting with Peach Market,
-            and golf self-training in LEGOLAS brought a related question into
-            focus: how can specialized information become something a person
-            can understand and use in their own situation?
+            Through this work, I began to ask what role people should play as
+            AI becomes more capable. What should people continue to judge,
+            contribute, and shape when working with AI? This question led me
+            to study Human–Computer Interaction.
           </p>
           <p>
-            These projects inform a broader goal: extending human capabilities
-            without replacing people or overwhelming them with the work of
-            managing AI. My recent work on human–AI collaboration asks how people
-            can delegate effort while still understanding the assistance,
-            contributing their expertise, and shaping the outcome. This is a
-            developing research direction grounded in the practical problems
-            of the projects I build.
+            I now study how people can work with AI in ways that extend their
+            capabilities without replacing them or overwhelming them with the
+            effort of managing it. I am especially interested in how people
+            can delegate work while still bringing their own expertise,
+            understanding the process, and shaping the outcome.
           </p>
         </div>
       </section>

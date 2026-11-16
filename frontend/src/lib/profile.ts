@@ -6,7 +6,7 @@ export const profile = rawData as ProfileData;
 export const siteConfig = {
   name: "Kangbeen Ko",
   title:
-    "Ph.D. Student (M.S./Ph.D. Integrated Course) at HCIS Lab, Gwangju Institute of Science and Technology",
+    "Ph.D. Student at HCIS Lab, Gwangju Institute of Science and Technology",
   bio: "I study interactions that help people understand, create, and act with AI while retaining their judgment and agency.",
   bio2: "My work explores how AI and interactive systems can extend human capabilities without replacing or overwhelming the people they support.",
   researchAreas: [
