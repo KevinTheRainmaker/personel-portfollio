@@ -7,32 +7,26 @@ export const siteConfig = {
   name: "Kangbeen Ko",
   title:
     "M.S. Student at HCIS Lab, at Gwangju Institute of Science and Technology",
-  bio: "I build AI and HCI tools that help people understand unfamiliar information, express what they want, and put that understanding into action.",
-  bio2: "My work spans accessible information, learning and reflection, and human–AI collaboration. I study how AI can reduce effort while keeping people involved in the judgments that matter.",
+  bio: "I study interactions that help people understand, create, and act with AI while retaining their judgment and agency.",
+  bio2: "My work explores how AI and interactive systems can extend human capabilities without replacing or overwhelming the people they support.",
   researchAreas: [
     {
-      title: "Accessibility",
+      title: "Human–AI Interaction",
       description:
-        "How can people use information that is difficult to read, interpret, or access? My work includes easy-to-read drafting with Peach Seoga, conversational access to medical records in SickGPT, and voice-based access to shopping information. I build interfaces that connect specialized information with the questions and needs of the person using it.",
-      keywords: ["Accessibility", "HCI", "LLMs"],
+        "How can people communicate their intentions, understand AI assistance, and guide what happens next? I explore interactions that make AI useful in people's own contexts, from conversational access to medical information in SickGPT to AI-assisted learning and professional work.",
+      keywords: ["Interaction", "Collaboration", "Intent"],
     },
     {
-      title: "Learning",
+      title: "Human Augmentation",
       description:
-        "A result or error display can leave people unsure what to do next. In LEGOLAS, verbal explanations complement visual golf feedback to help learners understand corrections. Projects such as Be With You explore how conversation can help people articulate and reflect on their experience. I am interested in assistance that builds understanding as well as supporting the immediate task.",
-      keywords: ["Learning", "Feedback", "Reflection"],
+        "I build tools that extend what people can understand, express, and do. My projects span easy-to-read drafting with Peach Seoga, verbal and visual golf feedback in LEGOLAS, and voice-based communication in Soridam. Across these settings, I am interested in support that expands people's capabilities rather than simply doing the task for them.",
+      keywords: ["Augmentation", "Learning", "Feedback"],
     },
     {
-      title: "Interaction",
+      title: "Human Agency",
       description:
-        "People may know what they want without knowing how to express it in a system's technical terms. I explore how interaction can help them clarify intentions, examine alternatives, and guide what AI does. This connects my interest in intent-sensitive interfaces with questions about delegation and control in AI-assisted programming.",
-      keywords: ["Interaction", "Delegation", "Agency"],
-    },
-    {
-      title: "Collaboration",
-      description:
-        "Reducing effort is only part of helping a professional. Who Holds the Pen? examines how different AI collaboration modes affect clinicians' participation in interpretation, perceived control, and professional identity. I study interaction structures that let people contribute their expertise, question suggestions, and retain authorship over consequential judgments.",
-      keywords: ["Collaboration", "Authorship", "Agency"],
+        "As AI takes on more work, how can people retain judgment, authorship, and control without being overwhelmed by supervision? Who Holds the Pen? examines clinicians' participation and perceived control across AI collaboration modes. My developing work on AI-assisted programming asks how people can delegate execution while continuing to shape and understand the outcome.",
+      keywords: ["Agency", "Delegation", "Authorship"],
     },
   ],
   email: "kangbeen.ko@gm.gist.ac.kr",

@@ -6,9 +6,7 @@ export const metadata: Metadata = {
   description: `Research interests and focus areas of ${siteConfig.name}`,
 };
 
-const researchPhilosophy = `I work on the gaps between having information, understanding it, and being able to act on it.
-My projects use AI and interaction design to make expertise more accessible, help people express their intentions,
-and support action without taking them out of important judgments.`;
+const researchPhilosophy = `${siteConfig.bio} ${siteConfig.bio2}`;
 
 export default function ResearchPage() {
   return (
@@ -162,11 +160,13 @@ export default function ResearchPage() {
             can understand and use in their own situation?
           </p>
           <p>
-            My recent work extends this question to human–AI collaboration.
-            As systems take on more interpretation and execution, I study how
-            people can still express what matters, evaluate the assistance,
-            and shape the outcome. This is a developing research direction,
-            grounded in the practical problems of the projects I build.
+            These projects inform a broader goal: extending human capabilities
+            without replacing people or overwhelming them with the work of
+            managing AI. My recent work on human–AI collaboration asks how people
+            can delegate effort while still understanding the assistance,
+            contributing their expertise, and shaping the outcome. This is a
+            developing research direction grounded in the practical problems
+            of the projects I build.
           </p>
         </div>
       </section>
