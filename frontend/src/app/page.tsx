@@ -90,7 +90,18 @@ export default function HomePage() {
             className="text-base leading-relaxed mb-8"
             style={{ color: "var(--dark)" }}
           >
-            {siteConfig.bio2}
+            {siteConfig.bio2
+              .split(/(extend human capabilities|without replacing or overwhelming the people they support)/)
+              .map((text, index) =>
+                index % 2 === 1 ? (
+                  <span
+                    key={index}
+                    style={{ color: index === 1 ? "var(--rq-capability)" : "var(--rq-agency)" }}
+                  >
+                    {text}
+                  </span>
+                ) : text
+              )}
           </p>
 
           {/* Social icons */}
