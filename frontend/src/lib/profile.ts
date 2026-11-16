@@ -11,28 +11,28 @@ export const siteConfig = {
   bio2: "My work spans accessible information, learning and reflection, and human–AI collaboration. I study how AI can reduce effort while keeping people involved in the judgments that matter.",
   researchAreas: [
     {
-      title: "Accessible Information & Expertise",
+      title: "Accessibility",
       description:
         "How can people use information that is difficult to read, interpret, or access? My work includes easy-to-read drafting with Peach Seoga, conversational access to medical records in SickGPT, and voice-based access to shopping information. I build interfaces that connect specialized information with the questions and needs of the person using it.",
-      keywords: ["Accessibility", "Information Access", "Conversational Interfaces", "Expert Knowledge"],
+      keywords: ["Accessibility", "HCI", "LLMs"],
     },
     {
-      title: "Learning Through Explanation & Reflection",
+      title: "Learning",
       description:
         "A result or error display can leave people unsure what to do next. In LEGOLAS, verbal explanations complement visual golf feedback to help learners understand corrections. Projects such as Be With You explore how conversation can help people articulate and reflect on their experience. I am interested in assistance that builds understanding as well as supporting the immediate task.",
-      keywords: ["Self-Directed Learning", "Explanatory Feedback", "Reflection", "LLM Applications"],
+      keywords: ["Learning", "Feedback", "Reflection"],
     },
     {
-      title: "Expressing Intent & Shaping AI Assistance",
+      title: "Interaction",
       description:
         "People may know what they want without knowing how to express it in a system's technical terms. I explore how interaction can help them clarify intentions, examine alternatives, and guide what AI does. This connects my interest in intent-sensitive interfaces with questions about delegation and control in AI-assisted programming.",
-      keywords: ["Intent Expression", "Human–AI Interaction", "Delegation", "User Control"],
+      keywords: ["Interaction", "Delegation", "Agency"],
     },
     {
-      title: "Professional Judgment & Human–AI Collaboration",
+      title: "Collaboration",
       description:
         "Reducing effort is only part of helping a professional. Who Holds the Pen? examines how different AI collaboration modes affect clinicians' participation in interpretation, perceived control, and professional identity. I study interaction structures that let people contribute their expertise, question suggestions, and retain authorship over consequential judgments.",
-      keywords: ["Professional Workflows", "Agency", "Authorship", "Collaborative AI"],
+      keywords: ["Collaboration", "Authorship", "Agency"],
     },
   ],
   email: "kangbeen.ko@gm.gist.ac.kr",
