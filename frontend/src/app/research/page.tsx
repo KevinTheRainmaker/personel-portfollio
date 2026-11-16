@@ -114,7 +114,7 @@ export default function ResearchPage() {
               className="font-medium text-base"
               style={{ color: "var(--dark)" }}
             >
-              M.S. Candidate - Human-Centered Intelligent System Lab
+              Ph.D. Student (M.S./Ph.D. Integrated Course) - Human-Centered Intelligent System Lab
             </p>
             <p className="text-base" style={{ color: "var(--mid)" }}>
               GIST (Gwangju Institute of Science and Technology) · Mar. 2025 –

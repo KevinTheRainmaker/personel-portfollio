@@ -17,7 +17,7 @@ description: "Complete CV with education, experience, projects, publications, an
 
 ## Education
 
-## Master of Engineering Degree
+## Ph.D. Student (M.S./Ph.D. Integrated Course)
 
 **Institution**: [Human-Centered Intelligent System Lab](https://sites.google.com/view/gist-hcis-lab)
 

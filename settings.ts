@@ -1,6 +1,6 @@
 export const profile = {
   fullName: "Kangbeen Ko",
-  title: "M.S. Student at HCIS Lab,",
+  title: "Ph.D. Student (M.S./Ph.D. Integrated Course) at HCIS Lab,",
   institute: "Gwangju Institute of Science and Technology",
   author_name: "Ko, K.", // Author name to be highlighted in the papers section
   research_areas: [

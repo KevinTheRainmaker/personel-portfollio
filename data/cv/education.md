@@ -3,7 +3,7 @@ title: "CV / Education"
 description: "Academic background and education details"
 ---
 
-## Master of Engineering Degree
+## Ph.D. Student (M.S./Ph.D. Integrated Course)
 
 **Institution**: [Human-Centered Intelligent System Lab](https://sites.google.com/view/gist-hcis-lab)
 
