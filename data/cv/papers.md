@@ -9,7 +9,7 @@ description: "Academic papers and publications"
 
 **Journal**: Proceedings of the 39th Annual ACM Symposium on User Interface Software and Technology (UIST 2026)
 
-**Published**: 2026
+**Published**: October 2026
 
 **Link**: [View Publication](https://dl.acm.org/doi/10.1145/3830398.3830652)
 
