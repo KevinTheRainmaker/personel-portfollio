@@ -1,7 +1,34 @@
 import type { ProfileData } from "./types";
 import rawData from "../data/profile-data.json";
 
-export const profile = rawData as ProfileData;
+// Sort display copies only; preserve source evidence and undated entries.
+export function latestDateKey(time: string = ""): number {
+  if (/\b(present|current|ongoing)\b/i.test(time)) return 99999999;
+  const months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+  const dates = [...time.matchAll(/\b(?:([A-Za-z]+)\.?\s+)?((?:19|20)\d{2})(?:-(0[1-9]|1[0-2])(?:-(0[1-9]|[12]\d|3[01]))?)?\b/g)];
+  return dates.reduce((latest, match) => {
+    const month = match[3] ? Number(match[3]) : Math.max(0, months.indexOf((match[1] || "").slice(0, 3).toLowerCase()) + 1);
+    return Math.max(latest, Number(match[2]) * 10000 + month * 100 + Number(match[4] || 0));
+  }, -1);
+}
+
+export function newestFirst<T extends { time: string; highlight?: boolean }>(items: T[], featuredFirst = false): T[] {
+  return [...items].sort((a, b) =>
+    (featuredFirst ? Number(b.highlight === true) - Number(a.highlight === true) : 0) ||
+    latestDateKey(b.time) - latestDateKey(a.time)
+  );
+}
+
+const source = rawData as ProfileData;
+export const profile: ProfileData = {
+  ...source,
+  education: newestFirst(source.education),
+  publications: newestFirst(source.publications, true),
+  experiences: newestFirst(source.experiences),
+  projects: newestFirst(source.projects),
+  awards: newestFirst(source.awards),
+  otherExperiences: newestFirst(source.otherExperiences),
+};
 
 export const siteConfig = {
   name: "Kangbeen Ko",

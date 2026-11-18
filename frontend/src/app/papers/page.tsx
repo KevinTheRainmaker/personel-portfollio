@@ -73,7 +73,7 @@ export default function PapersPage() {
         {profile.publications.map((pub, i) => {
           const isHighlight = pub.highlight === true;
           const authorPos = getAuthorPosition(pub.authors);
-          const hasMedia = Boolean(
+          const hasMedia = isHighlight && Boolean(
             pub.thumbnail && pub.thumbnailWidth && pub.thumbnailHeight && pub.thumbnailAlt
           );
 
@@ -135,7 +135,7 @@ export default function PapersPage() {
 
               </div>
 
-              {pub.thumbnail &&
+              {isHighlight && pub.thumbnail &&
                 pub.thumbnailWidth &&
                 pub.thumbnailHeight &&
                 pub.thumbnailAlt && (
