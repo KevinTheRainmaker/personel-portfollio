@@ -39,8 +39,10 @@ CV: [헤더] → [Education/Experience/Projects | Skills/Awards/Other]. 모바�
 - [x] CV를 단일 열 문서로 구성하고 이름·소속·연락처 및 표준 이력 섹션 정리
 - [x] 명시적 출판 상태를 데이터에 기록하고 CV에는 published만 최신순 서지 목록으로 표시
 - [x] 인쇄 시 챗봇/탐색 UI 제외, 문서 전체 흐름 유지
-- [ ] 미출판 배제·기존 내용·반응형·인쇄 검증 및 배포
+- [x] 미출판 배제·기존 내용·반응형·인쇄 검증 및 배포
 
 계획 검토: CV는 Featured 여부와 무관하게 출판된 논문의 시간순 기록을 제공한다. 원본 미출판 논문은 삭제하지 않는다. 기존 데이터상 Under Review 1건과 출판 기록 6건을 명시적 상태로 구분한다. Unknown/accepted/preprint를 published로 추정하지 않는다. 사용자 확정: CV와 Papers 모두 published만 표시한다. 홈 논문 목록도 같은 표시 대상을 사용한다. Education의 Autonomous Computing System Lab 및 Biomedical Informatics & Intelligence Lab 인턴 기록을 원본과 CV 문서에서 제거한다. Research는 이번 변경 범위가 아니다.
 
 검토: Publication/CV 10개와 챗봇 11개 테스트 PASS, 프로덕션 빌드/타입 검사 PASS. 실제 브라우저 1920/1440/1280/390px × CV/Papers에서 출판 논문 6편만 표시, 미출판 및 삭제한 Education 없음, 가로 넘침/잘림 없음 확인. CV 일곱 섹션은 모두 동일한 좌측 좌표로 단일 열. 인쇄 모드에서는 비문서 UI 숨김, body/main overflow visible, 마지막 섹션 존재 및 전체 높이 수용 확인. PC 스크린샷 시각 확인과 보안 검토 차단 사항 없음. 운영 반영은 후속 확인한다.
+
+운영 인수: 2471647 Vercel success. 실제 /cv에서 cv-document 단일 열(7개 섹션 같은 x좌표), Education 2개, 출판 논문6개, 삭제한 인턴2건 및 심사중 원고 미표시 확인. /papers도 출판6개·심사중 원고 미표시 확인. 두 화면 가로 넘침 없음.
