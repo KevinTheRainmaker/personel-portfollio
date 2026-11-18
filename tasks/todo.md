@@ -16,3 +16,18 @@
 - [x] 기존 테스트 및 Featured 최상단 정렬 확인 후 운영 배포 검증
 
 검토: 기존 Publication 7개·챗봇 11개 테스트 PASS. 895514c의 Vercel 배포 success 및 운영 /papers에서 첫 논문 MagToTheFuture, October 2026, Featured 표시를 직접 확인했다.
+
+## Research·CV PC 여백 재구성 (2026-11-18)
+
+- [x] Publications와 같은 최대 폭 1440px 및 반응형 바깥 여백 적용
+- [x] Research의 상위 연구 관심과 두 세부 관심, 소속·배경의 의미 있는 열 구성
+- [x] CV 주요 이력/보조 정보 2열 및 모바일 단일 열 구성
+- [ ] 기존 내용·정렬·앵커 보존, PC/모바일 실제 화면·테스트·빌드 검증 및 운영 배포
+
+설계: 기존 배경 #f8f7f5, 표면 #ffffff, 제목 #111111, 본문 #5a5a5a, 강조 #6366f1, 경계 #e5e3df 및 현재 sans/mono 글꼴을 유지한다. 최대 폭 1440px, PC 내부 여백 32–48px, 내용 간격 24–48px. 제목·문단 왼쪽 정렬, 본문은 16px 이상과 65–80ch 이내를 목표로 한다.
+
+Research: [제목 | 연구 관점] → [Human–AI Interaction: 제목/태그 | 설명] → [Human Augmentation | Human Agency] → [Current Position | Background]. 세 관심 분야를 무조건 같은 카드 세 개로 나열하기보다 포괄 주제와 세부 주제의 흐름에 맞춰 배치한다.
+CV: [헤더] → [Education/Experience/Projects | Skills/Awards/Other]. 모바일·인쇄는 단일 열. 원문, 기간, 링크, 정렬 기준을 바꾸지 않는다.
+계획 검토: 원래의 좁은 max-w-3xl에 폭만 늘리면 줄 길이가 과해지므로, PC 공간은 본문 확대가 아닌 열 구성에 사용한다. 공통 사이드바와 챗봇 동작은 유지한다.
+
+검토: 기존 테스트 18개 및 프로덕션 빌드/타입 검사 PASS. 보안 검토 차단 사항 없음. 1920/1440/1280/1024/390px 두 페이지 총10조건에서 가로 넘침·텍스트 박스 잘림 없음. 운영 CV와 로컬 CV의 여섯 섹션 텍스트가 동일함을 DOM 비교로 확인했다. 1440px 기준 내용 폭 768→1054px, Research 높이 1981→1423px, CV 5241→3845px로 줄었다. PC 상단/하단 스크린샷 시각 검토 완료. 운영 배포는 후속 확인한다.
