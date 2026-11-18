@@ -33,7 +33,7 @@ Putting difficult feelings into words can be a barrier to reflecting on them. Be
 
 ## Peach Seoga: Text Simplification Platform for Slow Learners
 
-**Period**: 2024-2025
+**Period**: 2024–2026
 
 **Link**: [View Project](https://ai.peachseoga.com/)
 

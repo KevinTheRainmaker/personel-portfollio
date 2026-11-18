@@ -46,3 +46,9 @@ CV: [헤더] → [Education/Experience/Projects | Skills/Awards/Other]. 모바�
 검토: Publication/CV 10개와 챗봇 11개 테스트 PASS, 프로덕션 빌드/타입 검사 PASS. 실제 브라우저 1920/1440/1280/390px × CV/Papers에서 출판 논문 6편만 표시, 미출판 및 삭제한 Education 없음, 가로 넘침/잘림 없음 확인. CV 일곱 섹션은 모두 동일한 좌측 좌표로 단일 열. 인쇄 모드에서는 비문서 UI 숨김, body/main overflow visible, 마지막 섹션 존재 및 전체 높이 수용 확인. PC 스크린샷 시각 확인과 보안 검토 차단 사항 없음. 운영 반영은 후속 확인한다.
 
 운영 인수: 2471647 Vercel success. 실제 /cv에서 cv-document 단일 열(7개 섹션 같은 x좌표), Education 2개, 출판 논문6개, 삭제한 인턴2건 및 심사중 원고 미표시 확인. /papers도 출판6개·심사중 원고 미표시 확인. 두 화면 가로 넘침 없음.
+
+## 활동 기간 정정 (2026-11-18)
+
+- [x] Technical Book Reviewer & Beta Reader를 2022 – 2026으로 수정
+- [x] Peach Seoga를 2024–2026으로 수정
+- [ ] 원본/CV 문서 일치, 기존 회귀 테스트 및 운영 반영 확인

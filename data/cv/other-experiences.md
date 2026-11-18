@@ -17,7 +17,7 @@ Selected for various early-stage startup competitions and accelerators, includin
 
 **Organization**: Hanbit Media, BJ Public
 
-**Period**: 2022 – 2024
+**Period**: 2022 – 2026
 
 Reviewed and contributed feedback for domestic and international IT publications. Authored endorsements and beta reviews for titles such as 'Reversed Python by Examples' and 'Reliable Data Engineering'; served as a preview reader for overseas titles in 2023.
 

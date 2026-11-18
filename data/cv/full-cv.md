@@ -142,7 +142,7 @@ Putting difficult feelings into words can be a barrier to reflecting on them. Be
 
 ## Peach Seoga: Text Simplification Platform for Slow Learners
 
-**Period**: 2024-2025
+**Period**: 2024–2026
 
 **Link**: [View Project](https://ai.peachseoga.com/)
 
@@ -316,7 +316,7 @@ Selected for various early-stage startup competitions and accelerators, includin
 
 **Organization**: Hanbit Media, BJ Public
 
-**Period**: 2022 – 2024
+**Period**: 2022 – 2026
 
 Reviewed and contributed feedback for domestic and international IT publications. Authored endorsements and beta reviews for titles such as 'Reversed Python by Examples' and 'Reliable Data Engineering'; served as a preview reader for overseas titles in 2023.
 

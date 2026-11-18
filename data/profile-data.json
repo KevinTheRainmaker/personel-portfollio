@@ -190,7 +190,7 @@
       "description": "Adapting everyday information into easy-to-read materials takes repeated work from educators and accessibility specialists. With the non-profit Peach Market, I helped develop an LLM-powered service that turns source content into accessible drafts for learners with cognitive or developmental challenges. Prompts were co-designed with experts, and users choose the output format. The service supports the drafting step so specialists can focus on reviewing and adapting materials to learners' needs.",
       "thumbnail": "/images/projects/peach_seoga.png",
       "link": "https://ai.peachseoga.com/",
-      "time": "2024-2025",
+      "time": "2024–2026",
       "tags": [
         "Accessibility",
         "AI for education",
@@ -246,7 +246,7 @@
     {
       "title": "Technical Book Reviewer & Beta Reader",
       "organization": "Hanbit Media, BJ Public",
-      "time": "2022 – 2024",
+      "time": "2022 – 2026",
       "description": "Reviewed and contributed feedback for domestic and international IT publications. Authored endorsements and beta reviews for titles such as 'Reversed Python by Examples' and 'Reliable Data Engineering'; served as a preview reader for overseas titles in 2023."
     },
     {
