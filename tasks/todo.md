@@ -13,4 +13,6 @@
 ## MagToTheFuture 발표 월 정정
 
 - [x] 사용자 확인에 따라 원본 데이터와 CV 문서의 날짜를 October 2026으로 수정
-- [ ] 기존 테스트 및 Featured 최상단 정렬 확인 후 운영 배포 검증
+- [x] 기존 테스트 및 Featured 최상단 정렬 확인 후 운영 배포 검증
+
+검토: 기존 Publication 7개·챗봇 11개 테스트 PASS. 895514c의 Vercel 배포 success 및 운영 /papers에서 첫 논문 MagToTheFuture, October 2026, Featured 표시를 직접 확인했다.
