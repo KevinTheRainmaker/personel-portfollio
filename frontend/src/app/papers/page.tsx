@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { profile } from "@/lib/profile";
+import { portfolioPublications } from "@/lib/profile";
 import PublicationMedia from "@/components/PublicationMedia";
 
 export const metadata: Metadata = {
@@ -42,7 +42,7 @@ function AuthorList({ authors }: { authors: string }) {
 }
 
 export default function PapersPage() {
-  const total = profile.publications.length;
+  const total = portfolioPublications.length;
 
   return (
     <div className="w-full max-w-[1440px] mx-auto px-4 py-8 md:px-8 md:py-12 xl:px-12 xl:py-16 animate-fade-up">
@@ -64,13 +64,13 @@ export default function PapersPage() {
           <span className="tag-accent text-xs font-mono">{total}</span>
         </div>
         <p className="text-base" style={{ color: "var(--mid)" }}>
-          Publications and manuscripts under review.
+          Published papers and conference proceedings.
         </p>
       </header>
 
       {/* Publication List */}
       <div className="space-y-6">
-        {profile.publications.map((pub, i) => {
+        {portfolioPublications.map((pub, i) => {
           const isHighlight = pub.highlight === true;
           const authorPos = getAuthorPosition(pub.authors);
           const hasMedia = isHighlight && Boolean(

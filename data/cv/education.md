@@ -22,23 +22,3 @@ description: "Academic background and education details"
 **Period**: Mar. 2019 – Aug. 2024
 
 **Location**: GIST, Gwangju, Korea
-
----
-
-## Undergraduate Research Intern
-
-**Institution**: [Autonomous Computing System Lab ](https://uehwan.github.io/)
-
-**Period**: Sep. 2022 – Feb. 2023
-
-**Location**: GIST, Gwangju, Korea
-
----
-
-## Education 4
-
-**Institution**: [Biomedical Informatics & Intelligence Lab ](https://www.biil-gist.net/)
-
-**Period**: Sep. 2020 – Aug. 2021
-
-**Location**: GIST, Gwangju, Korea

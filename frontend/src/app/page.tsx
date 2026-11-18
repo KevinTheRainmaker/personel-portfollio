@@ -1,4 +1,4 @@
-import { profile, siteConfig } from "@/lib/profile";
+import { profile, portfolioPublications, siteConfig } from "@/lib/profile";
 import Image from "next/image";
 
 function IconEmail() {
@@ -59,7 +59,7 @@ function IconInstagram() {
 }
 
 export default function HomePage() {
-  const recentPublications = profile.publications.slice(0, 3);
+  const recentPublications = portfolioPublications.slice(0, 3);
 
   return (
     <div className="px-4 py-8 md:px-12 md:py-12 w-full">

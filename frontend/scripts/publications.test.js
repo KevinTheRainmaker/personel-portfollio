@@ -133,8 +133,8 @@ test("rendered publications keep featured above regular and mount media only for
   });
   const html = renderToStaticMarkup(React.createElement(Page));
   const articles = [...html.matchAll(/<article\b[^>]*>[\s\S]*?<\/article>/g)].map(m => m[0]);
-  const shown = profileModule.profile.publications;
-  assert.equal(articles.length, publications.length);
+  const shown = profileModule.portfolioPublications;
+  assert.equal(articles.length, profileModule.portfolioPublications.length);
   let regularSeen = false;
   shown.forEach((pub, i) => {
     if (pub.highlight !== true) regularSeen = true;
@@ -145,6 +145,45 @@ test("rendered publications keep featured above regular and mount media only for
     assert.equal(/<img\b/.test(articles[i]), pub.highlight === true && Boolean(pub.thumbnail));
     if (pub.highlight !== true) assert.ok(!articles[i].includes("xl:grid-cols-"));
   });
+  for (const pub of publications.filter(p => p.status !== "published")) {
+    const escapedTitle = renderToStaticMarkup(React.createElement(React.Fragment, null, pub.title));
+    assert.ok(!html.includes(escapedTitle));
+  }
   assert.ok(mediaTitles.length > 0);
   assert.ok(mediaTitles.every(title => publications.find(p => p.title === title).highlight === true));
+});
+
+test("CV publication source requires explicit published status and ignores featured priority", () => {
+  const { publishedPublications: published, latestDateKey: key } = profileModule;
+  assert.equal(published.length, publications.filter(p => p.status === "published").length);
+  assert.ok(published.length > 0);
+  assert.ok(published.every(p => p.status === "published"));
+  for (let i = 1; i < published.length; i++) assert.ok(key(published[i - 1].time) >= key(published[i].time));
+  assert.ok(published.findIndex(p => p.title.startsWith("Demonstrating InteractiSense")) < published.findIndex(p => p.title.startsWith("LEGOLAS")));
+  assert.ok(profileModule.profile.publications.some(p => p.status === "under_review"));
+  const modified = JSON.parse(JSON.stringify(rawProfile));
+  for (const status of [undefined, "accepted", "preprint", "under_review"]) {
+    modified.publications.push({ ...publications.find(p => p.status === "published"), status, title: `Unpublished ${status}`, time: "2030" });
+  }
+  const filtered = loadTs("src/lib/profile.ts", { "../data/profile-data.json": modified }).publishedPublications;
+  assert.equal(filtered.length, published.length);
+});
+
+test("CV renders published citations without media or featured badges and preserves its anchors", () => {
+  const { default: CV } = loadTs("src/app/cv/page.tsx", { "@/lib/profile": profileModule });
+  const html = renderToStaticMarkup(React.createElement(CV));
+  const escape = text => renderToStaticMarkup(React.createElement(React.Fragment, null, text));
+  const publicationSection = html.match(/<section[^>]*id="publications"[^>]*>[\s\S]*?<\/section>/)?.[0];
+  assert.ok(publicationSection);
+  for (const pub of publications) assert.equal(publicationSection.includes(escape(pub.title)), pub.status === "published", pub.title);
+  assert.doesNotMatch(publicationSection, /<img|<video|<iframe|Featured|<details/);
+  for (const id of ["education", "publications", "skills", "experience", "projects", "awards", "other"]) assert.ok(html.includes(`id="${id}"`));
+});
+
+test("education omits the two removed undergraduate lab internship records", () => {
+  for (const name of ["Autonomous Computing System Lab", "Biomedical Informatics & Intelligence Lab"]) {
+    assert.ok(!rawProfile.education.some(e => e.school.includes(name)));
+    assert.ok(!fs.readFileSync(path.join(root, "data/cv/education.md"), "utf8").includes(name));
+    assert.ok(!fs.readFileSync(path.join(root, "data/cv/full-cv.md"), "utf8").includes(name));
+  }
 });

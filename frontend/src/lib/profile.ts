@@ -30,6 +30,14 @@ export const profile: ProfileData = {
   otherExperiences: newestFirst(source.otherExperiences),
 };
 
+// CV records are explicit published works, independent of portfolio featuring.
+export const publishedPublications = newestFirst(
+  profile.publications.filter(publication => publication.status === "published"),
+);
+
+// Portfolio cards retain featured-first ordering within published works.
+export const portfolioPublications = newestFirst(publishedPublications, true);
+
 export const siteConfig = {
   name: "Kangbeen Ko",
   title:

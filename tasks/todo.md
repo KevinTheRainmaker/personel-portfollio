@@ -33,3 +33,14 @@ CV: [헤더] → [Education/Experience/Projects | Skills/Awards/Other]. 모바�
 검토: 기존 테스트 18개 및 프로덕션 빌드/타입 검사 PASS. 보안 검토 차단 사항 없음. 1920/1440/1280/1024/390px 두 페이지 총10조건에서 가로 넘침·텍스트 박스 잘림 없음. 운영 CV와 로컬 CV의 여섯 섹션 텍스트가 동일함을 DOM 비교로 확인했다. 1440px 기준 내용 폭 768→1054px, Research 높이 1981→1423px, CV 5241→3845px로 줄었다. PC 상단/하단 스크린샷 시각 검토 완료. 운영 배포는 후속 확인한다.
 
 배포: 3889406의 Vercel success 확인. 실제 /research와 /cv에서 1440px 내용 폭1054px 및 PC 다중 열, 가로 넘침 없음 확인. Research 연구분야/배경/링크도 운영 이전본과 새 로컬 DOM 비교에서 동일했다.
+
+## 정식 학술 CV와 출판 실적 (2026-11-18)
+
+- [x] CV를 단일 열 문서로 구성하고 이름·소속·연락처 및 표준 이력 섹션 정리
+- [x] 명시적 출판 상태를 데이터에 기록하고 CV에는 published만 최신순 서지 목록으로 표시
+- [x] 인쇄 시 챗봇/탐색 UI 제외, 문서 전체 흐름 유지
+- [ ] 미출판 배제·기존 내용·반응형·인쇄 검증 및 배포
+
+계획 검토: CV는 Featured 여부와 무관하게 출판된 논문의 시간순 기록을 제공한다. 원본 미출판 논문은 삭제하지 않는다. 기존 데이터상 Under Review 1건과 출판 기록 6건을 명시적 상태로 구분한다. Unknown/accepted/preprint를 published로 추정하지 않는다. 사용자 확정: CV와 Papers 모두 published만 표시한다. 홈 논문 목록도 같은 표시 대상을 사용한다. Education의 Autonomous Computing System Lab 및 Biomedical Informatics & Intelligence Lab 인턴 기록을 원본과 CV 문서에서 제거한다. Research는 이번 변경 범위가 아니다.
+
+검토: Publication/CV 10개와 챗봇 11개 테스트 PASS, 프로덕션 빌드/타입 검사 PASS. 실제 브라우저 1920/1440/1280/390px × CV/Papers에서 출판 논문 6편만 표시, 미출판 및 삭제한 Education 없음, 가로 넘침/잘림 없음 확인. CV 일곱 섹션은 모두 동일한 좌측 좌표로 단일 열. 인쇄 모드에서는 비문서 UI 숨김, body/main overflow visible, 마지막 섹션 존재 및 전체 높이 수용 확인. PC 스크린샷 시각 확인과 보안 검토 차단 사항 없음. 운영 반영은 후속 확인한다.

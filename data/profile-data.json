@@ -14,19 +14,6 @@
       "time": "Mar. 2019 – Aug. 2024",
       "degree": "Bachelor of Engineering Degree",
       "location": "GIST, Gwangju, Korea"
-    },
-    {
-      "school": "Autonomous Computing System Lab",
-      "schoolLink": "https://uehwan.github.io/",
-      "time": "Sep. 2022 – Feb. 2023",
-      "degree": "Undergraduate Research Intern",
-      "location": "GIST, Gwangju, Korea"
-    },
-    {
-      "school": "Biomedical Informatics & Intelligence Lab",
-      "schoolLink": "https://www.biil-gist.net/",
-      "time": "Sep. 2020 – Aug. 2021",
-      "location": "GIST, Gwangju, Korea"
     }
   ],
   "skills": [
@@ -50,6 +37,7 @@
   "publications": [
     {
       "title": "Who Holds the Pen? Preserving Clinicians' Role in Human-AI Interpretation for Child Language Therapy",
+      "status": "under_review",
       "authors": "Ko, K., Lim, C., Oh, M., Park, J., Oh, J., Kang, S., Gim, B., Kim, W., Kim, S.",
       "journal": "Under Review",
       "time": "",
@@ -64,6 +52,7 @@
     },
     {
       "title": "MagToTheFuture: Transforming Passive Objects into Circuit-Free Haptic Devices via Magnetic Fields",
+      "status": "published",
       "authors": "Park, J., Kang, S., Ko, K., Kim, G., Shin, S., Kang, Y., Matusik, W., Rus, D., Kim, S. J.",
       "journal": "Proceedings of the 39th Annual ACM Symposium on User Interface Software and Technology (UIST 2026)",
       "time": "October 2026",
@@ -78,6 +67,7 @@
     },
     {
       "title": "PardonMix: Unpacking Ambiguity in Semantic Audio Mixing for Adaptive Interface Design",
+      "status": "published",
       "authors": "Kim, D., Ko, K., Oh, J., Kim, S.",
       "journal": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
       "time": "April 2026",
@@ -92,6 +82,7 @@
     },
     {
       "title": "Demonstrating InteractiSense: An Interactive Tool for Supporting Social Engagement for Children with ASD",
+      "status": "published",
       "authors": "Kim, W.*, Lim, C.*, Seong, M., Ko, K., Kim, S.",
       "journal": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
       "time": "April 2026",
@@ -106,6 +97,7 @@
     },
     {
       "title": "LEGOLAS: Learning & Enhancing Golf Skills through LLM-Augmented System",
+      "status": "published",
       "authors": "Ko, K., Oh, M., Seong, M., Kim, S.",
       "journal": "Extended Abstracts of the CHI Conference on Human Factors in Computing Systems",
       "time": "April 2025",
@@ -121,6 +113,7 @@
     },
     {
       "title": "Leveraging voice for early detection of chronic kidney disease: Enabling continuous monitoring in remote healthcare",
+      "status": "published",
       "authors": "Ko, K., Ryu, J., Kim, S.",
       "journal": "Proceedings of eTELEMED 2024",
       "time": "May 2024",
@@ -131,6 +124,7 @@
     },
     {
       "title": "A Survey on 3D Scene Graphs: Definition, Generation and Application",
+      "status": "published",
       "authors": "Bae, J.*, Shin, D.*, Ko, K., Lee, J., Kim, U.-H.",
       "journal": "Robot Intelligence Technology and Applications 7 (RiTA 2022)",
       "time": "March 2023",
@@ -173,7 +167,10 @@
       "thumbnail": "/images/projects/soridam.png",
       "link": "https://www.youtube.com/watch?v=LrO6cmoMTF4",
       "time": "2022",
-      "tags": ["Affective Computing", "Emotion Recognition"]
+      "tags": [
+        "Affective Computing",
+        "Emotion Recognition"
+      ]
     },
     {
       "title": "Be With You: A Soft Hug for Every Silent Struggle",
@@ -194,7 +191,11 @@
       "thumbnail": "/images/projects/peach_seoga.png",
       "link": "https://ai.peachseoga.com/",
       "time": "2024-2025",
-      "tags": ["Accessibility", "AI for education", "LLM"]
+      "tags": [
+        "Accessibility",
+        "AI for education",
+        "LLM"
+      ]
     }
   ],
   "awards": [

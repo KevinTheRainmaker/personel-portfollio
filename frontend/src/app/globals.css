@@ -169,3 +169,32 @@ h4 {
 .animate-slide-in {
   animation: slide-in 0.3s ease forwards;
 }
+
+/* A CV prints as a document, without the interactive portfolio shell. */
+@media print {
+  body:has(.cv-document) {
+    display: block;
+    height: auto !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+  body:has(.cv-document) > :not(main) { display: none !important; }
+  body:has(.cv-document) > main {
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    background: white !important;
+  }
+  .cv-document {
+    max-width: none;
+    padding: 0;
+    animation: none;
+    font-size: 11pt;
+  }
+  .cv-document, .cv-document * { color: #111 !important; background: transparent !important; }
+  .cv-document h1 { font-size: 24pt; }
+  .cv-document h2 { font-size: 14pt; break-after: avoid; }
+  .cv-document p, .cv-document li { font-size: 11pt; }
+  .cv-entry { break-inside: avoid; }
+  .cv-section { scroll-margin: 0; }
+}

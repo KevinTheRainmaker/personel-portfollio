@@ -13,6 +13,7 @@ export interface Skill {
 }
 
 export interface Publication {
+  status?: "published" | "under_review" | "accepted" | "preprint";
   title: string;
   authors: string;
   journal: string;
