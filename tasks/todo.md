@@ -51,4 +51,6 @@ CV: [헤더] → [Education/Experience/Projects | Skills/Awards/Other]. 모바�
 
 - [x] Technical Book Reviewer & Beta Reader를 2022 – 2026으로 수정
 - [x] Peach Seoga를 2024–2026으로 수정
-- [ ] 원본/CV 문서 일치, 기존 회귀 테스트 및 운영 반영 확인
+- [x] 원본/CV 문서 일치, 기존 회귀 테스트 및 운영 반영 확인
+
+검토: 원본 JSON과 CV 마크다운 세 파일에서 기간 일치 확인. 기존 테스트21개 PASS. 0f1fa6a Vercel success 및 운영 CV에서 Book Reviewer 2022 – 2026, Peach Seoga 2024–2026 표시 확인.
