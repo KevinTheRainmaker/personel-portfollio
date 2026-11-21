@@ -85,14 +85,12 @@ export default function PapersPage() {
                 hasMedia
                   ? "xl:grid xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] xl:grid-rows-[auto_1fr] xl:gap-x-8"
                   : "",
-                isHighlight ? "border-l-4" : "",
               ]
                 .filter(Boolean)
                 .join(" ")}
               style={{
                 background: isHighlight ? "var(--surface)" : "transparent",
                 borderColor: isHighlight ? "var(--border)" : "var(--border)",
-                borderLeftColor: isHighlight ? "var(--accent)" : undefined,
               }}
             >
               <div className="min-w-0 xl:col-start-1 xl:row-start-1">
