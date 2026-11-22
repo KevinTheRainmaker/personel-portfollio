@@ -132,3 +132,14 @@ test('prompt forbids carrying undergraduate affiliation into graduate facts or i
   assert.ok(prompt.includes('A bachelor’s major does not identify the current graduate department'));
   assert.ok(prompt.includes('Author order establishes author order only'));
 });
+
+
+test('excluded manuscript cannot re-enter through Research narrative or a shortened title', () => {
+  const publicText = JSON.stringify(profileModule.siteConfig);
+  for (const text of [publicText, JSON.stringify(contextModule.publicSiteContent), prompt]) {
+    assert.doesNotMatch(text, /Who Holds the Pen/i);
+    assert.doesNotMatch(text, /clinicians' participation|perceived control across AI collaboration modes/i);
+  }
+  assert.match(profileModule.siteConfig.researchAreas.find(area => area.title === 'Human Agency').description, /retain judgment, authorship, and control/);
+  assert.ok(prompt.includes('If a visitor names a paper or project absent from the public evidence'));
+});

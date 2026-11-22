@@ -23,10 +23,12 @@ not automatically included. Existing source data is preserved for authoring.
 `validateResponseLinks` derives its allowlist from this same public projection,
 not from hidden source records.
 
-A brief study mention currently shown in a Research description remains public
-text. That mention does not authorize the chatbot to retrieve excluded publication
-metadata, submission status, authors, abstract or additional findings. The prompt
-explicitly separates public research descriptions from the displayed publication list.
+Excluded manuscripts must also be absent from public research-area prose. The
+shortened title and clinician-study description formerly left in Human Agency
+were removed after the user reproduced a detailed answer by asking the short title.
+General research interests remain; they are not evidence about an unlisted named
+study. The prompt explicitly forbids inferring an absent study's topic, methods,
+participants, goals or connection to the author from its title or general interests.
 
 Linked PDFs/external websites and media contents are not ingested. A link is only
 a reference. Legacy `lib/` and `python/` chatbot implementations do not serve this route.

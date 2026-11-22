@@ -74,7 +74,7 @@ export const siteConfig = {
     {
       title: "Human Agency",
       description:
-        "As AI takes on more work, how can people retain judgment, authorship, and control without being overwhelmed by supervision? Who Holds the Pen? examines clinicians' participation and perceived control across AI collaboration modes. My developing work on AI-assisted programming asks how people can delegate execution while continuing to shape and understand the outcome.",
+        "As AI takes on more work, how can people retain judgment, authorship, and control without being overwhelmed by supervision? My developing work on AI-assisted programming asks how people can delegate execution while continuing to shape and understand the outcome.",
       keywords: ["Agency", "Delegation", "Authorship"],
     },
   ],
