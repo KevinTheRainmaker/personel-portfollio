@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import { portfolioPublications } from "@/lib/profile";
 import PublicationMedia from "@/components/PublicationMedia";
 
@@ -41,6 +44,24 @@ function AuthorList({ authors }: { authors: string }) {
   );
 }
 
+function PaperSurface({ featured, hasMedia, children }: { featured: boolean; hasMedia: boolean; children: ReactNode }) {
+  const layout = hasMedia
+    ? "xl:grid xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] xl:grid-rows-[auto_1fr] xl:gap-x-8"
+    : "";
+  if (featured) {
+    return (
+      <Card as="article" className="portfolio-publication-card">
+        <CardContent className={layout}>{children}</CardContent>
+      </Card>
+    );
+  }
+  return (
+    <article className="min-w-0 rounded-xl p-4 md:p-6 border" style={{ borderColor: "var(--border)" }}>
+      {children}
+    </article>
+  );
+}
+
 export default function PapersPage() {
   const total = portfolioPublications.length;
 
@@ -61,7 +82,7 @@ export default function PapersPage() {
           >
             Publications
           </h1>
-          <span className="tag-accent text-xs font-mono">{total}</span>
+          <Badge count={total} tone="info" aria-label={`${total} published papers`} />
         </div>
         <p className="text-base" style={{ color: "var(--mid)" }}>
           Published papers and conference proceedings.
@@ -78,21 +99,7 @@ export default function PapersPage() {
           );
 
           return (
-            <article
-              key={i}
-              className={[
-                "rounded-xl p-4 md:p-6 border transition-shadow hover:shadow-md min-w-0",
-                hasMedia
-                  ? "xl:grid xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] xl:grid-rows-[auto_1fr] xl:gap-x-8"
-                  : "",
-              ]
-                .filter(Boolean)
-                .join(" ")}
-              style={{
-                background: isHighlight ? "var(--surface)" : "transparent",
-                borderColor: isHighlight ? "var(--border)" : "var(--border)",
-              }}
-            >
+            <PaperSurface key={i} featured={isHighlight} hasMedia={hasMedia}>
               <div className="min-w-0 xl:col-start-1 xl:row-start-1">
                 {/* Top row: year + featured badge */}
                 <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
@@ -103,9 +110,9 @@ export default function PapersPage() {
                     {pub.time}
                   </span>
                   <div className="flex items-center gap-2">
-                    {isHighlight && <span className="tag-accent">Featured</span>}
+                    {isHighlight && <Badge tone="info" size="md">Featured</Badge>}
                     {authorPos !== null && authorPos <= 2 && (
-                      <span className="tag">{ordinal(authorPos)} Author</span>
+                      <Badge size="md">{ordinal(authorPos)} Author</Badge>
                     )}
                   </div>
                 </div>
@@ -204,7 +211,7 @@ export default function PapersPage() {
                   </a>
                 )}
               </div>
-            </article>
+            </PaperSurface>
           );
         })}
       </div>

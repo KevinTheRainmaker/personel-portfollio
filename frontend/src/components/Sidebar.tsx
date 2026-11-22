@@ -9,6 +9,9 @@ import remarkGfm from "remark-gfm";
 import type { ChatMessage } from "@/lib/types";
 import { siteConfig } from "@/lib/profile";
 import { useChatContext } from "@/lib/chat-context";
+import { Button } from "@/components/ui/button";
+import { IconButton } from "@/components/ui/icon-button";
+import { TextField } from "@/components/ui/text-field";
 
 const CHAT_ENDPOINT = "/api/chat";
 
@@ -214,31 +217,26 @@ export default function Sidebar() {
       <div className="flex flex-col flex-1 overflow-hidden min-h-0">
         {/* Chat header */}
         <div className="px-5 py-2 flex items-center justify-between shrink-0">
-          <button
+          <Button
+            variant="ghost"
+            size="sm"
             onClick={() => setChatOpen((v) => !v)}
-            className="flex items-center gap-1.5 transition-opacity hover:opacity-60"
+            aria-expanded={chatOpen}
+            className="min-w-0 portfolio-chat-toggle"
+            icon={
+              <span className={`transition-transform duration-200 ${chatOpen ? "" : "-rotate-90"}`}>
+                <IconChevronDown />
+              </span>
+            }
           >
-            <span
-              className={`transition-transform duration-200 ${chatOpen ? "" : "-rotate-90"}`}
-              style={{ color: "var(--mid)" }}
-            >
-              <IconChevronDown />
-            </span>
-            <span
-              className="text-sm font-semibold"
-              style={{ color: "var(--dark)" }}
-            >
-              Discover with My Digital Twin
-            </span>
-          </button>
-          <button
+            Discover with My Digital Twin
+          </Button>
+          <IconButton
+            size="sm"
             onClick={resetChat}
-            className="p-1 rounded transition-opacity hover:opacity-60"
-            title="Reset chat"
-            style={{ color: "var(--muted)" }}
-          >
-            <IconReset />
-          </button>
+            label="Reset chat"
+            icon={<IconReset />}
+          />
         </div>
 
         {chatOpen && (
@@ -351,7 +349,9 @@ export default function Sidebar() {
 
             {/* Input */}
             <div className="px-4 pb-4 pt-2 flex gap-2 shrink-0">
-              <input
+              <TextField
+                size="lg"
+                aria-label="Message to digital twin"
                 ref={inputRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
@@ -366,21 +366,16 @@ export default function Sidebar() {
                   }
                 }}
                 placeholder="Type your message here..."
-                className="flex-1 text-sm outline-none rounded-lg px-3 py-2 border"
-                style={{
-                  borderColor: "var(--border)",
-                  background: "var(--bg)",
-                  color: "var(--dark)",
-                }}
+                className="flex-1 min-w-0 portfolio-chat-input"
               />
-              <button
+              <Button
                 onClick={() => send(input)}
                 disabled={!input.trim() || loading}
-                className="px-4 py-2 rounded-lg text-sm font-medium text-white transition-opacity disabled:opacity-40"
-                style={{ background: "var(--send)" }}
+                loading={loading}
+                className="shrink-0"
               >
                 Send
-              </button>
+              </Button>
             </div>
           </>
         )}

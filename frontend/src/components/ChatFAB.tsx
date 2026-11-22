@@ -5,6 +5,9 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { useChatContext } from "@/lib/chat-context";
+import { Button } from "@/components/ui/button";
+import { IconButton } from "@/components/ui/icon-button";
+import { TextField } from "@/components/ui/text-field";
 import type { ChatMessage } from "@/lib/types";
 
 const CHAT_ENDPOINT = "/api/chat";
@@ -95,31 +98,29 @@ export default function ChatFAB() {
   return (
     <>
       {/* Floating action button */}
-      <button
-        className="fixed bottom-16 right-4 md:hidden z-40 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-opacity hover:opacity-80"
-        style={{ background: "var(--send)" }}
-        onClick={() => setOpen(true)}
-        aria-label="Open chat"
-      >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="white"
-          strokeWidth="2"
-        >
-          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-        </svg>
+      <div className="fixed bottom-16 right-4 md:hidden z-40">
+        <IconButton
+          variant="primary"
+          className="shadow-lg"
+          style={{ width: 48, height: 48, borderRadius: "50%" }}
+          onClick={() => setOpen(true)}
+          label="Open chat"
+          aria-expanded={open}
+          icon={
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+            </svg>
+          }
+        />
         {messages.length > 1 && (
           <span
-            className="absolute -top-1 -right-1 w-4 h-4 rounded-full text-white flex items-center justify-center"
+            className="absolute -top-1 -right-1 w-4 h-4 rounded-full text-white flex items-center justify-center pointer-events-none"
             style={{ background: "var(--accent)", fontSize: "10px" }}
           >
             {messages.length - 1 > 9 ? "9+" : messages.length - 1}
           </span>
         )}
-      </button>
+      </div>
 
       {/* Bottom sheet overlay */}
       {open && (
@@ -145,51 +146,38 @@ export default function ChatFAB() {
 
             {/* Header */}
             <div
-              className="px-4 py-2 flex items-center justify-between shrink-0 border-b"
+              className="px-4 py-2 flex items-center justify-between gap-2 shrink-0 border-b"
               style={{ borderColor: "var(--border)" }}
             >
               <span
-                className="text-sm font-semibold"
+                className="min-w-0 text-sm font-semibold"
                 style={{ color: "var(--dark)" }}
               >
                 Discover with My Digital Twin
               </span>
-              <div className="flex items-center gap-2">
-                <button
+              <div className="flex shrink-0 items-center gap-2">
+                <IconButton
+                  size="sm"
                   onClick={resetChat}
-                  className="p-1 rounded transition-opacity hover:opacity-60"
-                  style={{ color: "var(--muted)" }}
-                  title="Reset chat"
-                >
-                  <svg
-                    width="13"
-                    height="13"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <polyline points="1 4 1 10 7 10" />
-                    <path d="M3.51 15a9 9 0 102.13-9.36L1 10" />
-                  </svg>
-                </button>
-                <button
+                  label="Reset chat"
+                  icon={
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="1 4 1 10 7 10" />
+                      <path d="M3.51 15a9 9 0 102.13-9.36L1 10" />
+                    </svg>
+                  }
+                />
+                <IconButton
+                  size="sm"
                   onClick={() => setOpen(false)}
-                  className="p-1 rounded transition-opacity hover:opacity-60"
-                  style={{ color: "var(--muted)" }}
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </button>
+                  label="Close chat"
+                  icon={
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                  }
+                />
               </div>
             </div>
 
@@ -302,7 +290,9 @@ export default function ChatFAB() {
 
             {/* Input */}
             <div className="px-3 pb-4 pt-2 flex gap-2 shrink-0">
-              <input
+              <TextField
+                size="lg"
+                aria-label="Message to digital twin"
                 ref={inputRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
@@ -317,21 +307,16 @@ export default function ChatFAB() {
                   }
                 }}
                 placeholder="Type your message here..."
-                className="flex-1 text-sm outline-none rounded-lg px-3 py-2 border"
-                style={{
-                  borderColor: "var(--border)",
-                  background: "var(--bg)",
-                  color: "var(--dark)",
-                }}
+                className="flex-1 min-w-0 portfolio-chat-input"
               />
-              <button
+              <Button
                 onClick={() => send(input)}
                 disabled={!input.trim() || loading}
-                className="px-4 py-2 rounded-lg text-sm font-medium text-white transition-opacity disabled:opacity-40"
-                style={{ background: "var(--send)" }}
+                loading={loading}
+                className="shrink-0"
               >
                 Send
-              </button>
+              </Button>
             </div>
           </div>
         </div>

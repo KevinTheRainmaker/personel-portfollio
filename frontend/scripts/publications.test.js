@@ -125,6 +125,8 @@ test("all dated display lists are newest first while source and skills are uncha
 test("rendered publications keep featured above regular and mount media only for featured", () => {
   const mediaTitles = [];
   const { default: Page } = loadTs("src/app/papers/page.tsx", {
+    "@/components/ui/badge": loadTs("src/components/ui/badge.tsx", { react: React }),
+    "@/components/ui/card": loadTs("src/components/ui/card.tsx", { react: React }),
     "@/lib/profile": profileModule,
     "@/components/PublicationMedia": { __esModule: true, default: (props) => {
       mediaTitles.push(props.title);

@@ -1,5 +1,7 @@
 import { profile, portfolioPublications, siteConfig } from "@/lib/profile";
 import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
 function IconEmail() {
   return (
@@ -182,28 +184,14 @@ export default function HomePage() {
         </h2>
         <div className="space-y-3">
           {siteConfig.researchAreas.map((area) => (
-            <div
-              key={area.title}
-              className="flex flex-col gap-2 rounded-xl px-5 py-4 border"
-              style={{
-                background: "var(--surface)",
-                borderColor: "var(--border)",
-              }}
-            >
-              <h3
-                className="font-sans font-semibold text-base"
-                style={{ color: "var(--dark)" }}
-              >
-                {area.title}
-              </h3>
-              <div className="flex flex-wrap gap-1.5">
+            <Card as="article" key={area.title} className="portfolio-area-card">
+              <CardHeader title={area.title} className="[&_.ui-crd__title]:text-base [&_.ui-crd__title]:font-semibold" />
+              <CardContent className="flex flex-wrap gap-1.5">
                 {area.keywords.map((kw) => (
-                  <span key={kw} className="tag">
-                    {kw}
-                  </span>
+                  <Badge key={kw} size="md" title={kw}>{kw}</Badge>
                 ))}
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>

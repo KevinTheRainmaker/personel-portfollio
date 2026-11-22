@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 interface PublicationMediaProps {
@@ -61,14 +62,16 @@ export default function PublicationMedia({
         />
       </div>
       {poster && (
-        <button
+        <Button
           type="button"
-          className="btn-ghost text-xs mt-2"
+          variant="secondary"
+          size="sm"
+          className="mt-2"
           aria-label={`${action}: ${title}`}
           onClick={() => setPaused(playing)}
         >
           {action}
-        </button>
+        </Button>
       )}
     </div>
   );

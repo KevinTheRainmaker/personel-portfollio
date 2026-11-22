@@ -198,3 +198,56 @@ h4 {
   .cv-entry { break-inside: avoid; }
   .cv-section { scroll-margin: 0; }
 }
+
+/* AffectUI integration: keep the portfolio palette and typography. */
+:root {
+  --aui-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --aui-ink: var(--dark);
+  --aui-muted: var(--mid);
+  --aui-placeholder: #717171;
+  --aui-surface: var(--surface);
+  --aui-subtle: var(--bg);
+  --aui-border: var(--border);
+  --aui-border-strong: #c1bfbc;
+  --aui-focus: var(--accent);
+  --aui-info: var(--accent-hover);
+  --aui-info-soft: var(--accent-light);
+  --aui-radius: 10px;
+  --aui-radius-lg: 12px;
+}
+.dark {
+  --aui-placeholder: #a09b95;
+  --aui-border-strong: #625c55;
+}
+.ui-button[data-variant="primary"] {
+  --ui-btn-dark-top: var(--accent);
+  --ui-btn-dark-bottom: var(--accent-hover);
+  --ui-btn-dark-hover-top: var(--accent-hover);
+  --ui-btn-dark-hover-bottom: var(--accent-hover);
+  --ui-btn-edge-top: var(--accent);
+  --ui-btn-edge-mid: var(--accent-hover);
+  --ui-btn-edge-bottom: var(--accent-hover);
+  --ui-btn-ring: var(--accent-hover);
+}
+.portfolio-area-card.ui-crd,
+.portfolio-publication-card.ui-crd {
+  --ui-crd-pad: 20px;
+}
+.portfolio-area-card > .ui-crd__card { flex: 1; }
+@media (min-width: 768px) {
+  .portfolio-area-card.ui-crd,
+  .portfolio-publication-card.ui-crd { --ui-crd-pad: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-area-card *, .portfolio-publication-card * { transition: none !important; }
+}
+.portfolio-area-card .ui-crd__title {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.portfolio-focus-card .ui-crd__title { font-size: 1.25rem; }
+@media (max-width: 767px) {
+  .portfolio-chat-input .ui-tf__input { font-size: 16px; }
+}

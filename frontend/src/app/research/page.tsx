@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/profile";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Research",
@@ -25,15 +27,15 @@ export default function ResearchPage() {
         <h2 id="focus-heading" className="font-sans font-bold text-2xl mb-5" style={{ color: "var(--dark)" }}>Focus Areas</h2>
         <div className="grid gap-5 xl:grid-cols-2 xl:gap-6" data-research-areas>
           {siteConfig.researchAreas.map((area, i) => (
-            <article key={area.title}
-              className={`min-w-0 rounded-xl p-5 md:p-6 border ${i === 0 ? "xl:col-span-2 xl:grid xl:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] xl:gap-8" : "flex flex-col"}`}
-              style={{ background: "var(--surface)", borderColor: "var(--border)" }}>
-              <h3 className="font-sans font-semibold text-xl leading-snug mb-4 min-w-0" style={{ color: "var(--dark)" }}>{area.title}</h3>
-              <p className={`text-base leading-relaxed max-w-[75ch] min-w-0 ${i === 0 ? "xl:col-start-2 xl:row-start-1 xl:row-span-2" : "mb-5"}`} style={{ color: "var(--mid)" }}>{area.description}</p>
-              <div className={`flex flex-wrap gap-1.5 ${i === 0 ? "mt-5 xl:mt-0 xl:col-start-1 xl:row-start-2 xl:self-end" : "mt-auto pt-1"}`}>
-                {area.keywords.map(kw => <span key={kw} className="tag">{kw}</span>)}
-              </div>
-            </article>
+            <Card as="article" key={area.title} className={`portfolio-area-card portfolio-focus-card ${i === 0 ? "xl:col-span-2" : ""}`}>
+              <CardContent className={i === 0 ? "xl:grid xl:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] xl:gap-x-8" : "flex flex-col h-full"}>
+                <CardHeader title={area.title} className="mb-4 [&_.ui-crd__title]:text-xl [&_.ui-crd__title]:leading-snug [&_.ui-crd__title]:font-semibold" />
+                <p className={`text-base leading-relaxed max-w-[75ch] min-w-0 ${i === 0 ? "xl:col-start-2 xl:row-start-1 xl:row-span-2" : "mb-5"}`} style={{ color: "var(--mid)" }}>{area.description}</p>
+                <div className={`flex flex-wrap gap-1.5 ${i === 0 ? "mt-5 xl:mt-0 xl:col-start-1 xl:row-start-2 xl:self-end" : "mt-auto pt-1"}`}>
+                  {area.keywords.map(kw => <Badge key={kw} size="md" title={kw}>{kw}</Badge>)}
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
