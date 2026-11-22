@@ -59,10 +59,12 @@ CV: [헤더] → [Education/Experience/Projects | Skills/Awards/Other]. 모바�
 - [x] 공식 registry 소스·MIT 제공 여부·의존성 확인 및 설치
 - [x] Home/Research/Papers 카드·배지와 실제 Sidebar/모바일 채팅·미디어 조작부에 적용
 - [x] 기존 내용/논문 정렬/CV 문서/챗봇 계약 유지 및 PC·모바일·키보드·reduced-motion 검증
-- [ ] 빌드·회귀·보안 검토 후 커밋/Push 및 운영 배포 확인
+- [x] 빌드·회귀·보안 검토 후 커밋/Push 및 운영 배포 확인
 
 설계 검토: 기존 학술 포트폴리오의 targeted evolution. VARIANCE 5 / MOTION 3 / DENSITY 4. 배경 #f8f7f5, 표면 #fff, 강조 #6366f1, 현재 sans/mono, 12px 카드/8px 입력의 기존 인상을 유지한다. 페이지 경로/메타데이터/프로필 내용/featured 우선 및 최신순/출판된 논문만/CV 단일 문서/미디어 재생 선호는 불변이다. 실제 기능에 맞는 공식 Button, IconButton, Badge, Card, TextField를 사용한다. Reaction Bar는 반응 저장 기능이 없는 포트폴리오에 가짜 좋아요/댓글을 만들지 않도록 사용하지 않는다. 내비게이션은 링크이며 탭패널로 바꾸지 않는다. 추가 서버·유료 컴포넌트는 필요 없다.
 
 검증: 공식 UI 설치 뒤 Publications 10/10, Chat 11/11, TypeScript 및 Next 프로덕션 빌드 PASS. 프로덕션 브라우저 19결과 PASS: 1920/1440/768/390px의 4개 페이지 가로 넘침 없음, featured/최신순/미디어 정책, CV 비카드 문서, 키보드 Summary, 데스크톱·모바일 채팅(IMЕ Enter/중복 차단/대화 유지/reset/internal link), reduced-motion 재생·정지. 브라우저 console/page 오류 없음. 실제 LLM 대신 모의 응답만 사용했다. 독립 보안 검토 차단급 없음. 기존 Browserslist 데이터 노후 안내는 빌드를 막지 않는다.
 
 원격 a23aba1의 featured 카드 왼쪽 강조선 제거를 보존한다.
+
+운영 검증: fe7f90e Vercel success. 실제 portfolio.kangbeen.my의 Home/Research/Papers/CV와 모바일 chat open/close/Send 표시 확인. 원격 a23aba1 강조선 제거 유지. RCC 변경 없음.
