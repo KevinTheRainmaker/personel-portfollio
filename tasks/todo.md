@@ -73,8 +73,8 @@ CV: [헤더] → [Education/Experience/Projects | Skills/Awards/Other]. 모바�
 - [x] 페이지와 동일한 published selector + 공개 필드 projection을 컨텍스트·허용 링크에 적용
 - [x] 공개 컨텍스트 revision으로 이전 대화의 미표시 정보 재유입 방지
 - [x] 제외 논문/초록/미표시 필드·링크/대화 버전·기존 화면 회귀 테스트
-- [ ] 빌드·보안 검토·운영 배포 및 실제 응답 확인
+- [x] 빌드·보안 검토·운영 배포 및 실제 응답 확인
 
 계획: 원본 JSON은 보존한다. 공개 Publications/CV와 같은 published 조건을 공유하고, 페이지가 렌더하는 텍스트 필드만 명시적으로 선택한다. 새 필드/섹션을 자동 직렬화하지 않는다. Research의 기존 공개 연구 소개는 유지하되 공개 논문 목록과 구분한다. 컨텍스트 변경 전 대화는 근거로 전달하지 않는다. 사이트 내용/논문 목록/레이아웃은 변경하지 않는다.
 
-검토: chat 20/Papers·CV 10 PASS, build/typecheck PASS. 브라우저 저장·버전전환 및 기존 19개 화면/입력 검증 PASS. 보안 검토의 열린 탭 revision 문제 수정·검증 완료. 운영 배포 확인 대기.
+검토: chat 20/Papers·CV 10 PASS, build/typecheck PASS. 브라우저 저장·버전전환 및 기존 19개 화면/입력 검증 PASS. 보안 검토의 열린 탭 revision 문제 수정·검증 완료. 운영 118a7c1 Vercel success. 실 API 두 질문 HTTP 200: 공개 논문 6건 일치, 제외 원고 세부정보 미제공 및 stale 이력 sentinel 미사용 확인.

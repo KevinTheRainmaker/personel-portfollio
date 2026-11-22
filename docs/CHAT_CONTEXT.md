@@ -80,3 +80,13 @@ revision transition, and 19 existing layout/chat/media cases across 1920, 1440,
 768 and 390 widths. Primary and fallback model requests were mocked for API contract
 tests; live model behavior is checked separately after deployment. Security review
 found no blocking issue; its open-tab revision finding was fixed and browser-tested.
+
+Production verification: code commit `118a7c1af5b4a32c19d70df683fefc5debc65ce1`
+received Vercel success and served `https://portfolio.kangbeen.my` on 2026-11-22.
+Two live `/api/chat` requests returned HTTP 200 with context revision
+`cdecc405b16c62c1cb9d175bf4398d85161d4d6eb716bc9c90f29f7f3ffa3656`.
+The published-list question returned the six displayed publications. A question
+about excluded manuscript metadata with a synthetic stale-history sentinel declined
+to supply those details and did not repeat the sentinel. No hidden source record,
+credential or private manuscript content was sent as a test question. These are
+observed sample responses, not a universal claim about model behavior.
