@@ -68,5 +68,6 @@ export function buildPortfolioContext(data: unknown = profile, config: unknown =
   ].join("\n\n");
 }
 export const portfolioContext = buildPortfolioContext();
-// Also invalidates legacy conversation evidence after the public site changes.
-export const portfolioContextRevision = createHash("sha256").update("public-site-v1\n" + portfolioContext).digest("hex");
+// Bump this policy version when grounding rules change to invalidate earlier answers.
+// Public content changes also invalidate prior conversation evidence.
+export const portfolioContextRevision = createHash("sha256").update("public-site-v2\n" + portfolioContext).digest("hex");

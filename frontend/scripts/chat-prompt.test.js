@@ -142,4 +142,6 @@ test('excluded manuscript cannot re-enter through Research narrative or a shorte
   }
   assert.match(profileModule.siteConfig.researchAreas.find(area => area.title === 'Human Agency').description, /retain judgment, authorship, and control/);
   assert.ok(prompt.includes('If a visitor names a paper or project absent from the public evidence'));
+  assert.ok(prompt.includes('Do not reinterpret an absent name as a metaphor'));
+  assert.ok(prompt.indexOf('CHECK THE NAMED SUBJECT FIRST') < prompt.indexOf('ANSWER THE QUESTION'));
 });
