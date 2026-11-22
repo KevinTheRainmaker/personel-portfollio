@@ -6,6 +6,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import LayoutShell from "@/components/LayoutShell";
+import { portfolioContextRevision } from "@/lib/portfolio-context";
 import { siteConfig } from "@/lib/profile";
 
 const serif = DM_Serif_Display({
@@ -63,7 +64,7 @@ export default function RootLayout({
         className="flex overflow-hidden"
         style={{ background: "var(--bg)", height: "100dvh" }}
       >
-        <LayoutShell>{children}</LayoutShell>
+        <LayoutShell chatRevision={portfolioContextRevision}>{children}</LayoutShell>
       </body>
     </html>
   );

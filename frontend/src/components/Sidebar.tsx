@@ -131,6 +131,7 @@ function IconReset() {
 export default function Sidebar() {
   const pathname = usePathname();
   const {
+    contextRevision,
     messages,
     setMessages,
     input,
@@ -140,6 +141,7 @@ export default function Sidebar() {
     chatOpen,
     setChatOpen,
     resetChat,
+    acceptResponse,
   } = useChatContext();
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -164,6 +166,7 @@ export default function Sidebar() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           message: trimmed,
+          contextRevision,
           history: messages
             .slice(1)
             .map((m) => ({ role: m.role, content: m.content })),
@@ -172,10 +175,7 @@ export default function Sidebar() {
 
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
-      setMessages([
-        ...nextMessages,
-        { role: "assistant", content: data.response },
-      ]);
+      acceptResponse(trimmed, data.response, data.context_revision, nextMessages);
     } catch {
       setMessages([
         ...nextMessages,

@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Langfuse } from "langfuse";
 import { buildSystemPrompt, validateResponseLinks } from "@/lib/chat-prompt";
+import { portfolioContextRevision } from "@/lib/portfolio-context";
+import { selectCurrentHistory } from "@/lib/chat-history";
 
 const OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1";
 const PRIMARY_MODEL = "google/gemini-3-flash-preview";
@@ -52,7 +54,7 @@ export async function POST(req: NextRequest) {
   const langfuse = getLangfuse();
 
   try {
-    const { message, history = [] } = await req.json();
+    const { message, history: suppliedHistory, contextRevision } = await req.json();
 
     if (!message || typeof message !== "string") {
       return NextResponse.json(
@@ -61,13 +63,11 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const history = selectCurrentHistory(suppliedHistory, contextRevision, portfolioContextRevision);
     const systemPrompt = buildSystemPrompt();
     const messages = [
       { role: "system", content: systemPrompt },
-      ...history.map((m: { role: string; content: string }) => ({
-        role: m.role,
-        content: m.content,
-      })),
+      ...history,
       { role: "user", content: message },
     ];
 
@@ -116,7 +116,7 @@ export async function POST(req: NextRequest) {
     trace?.update({ output: { response, modelUsed } });
     await langfuse?.flushAsync();
 
-    return NextResponse.json({ response, model_used: modelUsed });
+    return NextResponse.json({ response, model_used: modelUsed, context_revision: portfolioContextRevision });
   } catch (err) {
     const msg = err instanceof Error ? err.message : "Unknown error";
     await langfuse?.flushAsync();

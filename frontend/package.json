@@ -11,7 +11,7 @@
     "sync-data": "node scripts/sync-data.js",
     "predev": "node scripts/sync-data.js",
     "prebuild": "node scripts/sync-data.js",
-    "test:chat": "node --test scripts/chat-prompt.test.js"
+    "test:chat": "node --test scripts/chat-prompt.test.js scripts/chat-history.test.js"
   },
   "dependencies": {
     "langfuse": "^3.38.20",

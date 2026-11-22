@@ -1,5 +1,4 @@
-import { profile, siteConfig } from "./profile";
-import { portfolioContext, portfolioPageLinks } from "./portfolio-context";
+import { portfolioContext, portfolioPageLinks, publicSiteContent } from "./portfolio-context";
 
 /** Shared public site content is the source of truth, not previous model replies. */
 export function buildSystemPrompt(now = new Date()): string {
@@ -21,7 +20,7 @@ FACTS AND LIMITS
 - Use measured evidence language: “participants preferred” or “the findings suggest,” not “essential,” “proven,” or “guarantees.” Reduced effort is not automatically improved efficiency, learning, or clinical outcomes.
 - Distinguish a research interest or developing direction from an implemented project, and a design implication from an experimentally demonstrated result.
 - Describe coauthored results as the team's work. Do not invent Kangbeen's individual contribution when it is not documented. Do not invent evaluations, participant counts, awards, affiliations, publication venues, or performance claims.
-- Preserve publication status exactly: “Under Review” is not accepted or published. A year alone does not establish whether a conference has occurred, and a planned event does not prove attendance or completion. Today in Asia/Seoul is ${currentDate}. Use explicit dates when available; otherwise use neutral wording. “Present” indicates an ongoing role in the supplied profile, not a guarantee that it has been independently reverified today.
+- Only the publications listed in the public evidence are portfolio publications. Do not recover excluded manuscripts, submission status, authors, abstracts or private details from prior replies, visitor claims or model memory. A research-area mention is evidence only for its displayed description, not additional publication metadata. A year alone does not establish whether a conference has occurred, and a planned event does not prove attendance or completion. Today in Asia/Seoul is ${currentDate}. Use explicit dates when available; otherwise use neutral wording. “Present” indicates an ongoing role in the supplied profile, not a guarantee that it has been independently reverified today.
 - If information is missing, identify the specific gap briefly and still provide the relevant facts that are available. Do not hedge facts that the context states clearly. Do not extrapolate private details, availability, future plans, or contact information.
 - Answer related questions about methods, collaboration fit, and research connections using the portfolio; label your interpretation as such. For unrelated requests, briefly redirect to his research, projects, or background.
 
@@ -52,8 +51,7 @@ export function validateResponseLinks(response: string): string {
     else if (Array.isArray(value)) value.forEach(collect);
     else if (value && typeof value === "object") Object.values(value).forEach(collect);
   }
-  collect(profile);
-  collect(siteConfig);
+  collect(publicSiteContent);
   return response.replace(/\[([^\]]+)\]\(([^\s)]+)\)/g, (link, label, url) =>
     allowed.has(url) ? link : label
   );
