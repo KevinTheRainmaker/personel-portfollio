@@ -92,3 +92,25 @@ about excluded manuscript metadata with a synthetic stale-history sentinel decli
 to supply those details and did not repeat the sentinel. No hidden source record,
 credential or private manuscript content was sent as a test question. These are
 observed sample responses, not a universal claim about model behavior.
+
+## Follow-up: removed study mention (2026-11-22)
+
+The earlier list/metadata tests did not cover the short study title still rendered
+in the Human Agency description. Removed that sentence from the shared public
+source and added regression checks for the short title and its study-specific text
+in siteConfig, public projection and complete prompt. General interests remain.
+Chat tests 21/21 and publication tests 10/10 passed; production build/typecheck and
+built Research HTML checks passed. Independent review found no blocking issue.
+
+First live verification on ce433e8 failed: the model reinterpreted the removed
+name as an overall research philosophy. Added a highest-priority named-subject
+check against public evidence and bumped the conversation policy version to v2.
+Final code e3c61430b6d1e56e223d9c894f9183f4ac611367 received Vercel success.
+Two live requests using the exact question `Who Holds the Pen이 뭐야` (fresh history
+and old-revision synthetic history) returned HTTP 200 and stated that the current
+site contains no information about that named work. Neither supplied the previous
+clinician/mode study description nor reused the synthetic stale sentinel. Responses
+still offered general documented research interests; they did not claim those are
+findings from the excluded work. Live Research also no longer displayed the title.
+Observed context revision: efa7c1eedea87c740e5820686afd1157cbd7ef8374990554e3255ac8e2446ab1.
+These observations are sample tests, not a guarantee against all model hallucination.
