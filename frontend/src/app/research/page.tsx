@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
+import { portfolioPageMetadata } from "@/lib/page-metadata";
 import { siteConfig } from "@/lib/profile";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Research",
-  description: `Research interests and focus areas of ${siteConfig.name}`,
+  ...portfolioPageMetadata(
+    "/research",
+    `Research · ${siteConfig.name}`,
+    `Research interests and focus areas of ${siteConfig.name}`,
+  ),
 };
 
 const researchPhilosophy = `${siteConfig.bio} ${siteConfig.bio2}`;

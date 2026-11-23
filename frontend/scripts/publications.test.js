@@ -81,7 +81,7 @@ function loadTs(file, imports) {
     target: ts.ScriptTarget.ES2020,
   } }).outputText;
   const exports = {};
-  vm.runInNewContext(js, { exports, React, require: (name) => {
+  vm.runInNewContext(js, { exports, React, URL, require: (name) => {
     assert.ok(Object.hasOwn(imports, name), `Unexpected import: ${name}`);
     return imports[name];
   } });
@@ -90,6 +90,7 @@ function loadTs(file, imports) {
 const rawProfile = JSON.parse(fs.readFileSync(path.join(root, "data/profile-data.json"), "utf8"));
 const rawBefore = JSON.stringify(rawProfile);
 const profileModule = loadTs("src/lib/profile.ts", { "../data/profile-data.json": rawProfile });
+const pageMetadataModule = loadTs("src/lib/page-metadata.ts", { "@/lib/profile": profileModule });
 
 test("date ordering supports year, month, ISO date, ranges, present, and unknown dates", () => {
   const { latestDateKey: key, newestFirst } = profileModule;
@@ -128,6 +129,7 @@ test("rendered publications keep featured above regular and mount media only for
     "@/components/ui/badge": loadTs("src/components/ui/badge.tsx", { react: React }),
     "@/components/ui/card": loadTs("src/components/ui/card.tsx", { react: React }),
     "@/lib/profile": profileModule,
+    "@/lib/page-metadata": pageMetadataModule,
     "@/components/PublicationMedia": { __esModule: true, default: (props) => {
       mediaTitles.push(props.title);
       return React.createElement("img", { src: props.src, alt: props.alt });
@@ -172,7 +174,7 @@ test("CV publication source requires explicit published status and ignores featu
 });
 
 test("CV renders published citations without media or featured badges and preserves its anchors", () => {
-  const { default: CV } = loadTs("src/app/cv/page.tsx", { "@/lib/profile": profileModule });
+  const { default: CV } = loadTs("src/app/cv/page.tsx", { "@/lib/profile": profileModule, "@/lib/page-metadata": pageMetadataModule });
   const html = renderToStaticMarkup(React.createElement(CV));
   const escape = text => renderToStaticMarkup(React.createElement(React.Fragment, null, text));
   const publicationSection = html.match(/<section[^>]*id="publications"[^>]*>[\s\S]*?<\/section>/)?.[0];

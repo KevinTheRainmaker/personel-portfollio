@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
+import { portfolioPageMetadata } from "@/lib/page-metadata";
 import type { ReactNode } from "react";
 import { profile, publishedPublications, siteConfig } from "@/lib/profile";
 
 export const metadata: Metadata = {
   title: "Curriculum Vitae",
-  description: `Academic CV for ${siteConfig.name} — education, publications, experience, projects, and awards.`,
+  ...portfolioPageMetadata(
+    "/cv",
+    `Curriculum Vitae · ${siteConfig.name}`,
+    `Academic CV for ${siteConfig.name} — education, publications, experience, projects, and awards.`,
+  ),
 };
 
 function ParsedText({ text }: { text: string }) {

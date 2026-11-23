@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
+import { portfolioPageMetadata } from "@/lib/page-metadata";
 import type { ReactNode } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { portfolioPublications } from "@/lib/profile";
+import { portfolioPublications, siteConfig } from "@/lib/profile";
 import PublicationMedia from "@/components/PublicationMedia";
 
 export const metadata: Metadata = {
   title: "Publications",
-  description: "Academic publications and research papers by Kangbeen Ko.",
+  ...portfolioPageMetadata(
+    "/papers",
+    `Publications · ${siteConfig.name}`,
+    "Academic publications and research papers by Kangbeen Ko.",
+  ),
 };
 
 function getAuthorPosition(authors: string): number | null {

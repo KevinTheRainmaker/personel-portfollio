@@ -1,7 +1,11 @@
+import type { Metadata } from "next";
+import { portfolioPageMetadata } from "@/lib/page-metadata";
 import { profile, portfolioPublications, siteConfig } from "@/lib/profile";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
+
+export const metadata: Metadata = portfolioPageMetadata("/", siteConfig.name, siteConfig.bio);
 
 function IconEmail() {
   return (
