@@ -1,0 +1,18 @@
+.document { width: min(100%, 860px); margin: 0 auto; padding: 56px 28px 72px; color: #20252a; }
+.document header { margin-bottom: 40px; }
+.document h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.14; font-weight: 700; letter-spacing: -0.045em; overflow-wrap: anywhere; }
+.document h2 { font-size: 1.25rem; line-height: 1.5; font-weight: 700; margin-bottom: 12px; }
+.document p, .document li { font-size: 1rem; line-height: 1.9; word-break: keep-all; overflow-wrap: anywhere; }
+.document p + p { margin-top: 12px; }
+.document header p { margin-top: 18px; color: #4c555f; }
+.document .lead { font-size: 1.15rem; line-height: 1.8; }
+.document section { border-top: 1px solid #d9dedf; padding-top: 24px; margin-top: 28px; }
+.document ul { padding-left: 22px; list-style: disc; }
+.document li + li { margin-top: 8px; }
+.document a { color: #244ab0; text-decoration: underline; text-underline-offset: 4px; }
+.document a:hover { color: #142b69; }
+.document a:focus-visible { outline: 3px solid #244ab0; outline-offset: 5px; border-radius: 2px; }
+.document footer { border-top: 1px solid #d9dedf; margin-top: 40px; padding-top: 20px; color: #4c555f; }
+.document .date { font-size: 0.9rem; }
+.document .links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 20px; }
+@media (max-width: 480px) { .document { padding: 32px 20px 48px; } .document header { margin-bottom: 28px; } }

@@ -145,3 +145,12 @@ test('excluded manuscript cannot re-enter through Research narrative or a shorte
   assert.ok(prompt.includes('Do not reinterpret an absent name as a metaphor'));
   assert.ok(prompt.indexOf('CHECK THE NAMED SUBJECT FIRST') < prompt.indexOf('ANSWER THE QUESTION'));
 });
+
+
+test('standalone RCC documents stay outside portfolio chat evidence and allowed links', () => {
+  assert.doesNotMatch(prompt, /Research Command Center|spreadsheets\.readonly|개인정보처리방침/);
+  assert.ok(!contextModule.portfolioPageLinks.some(link => link.startsWith('/rcc')));
+  for (const url of ['/rcc', '/rcc/privacy', 'https://portfolio.kangbeen.my/rcc', 'https://portfolio.kangbeen.my/rcc/privacy']) {
+    assert.equal(validateResponseLinks(`[RCC](${url})`), 'RCC');
+  }
+});

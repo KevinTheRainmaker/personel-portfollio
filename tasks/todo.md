@@ -91,3 +91,14 @@ CV: [헤더] → [Education/Experience/Projects | Skills/Awards/Other]. 모바�
 운영 1차 검증 ce433e8: Research에서 제거 PASS, 정확한 질문에 모델이 제목을 일반 철학으로 재해석하여 응답 검증 FAIL. 계획 보완: 답변 스타일 규칙보다 우선하는 고유명사 근거 확인 및 비유적 연결 금지 규칙을 추가하고 실제 질문 재검증.
 
 최종 검토: e3c6143 Vercel success. 실제 동일 질문 fresh/old-revision 두 요청 모두 사이트에 해당 정보 없음 응답, 이전 임상가 연구 설명 및 stale sentinel 재노출 없음. 일반 공개 관심사 안내는 남아 있음. 운영 Research 제목 부재 확인.
+
+
+## RCC OAuth 공개 소개·개인정보처리방침 (2026-11-23)
+- [x] 현재 RCC 데이터 처리와 공식 OAuth 안내 확인
+- [x] /rcc 및 /rcc/privacy 독립 문서 구현, 기존 메뉴·챗봇 링크 추가 없음
+- [x] 페이지 직접 접근/모바일/키보드/기존 화면·챗봇 회귀 검증
+- [ ] 내용·보안 검토 후 커밋/배포·운영 URL 확인
+
+설계 검토: 따뜻한 기존 배경에 진한 제목과 얇은 구분선의 단일 문서. 소개는 앱명과 용도, Google 접근 목적, 연락처 및 개인정보처리방침 링크. 정책은 수집·사용·저장·외부처리·보존·삭제를 실제 구현 기준으로 작성한다. 포트폴리오의 소개/Research/Papers/CV 내용·내비게이션은 유지하며 RCC 문서만 독립 main으로 렌더한다. Google 검증 완료나 영구 토큰 보장을 주장하지 않는다.
+
+로컬 검토: chat22/Publications10 PASS, production build/typecheck PASS. RCC 브라우저8결과 PASS(1440/390 직접200·noindex·canonical·no nav/chat/form/storage·포트폴리오4페이지 진입링크없음), 기존 UI19결과 PASS. PC 소개/모바일 정책 스크린샷 읽기·줄바꿈 확인. 운영 배포 대기.

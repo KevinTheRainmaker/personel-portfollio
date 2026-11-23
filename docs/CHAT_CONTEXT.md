@@ -3,7 +3,7 @@
 ## Public website is the source of truth
 
 The deployed Next.js `/api/chat` uses deterministic full context assembled from
-**only the records and text fields displayed on the current website**. It does not
+**only the records and text fields displayed on the portfolio Home/Research/Papers/CV pages**. It does not
 serialize the complete authoring JSON, crawl the site, or retrieve from a separate
 biography/index. A normal site build/deployment updates the evidence.
 
@@ -114,3 +114,10 @@ still offered general documented research interests; they did not claim those ar
 findings from the excluded work. Live Research also no longer displayed the title.
 Observed context revision: efa7c1eedea87c740e5820686afd1157cbd7ef8374990554e3255ac8e2446ab1.
 These observations are sample tests, not a guarantee against all model hallucination.
+
+Standalone RCC OAuth documents at `/rcc` and `/rcc/privacy` are explicitly excluded
+from chatbot evidence and response-link allowlists. They are direct-URL public
+information pages, not portfolio biography/research records. Adding these routes
+does not change the portfolio context revision or ingest their text. They do not
+mount portfolio navigation or ChatProvider. Existing portfolio pages have no entry
+links to these documents.
